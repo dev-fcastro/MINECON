@@ -103,117 +103,158 @@
 
 .machinery-section {
   background-color: var(--mc-white);
-  padding: 100px 0;
+  padding-top: 100px;
   border-bottom: 2px solid var(--mc-secondary);
   box-sizing: border-box;
 }
 
 .machinery-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 460px 280px;
+  gap: 3px;
+  background-color: var(--mc-black);
 }
 
-@media (min-width: 600px) {
-  .machinery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.mach-item {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
 }
 
-@media (min-width: 1024px) {
-  .machinery-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* ── Services Section ─────────────────────────────── */
-
-.services-section {
-  background-color: var(--mc-white);
-  padding: 100px 0;
-  border-bottom: 2px solid var(--mc-secondary);
-  box-sizing: border-box;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-@media (min-width: 600px) {
-  .services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .services-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-/* ── Service Card styling ── */
-.service-card {
-  background-color: var(--mc-white);
-  border: 2px solid var(--mc-secondary);
-  box-sizing: border-box;
-  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.3s ease;
-  display: flex;
-  flex-direction: column;
+.mach-item__img {
+  width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.service-card:hover {
-  border-color: var(--mc-primary);
-  transform: translateY(-4px);
+.mach-item:hover .mach-item__img {
+  transform: scale(1.06);
 }
 
-.service-card__content {
-  padding: 32px 28px;
+.mach-item__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.88) 0%,
+    rgba(10, 10, 10, 0.3) 45%,
+    transparent 100%
+  );
+  transition: background 0.45s ease;
+}
+
+.mach-item:hover .mach-item__overlay {
+  background: linear-gradient(
+    to top,
+    rgba(10, 10, 10, 0.92) 0%,
+    rgba(10, 10, 10, 0.4) 55%,
+    transparent 100%
+  );
+}
+
+.mach-item__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 32px;
   display: flex;
   flex-direction: column;
-  flex: 1;
-  box-sizing: border-box;
+  gap: 8px;
 }
 
-.service-card__title {
-  font-size: 20px;
+.mach-item__brand {
+  font-size: 10px;
   font-weight: 900;
   text-transform: uppercase;
-  color: var(--mc-black);
-  margin: 0 0 16px 0;
-  letter-spacing: 0.02em;
-  line-height: 1.2;
+  letter-spacing: 0.22em;
+  color: var(--mc-primary);
 }
 
-.service-card__description {
-  font-size: 13px;
-  color: var(--mc-secondary);
-  line-height: 1.6;
-  margin: 0 0 24px 0;
-  flex: 1;
+.mach-item__title {
+  font-size: clamp(16px, 1.6vw, 22px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--mc-white);
+  margin: 0;
+  line-height: 1.15;
 }
 
-.service-card__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 11px;
+.mach-item__cta {
+  font-size: 10px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--mc-primary);
-  text-decoration: none;
-  transition: color 0.2s ease, padding-left 0.2s ease;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  padding-top: 18px;
-  margin-top: auto;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s ease, gap 0.2s ease;
 }
 
-.service-card__link:hover {
+.mach-item:hover .mach-item__cta {
+  color: var(--mc-white);
+  gap: 10px;
+}
+
+/* Red accent line on hover — bottom edge */
+.mach-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--mc-primary);
+  transition: width 0.45s cubic-bezier(0.4, 0, 0, 1);
+  z-index: 2;
+}
+
+.mach-item:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .machinery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .mach-item {
+    height: 280px;
+  }
+}
+
+/* ── Services Ticker ─────────────────────────────── */
+
+.services-ticker {
+  display: block;
+}
+
+.services-ticker ::ng-deep .ticker {
+  height: 52px;
+  background-color: var(--mc-white);
+  border-top: 3px solid var(--mc-secondary);
+  border-bottom: 3px solid var(--mc-secondary);
+}
+
+.services-ticker ::ng-deep .ticker__prefix {
+  display: none;
+}
+
+.services-ticker ::ng-deep .ticker__item {
   color: var(--mc-black);
-  padding-left: 4px;
+}
+
+.services-ticker ::ng-deep .ticker__sep {
+  color: var(--mc-primary);
 }
 
 /* ── Brands Section ───────────────────────────────── */
