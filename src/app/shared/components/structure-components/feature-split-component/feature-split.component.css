@@ -1,0 +1,97 @@
+.split__item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 500px;
+}
+
+.split__item + .split__item {
+  border-top: 3px solid var(--mc-secondary);
+}
+
+/* Columna de imagen: position relative + absolute img garantiza fill sin depender del grid */
+.split__image-col {
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
+}
+
+.split__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.split__item:hover .split__img {
+  transform: scale(1.04);
+}
+
+/* Columna de texto */
+.split__text-col {
+  padding: 72px 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  background-color: var(--mc-white);
+}
+
+.split__para {
+  display: block;
+}
+
+.split__para ::ng-deep .mc-paragraph {
+  font-size: 15px;
+  color: var(--mc-secondary);
+  line-height: 1.8;
+}
+
+.split__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--mc-primary);
+  text-decoration: none;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  transition: color steps(1, end), padding-left steps(1, end);
+}
+
+.split__cta:hover {
+  color: var(--mc-black);
+  padding-left: 6px;
+}
+
+/* Ítem impar: imagen a la derecha → solo el image-col va al order 2 */
+.split__item--reverse .split__image-col {
+  order: 1;
+}
+
+/* Fondo alternado para el texto del ítem impar */
+.split__item--reverse .split__text-col {
+  background-color: #f5f5f5;
+}
+
+/* ── Responsive ─────────────────────────────────── */
+@media (max-width: 767px) {
+  .split__item {
+    grid-template-columns: 1fr;
+  }
+
+  /* Imagen siempre arriba en móvil */
+  .split__image-col {
+    min-height: 280px;
+    order: -1 !important;
+  }
+
+  .split__text-col {
+    padding: 40px 24px;
+  }
+}
