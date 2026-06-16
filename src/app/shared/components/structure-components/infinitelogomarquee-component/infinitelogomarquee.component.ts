@@ -10,6 +10,8 @@ export interface MarqueeItem {
   name: string;
   logoSrc: string;
   route: string;
+  logoWidth?: number;
+  logoHeight?: number;
 }
 
 @Component({

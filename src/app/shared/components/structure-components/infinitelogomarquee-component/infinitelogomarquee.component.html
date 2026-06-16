@@ -6,6 +6,8 @@
           class="marquee__logo"
           [src]="item.logoSrc"
           [alt]="item.name"
+          [style.width.px]="item.logoWidth ?? 180"
+          [style.height.px]="item.logoHeight ?? 60"
           loading="lazy"
           (error)="hideImg($event)"
         />
