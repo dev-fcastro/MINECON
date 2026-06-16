@@ -1,0 +1,240 @@
+:host {
+  display: block;
+}
+
+.services-accordion {
+  display: flex;
+  height: 460px;
+  overflow: hidden;
+}
+
+/* ── Header panel ── */
+.srv-header {
+  flex: 0 0 240px;
+  background: #2b2b2d;
+  border-right: 3px solid var(--mc-primary);
+  padding: 48px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.srv-header__eyebrow {
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mc-primary);
+  margin: 0 0 14px 0;
+}
+
+.srv-header__title {
+  font-size: clamp(24px, 2.2vw, 34px);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--mc-white);
+  margin: 0;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+}
+
+.srv-header__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--mc-primary);
+  text-decoration: none;
+  transition: gap 0.18s ease;
+}
+
+.srv-header__cta:hover {
+  gap: 14px;
+}
+
+/* ── Panels ── */
+.srv-panel {
+  flex: 1;
+  background-color: #2b2b2d;
+  background-size: cover;
+  background-position: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.45);
+  position: relative;
+  overflow: hidden;
+  transition: flex 0.45s cubic-bezier(0.4, 0, 0, 1);
+  cursor: pointer;
+}
+
+.srv-panel:last-child {
+  border-right: none;
+}
+
+.srv-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 20, 0.78);
+  transition: background 0.45s ease;
+  z-index: 0;
+}
+
+.srv-panel:hover::before {
+  background: rgba(20, 20, 20, 0.6);
+}
+
+.srv-panel::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: var(--mc-primary);
+  transition: width 0.45s cubic-bezier(0.4, 0, 0, 1);
+  z-index: 2;
+}
+
+.srv-panel:hover::after {
+  width: 100%;
+}
+
+.services-accordion:has(.srv-panel:hover) .srv-panel:not(:hover) {
+  flex: 0 0 96px;
+}
+
+.services-accordion:has(.srv-panel:hover) .srv-panel:hover {
+  flex: 3;
+}
+
+/* ── Collapsed view ── */
+.srv-panel__slim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  transition: opacity 0.15s ease;
+}
+
+.srv-panel:hover .srv-panel__slim {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.srv-panel__icon-frame {
+  width: 64px;
+  height: 64px;
+  border: 2px solid var(--mc-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.srv-panel__icon-sm {
+  width: 36px;
+  height: 36px;
+  color: var(--mc-primary);
+}
+
+/* ── Expanded view ── */
+.srv-panel__full {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  padding: 52px 44px 44px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.1s ease;
+  min-width: 240px;
+}
+
+.srv-panel:hover .srv-panel__full {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.28s ease 0.18s;
+}
+
+.srv-panel__icon-lg {
+  width: 52px;
+  height: 52px;
+  color: var(--mc-primary);
+  margin-bottom: 24px;
+  flex-shrink: 0;
+}
+
+.srv-panel__title {
+  font-size: 18px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--mc-white);
+  margin: 0 0 16px 0;
+  line-height: 1.15;
+}
+
+.srv-panel__description {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+.srv-panel__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--mc-primary);
+  text-decoration: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 20px;
+  margin-top: 24px;
+  white-space: nowrap;
+  transition: gap 0.18s ease;
+}
+
+.srv-panel__link:hover {
+  gap: 14px;
+}
+
+@media (max-width: 767px) {
+  .services-accordion {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .srv-header {
+    flex: 0 0 auto;
+  }
+
+  .srv-panel {
+    flex: 0 0 auto !important;
+    min-height: 80px;
+  }
+
+  .srv-panel__slim {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 20px 28px;
+    gap: 20px;
+  }
+
+  .srv-panel__full {
+    display: none;
+  }
+}

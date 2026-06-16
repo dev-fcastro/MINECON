@@ -9,7 +9,6 @@ import {
   BrandShowcaseComponent,
   BrandShowcaseItem,
 } from '../../shared/components/structure-components/brandshowcase-component/brandshowcase.component';
-import { MachineryCardComponent } from '../../shared/components/ux/machinery-card-component/machinery-card.component';
 import {
   SliderComponent,
   SliderImage,
@@ -20,19 +19,14 @@ import {
   FeatureSplitComponent,
   FeatureSplitItem,
 } from '../../shared/components/structure-components/feature-split-component/feature-split.component';
+import { TextCarouselSliderComponent } from '../../shared/components/structure-components/textcarouselslider-component/textcarouselslider.component';
+import { ServicesAccordionComponent } from '../../shared/components/structure-components/services-accordion-component/services-accordion.component';
 
 
 export interface FeaturedEquipmentItem {
   title: string;
   brand: string;
   image: string;
-  route: string;
-  specs: string[];
-}
-
-export interface ServiceItem {
-  title: string;
-  description: string;
   route: string;
 }
 
@@ -44,10 +38,11 @@ export interface ServiceItem {
     InfiniteLogoMarqueeComponent,
     BrandShowcaseComponent,
     SliderComponent,
-    MachineryCardComponent,
     TitleComponent,
     CallToActionComponent,
     FeatureSplitComponent,
+    TextCarouselSliderComponent,
+    ServicesAccordionComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
@@ -93,68 +88,47 @@ export class HomeComponent {
     {
       title: 'Excavadora Hidráulica EC950E',
       brand: 'Volvo CE',
-      image: 'https://images.unsplash.com/photo-1579616790875-af7fbc5a5cf2?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1579616790875-af7fbc5a5cf2?q=80&w=1200&auto=format&fit=crop',
       route: '/marcas/volvo-construction-equipment',
-      specs: ['Peso de operación: 95,000 kg', 'Capacidad del balde: 5.6 m³', 'Motor Volvo D16 de 603 hp'],
     },
     {
-      title: 'Camión de Volteo HOWO 6x4',
+      title: 'Tractocamión HOWO T7H',
       brand: 'Sinotruk',
-      image: 'https://images.unsplash.com/photo-1592838064808-0203d267e3e3?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1200&auto=format&fit=crop',
       route: '/marcas/sinotruk',
-      specs: ['Capacidad de carga: 25 toneladas', 'Motor Sinotruk D12 de 420 hp', 'Estructura reforzada para minería'],
     },
     {
       title: 'Minicargador S450',
       brand: 'Bobcat',
-      image: 'https://images.unsplash.com/photo-1533512930330-4ac257c86793?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1533512930330-4ac257c86793?q=80&w=1200&auto=format&fit=crop',
       route: '/marcas/bobcat',
-      specs: ['Carga nominal: 608 kg', 'Caudal hidráulico estándar: 64 L/min', 'Cabina sellada y presurizada'],
     },
     {
-      title: 'Generador Diésel Profesional',
+      title: 'Generador T12000',
       brand: 'Firman',
-      image: 'https://images.unsplash.com/photo-1597843797221-54191d9d9847?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1200&auto=format&fit=crop',
       route: '/marcas/firman',
-      specs: ['Potencia nominal: 10 kVA', 'Motor diésel insonorizado de 4 tiempos', 'Panel digital multifunción'],
     },
     {
       title: 'Compresor Portátil 185 CFM',
       brand: 'Ingersoll Rand',
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop',
       route: '/marcas/ingersoll-rand',
-      specs: ['Caudal de aire: 185 CFM a 100 psi', 'Motor diésel Yanmar de alta eficiencia', 'Chasis remolcable para carretera'],
     },
     {
-      title: 'Sistemas e Hidráulica Premium',
-      brand: 'Parker',
-      image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop',
-      route: '/marcas/parker',
-      specs: ['Mangueras y conexiones de alta presión', 'Sistemas de filtración hidráulica industrial', 'Válvulas y actuadores robustos'],
+      title: 'Neumáticos OTR para Minería',
+      brand: 'Michelin',
+      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop',
+      route: '/marcas/michelin',
     },
   ];
 
-  readonly servicesData: ServiceItem[] = [
-    {
-      title: 'Repuestos',
-      description: 'Catálogo completo de repuestos originales para todas nuestras marcas representadas con entrega rápida.',
-      route: '/repuestos',
-    },
-    {
-      title: 'Taller',
-      description: 'Servicio de mantenimiento preventivo y correctivo con técnicos certificados en taller o campo.',
-      route: '/servicios',
-    },
-    {
-      title: 'Alquiler',
-      description: 'Amplia flota de alquiler de maquinaria pesada y equipos industriales listos para operar.',
-      route: '/alquiler',
-    },
-    {
-      title: 'Soporte',
-      description: 'Asistencia técnica especializada 24/7 para garantizar la continuidad de sus operaciones.',
-      route: '/servicios',
-    },
+  readonly serviceTickerTexts: string[] = [
+    'SERVICIO TÉCNICO CERTIFICADO · DISPONIBILIDAD 24/7 EN CAMPO Y TALLER',
+    'STOCK PERMANENTE DE REPUESTOS ORIGINALES PARA TODAS LAS MARCAS REPRESENTADAS',
+    'PLANES DE MANTENIMIENTO PREVENTIVO · REDUZCA SUS COSTOS OPERATIVOS',
+    'EFICIENCIA DE FLOTA · MONITOREO Y OPTIMIZACIÓN DEL CONSUMO DE COMBUSTIBLE',
+    'SEGURIDAD INDUSTRIAL · PROGRAMAS DE GESTIÓN DE RIESGO CERTIFICADOS',
   ];
 
   readonly featureItems: FeatureSplitItem[] = [

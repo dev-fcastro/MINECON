@@ -12,4 +12,5 @@ import { FooterComponent } from './features/layout/footer-component/footer.compo
   styleUrl: './app.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class App {}
+export class App {
+}

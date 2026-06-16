@@ -1,0 +1,35 @@
+<div class="services-accordion">
+
+  <div class="srv-header">
+    <div class="srv-header__top">
+      <p class="srv-header__eyebrow">Lo que hacemos</p>
+      <h2 class="srv-header__title">Nuestros<br>Servicios</h2>
+    </div>
+    <a routerLink="/servicios" class="srv-header__cta">
+      Ver todos <span aria-hidden="true">→</span>
+    </a>
+  </div>
+
+  @for (service of services; track service.title) {
+    <div class="srv-panel" [style.background-image]="'url(' + service.bgImage + ')'">
+      <div class="srv-panel__slim">
+        <div class="srv-panel__icon-frame">
+          <svg class="srv-panel__icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path [attr.d]="service.iconPath" />
+          </svg>
+        </div>
+      </div>
+      <div class="srv-panel__full">
+        <svg class="srv-panel__icon-lg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path [attr.d]="service.iconPath" />
+        </svg>
+        <h3 class="srv-panel__title">{{ service.title }}</h3>
+        <p class="srv-panel__description">{{ service.description }}</p>
+        <a [routerLink]="service.route" class="srv-panel__link">
+          Saber más <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  }
+
+</div>
