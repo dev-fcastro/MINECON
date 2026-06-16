@@ -1,0 +1,21 @@
+@for (item of items(); track item.title; let i = $index) {
+  <div class="split__item" [class.split__item--reverse]="i % 2 !== 0">
+    <div class="split__image-col">
+      <img
+        class="split__img"
+        [src]="item.image"
+        [alt]="item.imageAlt"
+        loading="lazy"
+      />
+    </div>
+    <div class="split__text-col">
+      <app-title variant="section" level="h3" [text]="item.title" [eyebrow]="item.eyebrow ?? ''" />
+      <app-paragraph variant="body" class="split__para">{{ item.description }}</app-paragraph>
+      @if (item.route) {
+        <a class="split__cta" [routerLink]="item.route">
+          {{ item.ctaLabel ?? 'Saber más' }} <span aria-hidden="true">→</span>
+        </a>
+      }
+    </div>
+  </div>
+}

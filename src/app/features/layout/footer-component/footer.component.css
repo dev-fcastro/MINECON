@@ -267,6 +267,12 @@
   width: 115px;
 }
 
+/* INGERSOLL RAND */
+.footer-partner-logo--ingersollrand {
+  height: 18px;
+  width: 110px;
+}
+
 /* ── Responsivo ──────────────────────────────────── */
 
 @media (max-width: 1100px) {

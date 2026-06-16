@@ -1,6 +1,6 @@
 <section
   class="slider"
-  aria-label="Galería de maquinaria industrial"
+  aria-label="Divisiones de negocios"
   aria-roledescription="carrusel"
 >
   <div class="slider__track">
@@ -12,28 +12,31 @@
         [attr.aria-hidden]="i !== currentIndex()"
         [attr.aria-label]="'Diapositiva ' + (i + 1) + ' de ' + images().length"
       >
-        <img class="slider__image" [src]="img.url" [alt]="img.alt" />
+        <img class="slider__image" [src]="img.url" [alt]="img.alt" loading="lazy" />
         <div class="slider__overlay" aria-hidden="true"></div>
-        @if (img.label || img.caption) {
-          <div class="slider__meta">
-            @if (img.label) {
-              <span class="slider__label">{{ img.label }}</span>
-            }
-            @if (img.caption) {
-              <p class="slider__caption">{{ img.caption }}</p>
-            }
-          </div>
-        }
+        <div class="slider__meta">
+          @if (img.label) {
+            <p class="slider__label">{{ img.label }}</p>
+          }
+          @if (img.caption) {
+            <p class="slider__caption">{{ img.caption }}</p>
+          }
+          @if (img.route) {
+            <a class="slider__link" [routerLink]="img.route">
+              {{ img.ctaLabel ?? 'Ver más' }} <span aria-hidden="true">›</span>
+            </a>
+          }
+        </div>
       </div>
     }
   </div>
 
-  <!-- Zonas de navegación invisibles -->
+  <!-- Zonas de navegación -->
   <div
     class="slider__nav slider__nav--prev"
     (click)="prevImage()"
     role="button"
-    aria-label="Imagen anterior"
+    aria-label="Anterior"
     tabindex="0"
     (keydown.enter)="prevImage()"
     (keydown.space)="$event.preventDefault(); prevImage()"
@@ -42,27 +45,24 @@
     class="slider__nav slider__nav--next"
     (click)="nextImage()"
     role="button"
-    aria-label="Imagen siguiente"
+    aria-label="Siguiente"
     tabindex="0"
     (keydown.enter)="nextImage()"
     (keydown.space)="$event.preventDefault(); nextImage()"
   ></div>
 
-  <!-- Indicadores de progreso -->
+  <!-- Indicadores con progreso animado -->
   @if (images().length > 1) {
-    <div
-      class="slider__indicators"
-      role="tablist"
-      aria-label="Seleccionar diapositiva"
-    >
+    <div class="slider__indicators" role="tablist" aria-label="Seleccionar diapositiva">
       @for (img of images(); track img.url; let i = $index) {
         <button
           class="slider__dot"
           [class.slider__dot--active]="i === currentIndex()"
+          [style.--progress-duration]="i === currentIndex() ? intervalMs() + 'ms' : null"
           (click)="goTo(i)"
           role="tab"
           [attr.aria-selected]="i === currentIndex()"
-          [attr.aria-label]="'Ir a imagen ' + (i + 1)"
+          [attr.aria-label]="'Ir a ' + (img.label ?? ('diapositiva ' + (i + 1)))"
         ></button>
       }
     </div>

@@ -83,64 +83,20 @@
   margin-bottom: 48px;
 }
 
-/* ── About Section ────────────────────────────────── */
+/* ── Feature Split Section ────────────────────────── */
 
-.about-section {
+.feature-section {
   background-color: var(--mc-white);
-  padding: 100px 0;
-  border-bottom: 2px solid var(--mc-secondary);
+  padding-top: 100px;
+  padding-bottom: 80px;
+  border-bottom: 4px solid var(--mc-secondary);
   box-sizing: border-box;
 }
 
-.about-section__layout {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
-}
-
-@media (min-width: 768px) {
-  .about-section__layout {
-    grid-template-columns: 1fr 2fr;
-    gap: 64px;
-    align-items: center;
-  }
-}
-
-.about-section__content ::ng-deep .mc-paragraph {
-  color: var(--mc-secondary);
-  font-size: 20px;
-  line-height: 1.7;
-}
-
-/* ── Solutions / Categories Section ───────────────── */
+/* ── Solutions / Slider Section ───────────────────── */
 
 .solutions-section {
-  background-color: var(--mc-secondary);
-  padding: 100px 0;
-  border-bottom: 2px solid var(--mc-white);
-  box-sizing: border-box;
-}
-
-.solutions-section .section-header ::ng-deep .mc-title {
-  color: var(--mc-white) !important;
-}
-
-.solutions-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-}
-
-@media (min-width: 600px) {
-  .solutions-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .solutions-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
+  border-bottom: 2px solid var(--mc-primary);
 }
 
 /* ── Machinery Section ────────────────────────────── */
