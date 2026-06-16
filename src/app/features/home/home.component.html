@@ -54,43 +54,30 @@
     <div class="section-header">
       <app-title variant="section" level="h2" text="Equipos Destacados" />
     </div>
-
-    <div class="machinery-grid">
-      @for (equip of featuredMachinery; track equip.title) {
-        <app-machinery-card
-          [title]="equip.title"
-          [brand]="equip.brand"
-          [image]="equip.image"
-          [route]="equip.route"
-          [specs]="equip.specs"
-        ></app-machinery-card>
-      }
-    </div>
+  </div>
+  <div class="machinery-grid">
+    @for (equip of featuredMachinery; track equip.title) {
+      <a class="mach-item" [routerLink]="equip.route" [attr.aria-label]="equip.brand + ' — ' + equip.title">
+        <img class="mach-item__img" [src]="equip.image" [alt]="equip.title" loading="lazy" />
+        <div class="mach-item__overlay" aria-hidden="true"></div>
+        <div class="mach-item__content">
+          <span class="mach-item__brand">{{ equip.brand }}</span>
+          <h3 class="mach-item__title">{{ equip.title }}</h3>
+          <span class="mach-item__cta">Ver marca <span aria-hidden="true">→</span></span>
+        </div>
+      </a>
+    }
   </div>
 </section>
+
+<!-- Divisor -->
+<app-textcarouselslider [tickerTexts]="serviceTickerTexts" class="services-ticker" />
 
 <!-- Servicios -->
-<section class="services-section">
-  <div class="section-container">
-    <div class="section-header">
-      <app-title variant="section" level="h2" text="Nuestros Servicios" />
-    </div>
+<app-services-accordion />
 
-    <div class="services-grid">
-      @for (service of servicesData; track service.title) {
-        <div class="service-card">
-          <div class="service-card__content">
-            <h3 class="service-card__title">{{ service.title }}</h3>
-            <p class="service-card__description">{{ service.description }}</p>
-            <a [routerLink]="service.route" class="service-card__link">
-              Saber más <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
-      }
-    </div>
-  </div>
-</section>
+<!-- Divisor -->
+<app-textcarouselslider [tickerTexts]="serviceTickerTexts" class="services-ticker" />
 
 <!-- CTA Final -->
 <app-calltoaction
