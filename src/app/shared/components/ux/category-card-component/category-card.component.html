@@ -1,0 +1,10 @@
+<a [routerLink]="route()" class="category-card" [attr.aria-label]="title()">
+  @if (bgImage()) {
+    <div class="category-card__bg" [style.background-image]="'url(' + bgImage() + ')'"></div>
+  }
+  <div class="category-card__overlay"></div>
+  <div class="category-card__content">
+    <h3 class="category-card__title">{{ title() }}</h3>
+    <span class="category-card__arrow">Ver equipos →</span>
+  </div>
+</a>

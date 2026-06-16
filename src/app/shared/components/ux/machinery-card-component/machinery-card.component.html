@@ -1,0 +1,24 @@
+<div class="machinery-card">
+  <div class="machinery-card__img-container">
+    @if (image()) {
+      <img [src]="image()" [alt]="title()" class="machinery-card__img" loading="lazy" />
+    }
+    <span class="machinery-card__brand-tag">{{ brand() }}</span>
+  </div>
+  
+  <div class="machinery-card__content">
+    <h3 class="machinery-card__title">{{ title() }}</h3>
+    
+    @if (specs() && specs().length > 0) {
+      <ul class="machinery-card__specs">
+        @for (spec of specs(); track spec) {
+          <li class="machinery-card__spec-item">{{ spec }}</li>
+        }
+      </ul>
+    }
+    
+    <a [routerLink]="route()" class="machinery-card__cta">
+      Ver marca <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</div>

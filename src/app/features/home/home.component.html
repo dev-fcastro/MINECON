@@ -7,8 +7,121 @@
       priority
       alt="MINECON — Maquinaria Pesada Industrial"
     />
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <app-title variant="display" level="h1" class="hero__title">MINECON</app-title>
+      <p class="hero__subtitle">
+        Representantes de equipos para construcción, minería, industria, transporte y energía en República Dominicana.
+      </p>
+      <div class="hero__actions">
+        <a routerLink="/productos" class="mc-btn mc-btn--primary">
+          <span class="mc-btn__label">Ver Catálogo</span>
+        </a>
+      </div>
+    </div>
   </section>
   <app-infinitelogomarquee [items]="marqueeItems" />
 </div>
 
-<app-brandshowcase [items]="showcaseItems" />
+<!-- Marcas Destacadas (las 3 compañías principales) -->
+<section class="brands-section">
+  <div class="section-container">
+    <div class="section-header">
+      <app-title variant="section" level="h2" eyebrow="Representaciones Oficiales">Marcas Líderes</app-title>
+    </div>
+  </div>
+  <app-brandshowcase [items]="showcaseItems" />
+</section>
+
+<!-- Introducción / Propuesta de Valor -->
+<section class="about-section">
+  <div class="section-container">
+    <div class="about-section__layout">
+      <div class="about-section__header">
+        <app-title variant="section" level="h2" eyebrow="Soluciones de Alto Rendimiento">Quiénes Somos</app-title>
+      </div>
+      <div class="about-section__content">
+        <app-paragraph variant="lead">
+          En MINECON proveemos maquinaria pesada, repuestos originales y soporte técnico de clase mundial.
+          Representamos a marcas líderes del mercado internacional en los sectores de construcción, minería,
+          transporte, energía e industria en toda la República Dominicana, asegurando la continuidad de sus proyectos.
+        </app-paragraph>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Categorías de Negocio (Nuestras Soluciones) -->
+<section class="solutions-section">
+  <div class="section-container">
+    <div class="section-header">
+      <app-title variant="section" level="h2" eyebrow="Sectores que Atendemos">Nuestras Soluciones</app-title>
+    </div>
+    
+    <div class="solutions-grid">
+      @for (cat of categoriesData; track cat.title) {
+        <app-category-card 
+          [title]="cat.title"
+          [bgImage]="cat.bgImage"
+          [route]="cat.route"
+        ></app-category-card>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Equipos Destacados -->
+<section class="machinery-section">
+  <div class="section-container">
+    <div class="section-header">
+      <app-title variant="section" level="h2" eyebrow="Visualización de Portafolio">Equipos Destacados</app-title>
+    </div>
+    
+    <div class="machinery-grid">
+      @for (equip of featuredMachinery; track equip.title) {
+        <app-machinery-card
+          [title]="equip.title"
+          [brand]="equip.brand"
+          [image]="equip.image"
+          [route]="equip.route"
+          [specs]="equip.specs"
+        ></app-machinery-card>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Servicios -->
+<section class="services-section">
+  <div class="section-container">
+    <div class="section-header">
+      <app-title variant="section" level="h2" eyebrow="Soporte Posventa e Infraestructura">Nuestros Servicios</app-title>
+    </div>
+    
+    <div class="services-grid">
+      @for (service of servicesData; track service.title) {
+        <div class="service-card">
+          <div class="service-card__content">
+            <h3 class="service-card__title">{{ service.title }}</h3>
+            <p class="service-card__description">{{ service.description }}</p>
+            <a [routerLink]="service.route" class="service-card__link">
+              Saber más <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA Final -->
+<app-calltoaction
+  eyebrow="Impulse sus Proyectos"
+  title="¿Listo para cotizar o requiere asesoría?"
+  description="Póngase en contacto con nuestros asesores para cotizar equipos, programar mantenimientos o consultar stock de repuestos originales."
+  bgImageUrl="https://images.unsplash.com/photo-1581092783236-aefd3b1eb9f4?q=80&w=1200&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Contactar Asesor</span>
+  </a>
+</app-calltoaction>
