@@ -9,17 +9,18 @@ import {
   BrandShowcaseComponent,
   BrandShowcaseItem,
 } from '../../shared/components/structure-components/brandshowcase-component/brandshowcase.component';
-import { CategoryCardComponent } from '../../shared/components/ux/category-card-component/category-card.component';
 import { MachineryCardComponent } from '../../shared/components/ux/machinery-card-component/machinery-card.component';
+import {
+  SliderComponent,
+  SliderImage,
+} from '../../shared/components/structure-components/slider-componet/slider.component';
 import { TitleComponent } from '../../shared/components/ux/title-component/title.component';
-import { ParagraphComponent } from '../../shared/components/ux/paragraph-component/paragraph.component';
 import { CallToActionComponent } from '../../shared/components/structure-components/calltoaction-component/calltoaction.component';
+import {
+  FeatureSplitComponent,
+  FeatureSplitItem,
+} from '../../shared/components/structure-components/feature-split-component/feature-split.component';
 
-export interface CategoryItem {
-  title: string;
-  bgImage: string;
-  route: string;
-}
 
 export interface FeaturedEquipmentItem {
   title: string;
@@ -42,42 +43,49 @@ export interface ServiceItem {
     RouterLink,
     InfiniteLogoMarqueeComponent,
     BrandShowcaseComponent,
-    CategoryCardComponent,
+    SliderComponent,
     MachineryCardComponent,
     TitleComponent,
-    ParagraphComponent,
     CallToActionComponent,
+    FeatureSplitComponent,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
-  readonly categoriesData: CategoryItem[] = [
+  readonly solutionSlides: SliderImage[] = [
     {
-      title: 'Construcción',
-      bgImage: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop',
-      route: '/productos',
+      url: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop',
+      alt: 'Sistemas de aire comprimido y herramientas neumáticas industriales',
+      label: 'División Industrial',
+      caption: 'Nuestra división se enfoca en la distribución e instalación de sistemas de aire comprimido, satisfaciendo las necesidades de tratamiento, filtración y control de sistemas de vacío. Contamos con una alta gama de productos que abarcan desde compresores de tornillo rotativo, colectores de polvo, hasta líneas completas de herramientas neumáticas.',
+      route: '/marcas',
+      ctaLabel: 'Mostrar Marcas',
     },
     {
-      title: 'Minería',
-      bgImage: 'https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b?q=80&w=800&auto=format&fit=crop',
-      route: '/productos',
+      url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop',
+      alt: 'Equipos para construcción y minería en obra',
+      label: 'División Construcción & Minería',
+      caption: 'Somos una empresa líder en la venta y alquiler de equipos para la construcción y la minería, contamos con una reconocida línea de productos que destacan por su calidad y eficiencia, esta división satisface los requerimientos para los rubros enfocados a la extracción de agregados, construcción, compactación ligera, manipulación de concreto, excavación y movimiento de tierra.',
+      route: '/marcas',
+      ctaLabel: 'Mostrar Marcas',
     },
     {
-      title: 'Transporte',
-      bgImage: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=800&auto=format&fit=crop',
-      route: '/productos',
+      url: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1400&auto=format&fit=crop',
+      alt: 'Vehículos de carga ligera y pesada Sinotruk',
+      label: 'Vehículos Carga Ligera',
+      caption: 'Nuestra división se enfoca en la distribución y comercialización de vehículos livianos y pesados satisfaciendo las necesidades del consumidor. Contamos con una alta gama de vehículos Sinotruk que abarcan desde camiones livianos hasta pesados.',
+      route: '/marcas/sinotruk',
+      ctaLabel: 'Mostrar Marcas',
     },
     {
-      title: 'Energía',
-      bgImage: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800&auto=format&fit=crop',
-      route: '/productos',
-    },
-    {
-      title: 'Industrial',
-      bgImage: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop',
-      route: '/productos',
+      url: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1400&auto=format&fit=crop',
+      alt: 'Generadores eléctricos y equipos de energía Firman',
+      label: 'División Energía',
+      caption: 'Estamos comprometidos con llevar energía de calidad a nuestros consumidores bajo la marca FIRMAN, nos enfocamos en la distribución de generadores eléctricos, motobombas y motores estacionarios para diversas aplicaciones.',
+      route: '/marcas/firman',
+      ctaLabel: 'Mostrar Marcas',
     },
   ];
 
@@ -149,6 +157,36 @@ export class HomeComponent {
     },
   ];
 
+  readonly featureItems: FeatureSplitItem[] = [
+    {
+      title: 'Maquinaria Pesada para Proyectos de Gran Escala',
+      description:
+        'Representamos las marcas más reconocidas del mercado global en maquinaria de construcción, minería y movimiento de tierra. Desde excavadoras hidráulicas hasta compactadoras y cargadores frontales, contamos con el equipo adecuado para cada proyecto.',
+      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop',
+      imageAlt: 'Maquinaria pesada de construcción en obra',
+      route: '/productos',
+      ctaLabel: 'Ver catálogo',
+    },
+    {
+      title: 'Soluciones de Transporte Industrial para la República Dominicana',
+      description:
+        'Con Sinotruk, ofrecemos camiones de volteo, tractocamiones y camiones de carga pesada diseñados para las exigencias del mercado dominicano. Potencia, durabilidad y servicio posventa garantizado.',
+      image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1400&auto=format&fit=crop',
+      imageAlt: 'Camión de transporte industrial en carretera',
+      route: '/marcas/sinotruk',
+      ctaLabel: 'Conocer Sinotruk',
+    },
+    {
+      title: 'Repuestos Originales y Servicio Técnico Certificado',
+      description:
+        'Nuestro taller especializado y red de técnicos certificados garantiza la continuidad de sus operaciones. Disponemos de stock de repuestos originales y ofrecemos contratos de mantenimiento preventivo para toda la flota.',
+      image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1400&auto=format&fit=crop',
+      imageAlt: 'Técnico especializado en mantenimiento de maquinaria',
+      route: '/servicios',
+      ctaLabel: 'Nuestros Servicios',
+    },
+  ];
+
   readonly showcaseItems: BrandShowcaseItem[] = [
     {
       name: 'Volvo Construction Equipment',
@@ -169,13 +207,13 @@ export class HomeComponent {
       bgImage: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1200&auto=format&fit=crop',
     },
     {
-      name: 'Michelin',
-      logoSrc: '/MichelinIMG/michelin-logo-texto.png',
-      route: '/marcas/michelin',
-      logoWidth: 180, logoHeight: 48,
-      categories: ['Neumáticos OTR', 'Neumáticos Industriales', 'Neumáticos para Minería'],
+      name: 'Ingersoll Rand',
+      logoSrc: '/IngersollRandIMG/ingersollrand-logo-texto.png',
+      route: '/marcas/ingersoll-rand',
+      logoWidth: 200, logoHeight: 48,
+      categories: ['Compresores Portátiles', 'Herramientas Neumáticas', 'Sistemas de Aire Comprimido'],
       ctaLabel: 'Ver catálogo',
-      bgImage: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1200&auto=format&fit=crop',
+      bgImage: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1200&auto=format&fit=crop',
     },
   ];
 

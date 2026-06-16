@@ -4,7 +4,6 @@
   height: 580px;
   overflow: hidden;
   background-color: var(--mc-black);
-  border-bottom: 2px solid var(--mc-primary);
 }
 
 .slider__track {
@@ -16,7 +15,7 @@
   position: absolute;
   inset: 0;
   opacity: 0;
-  transition: opacity 0.75s ease;
+  transition: opacity 0.6s ease;
   pointer-events: none;
 }
 
@@ -37,53 +36,69 @@
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(26, 26, 26, 0.88) 0%,
-    rgba(26, 26, 26, 0.2) 45%,
-    transparent 100%
+    rgba(10, 10, 10, 0.92) 0%,
+    rgba(10, 10, 10, 0.35) 55%,
+    rgba(10, 10, 10, 0.1) 100%
   );
 }
 
+/* Meta: label grande + caption + link */
 .slider__meta {
   position: absolute;
-  bottom: 64px;
+  bottom: 72px;
   left: 56px;
   right: 56px;
-  z-index: 5;
+  z-index: 15;
 }
 
+/* Label como título principal de la diapositiva */
 .slider__label {
-  display: inline-block;
-  background-color: var(--mc-primary);
-  color: var(--mc-white);
-  font-size: 9px;
+  margin: 0 0 12px;
+  font-size: clamp(36px, 5.5vw, 72px);
   font-weight: 900;
-  letter-spacing: 0.3em;
   text-transform: uppercase;
-  padding: 4px 12px;
-  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  color: var(--mc-white);
+  line-height: 1;
 }
 
 .slider__caption {
-  margin: 0;
-  font-size: 13px;
+  margin: 0 0 20px;
+  font-size: 14px;
   font-weight: 400;
-  color: var(--mc-bg-light);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.04em;
   line-height: 1.55;
-  max-width: 620px;
+  max-width: 520px;
 }
 
-/* Zonas de navegación invisibles */
+.slider__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--mc-primary);
+  text-decoration: none;
+  transition: color steps(1, end);
+}
+
+.slider__link:hover {
+  color: var(--mc-white);
+}
+
+/* Zonas de navegación — no cubren el área de meta */
 .slider__nav {
   position: absolute;
   top: 0;
   width: 50%;
-  height: 100%;
+  height: calc(100% - 160px);
   z-index: 10;
-  outline: none;
   background: transparent;
   border: none;
+  outline: none;
 }
 
 .slider__nav--prev {
@@ -101,10 +116,10 @@
   outline-offset: -4px;
 }
 
-/* Indicadores */
+/* Indicadores con barra de progreso animada */
 .slider__indicators {
   position: absolute;
-  bottom: 24px;
+  bottom: 28px;
   left: 56px;
   display: flex;
   gap: 6px;
@@ -112,18 +127,30 @@
 }
 
 .slider__dot {
-  width: 28px;
+  position: relative;
+  width: 32px;
   height: 3px;
   padding: 0;
   border: none;
-  background-color: rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.2);
   cursor: pointer;
-  transition: background-color 0.3s ease, width 0.3s ease;
+  overflow: hidden;
 }
 
-.slider__dot--active {
+/* Barra de progreso que avanza mientras se reproduce la diapositiva */
+.slider__dot--active::after {
+  content: '';
+  position: absolute;
+  inset: 0;
   background-color: var(--mc-primary);
-  width: 48px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: dot-progress var(--progress-duration, 2000ms) linear forwards;
+}
+
+@keyframes dot-progress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
 }
 
 .slider__dot:focus-visible {
@@ -134,13 +161,13 @@
 /* Contador */
 .slider__counter {
   position: absolute;
-  bottom: 24px;
+  bottom: 28px;
   right: 56px;
   z-index: 20;
   font-size: 11px;
   font-weight: 900;
   letter-spacing: 0.2em;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.4);
   display: flex;
   align-items: center;
   gap: 5px;

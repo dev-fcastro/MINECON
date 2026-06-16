@@ -9,7 +9,7 @@
     />
     <div class="hero__overlay"></div>
     <div class="hero__content">
-      <app-title variant="display" level="h1" class="hero__title">MINECON</app-title>
+      <app-title variant="display" level="h1" text="MINECON" class="hero__title" />
       <p class="hero__subtitle">
         Representantes de equipos para construcción, minería, industria, transporte y energía en República Dominicana.
       </p>
@@ -23,60 +23,38 @@
   <app-infinitelogomarquee [items]="marqueeItems" />
 </div>
 
-<!-- Marcas Destacadas (las 3 compañías principales) -->
+<!-- Marcas Destacadas -->
 <section class="brands-section">
   <div class="section-container">
     <div class="section-header">
-      <app-title variant="section" level="h2" eyebrow="Representaciones Oficiales">Marcas Líderes</app-title>
+      <app-title variant="section" level="h2" text="Marcas Líderes" />
     </div>
   </div>
   <app-brandshowcase [items]="showcaseItems" />
 </section>
 
-<!-- Introducción / Propuesta de Valor -->
-<section class="about-section">
-  <div class="section-container">
-    <div class="about-section__layout">
-      <div class="about-section__header">
-        <app-title variant="section" level="h2" eyebrow="Soluciones de Alto Rendimiento">Quiénes Somos</app-title>
-      </div>
-      <div class="about-section__content">
-        <app-paragraph variant="lead">
-          En MINECON proveemos maquinaria pesada, repuestos originales y soporte técnico de clase mundial.
-          Representamos a marcas líderes del mercado internacional en los sectores de construcción, minería,
-          transporte, energía e industria en toda la República Dominicana, asegurando la continuidad de sus proyectos.
-        </app-paragraph>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Categorías de Negocio (Nuestras Soluciones) -->
-<section class="solutions-section">
+<!-- Propuesta de Valor — imagen + texto alternado -->
+<section class="feature-section">
   <div class="section-container">
     <div class="section-header">
-      <app-title variant="section" level="h2" eyebrow="Sectores que Atendemos">Nuestras Soluciones</app-title>
-    </div>
-    
-    <div class="solutions-grid">
-      @for (cat of categoriesData; track cat.title) {
-        <app-category-card 
-          [title]="cat.title"
-          [bgImage]="cat.bgImage"
-          [route]="cat.route"
-        ></app-category-card>
-      }
+      <app-title variant="section" level="h2" text="Soluciones para cada Proyecto" />
     </div>
   </div>
+  <app-feature-split [items]="featureItems" />
+</section>
+
+<!-- Divisiones de negocios -->
+<section class="solutions-section">
+  <app-slider [images]="solutionSlides" [intervalMs]="2500" />
 </section>
 
 <!-- Equipos Destacados -->
 <section class="machinery-section">
   <div class="section-container">
     <div class="section-header">
-      <app-title variant="section" level="h2" eyebrow="Visualización de Portafolio">Equipos Destacados</app-title>
+      <app-title variant="section" level="h2" text="Equipos Destacados" />
     </div>
-    
+
     <div class="machinery-grid">
       @for (equip of featuredMachinery; track equip.title) {
         <app-machinery-card
@@ -95,9 +73,9 @@
 <section class="services-section">
   <div class="section-container">
     <div class="section-header">
-      <app-title variant="section" level="h2" eyebrow="Soporte Posventa e Infraestructura">Nuestros Servicios</app-title>
+      <app-title variant="section" level="h2" text="Nuestros Servicios" />
     </div>
-    
+
     <div class="services-grid">
       @for (service of servicesData; track service.title) {
         <div class="service-card">
@@ -116,10 +94,9 @@
 
 <!-- CTA Final -->
 <app-calltoaction
-  eyebrow="Impulse sus Proyectos"
   title="¿Listo para cotizar o requiere asesoría?"
   description="Póngase en contacto con nuestros asesores para cotizar equipos, programar mantenimientos o consultar stock de repuestos originales."
-  bgImageUrl="https://images.unsplash.com/photo-1581092783236-aefd3b1eb9f4?q=80&w=1200&auto=format&fit=crop"
+  bgImageUrl="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop"
 >
   <a routerLink="/contacto" class="mc-btn mc-btn--primary">
     <span class="mc-btn__label">Contactar Asesor</span>

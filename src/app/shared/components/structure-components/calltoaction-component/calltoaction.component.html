@@ -1,7 +1,7 @@
 <section
   class="cta"
   [style.background-image]="bgImageUrl() ? 'url(' + bgImageUrl() + ')' : null"
-  aria-labelledby="cta-heading"
+  [attr.aria-label]="title()"
 >
   <div class="cta__overlay" aria-hidden="true"></div>
 
@@ -9,7 +9,7 @@
     @if (eyebrow()) {
       <span class="cta__eyebrow">{{ eyebrow() }}</span>
     }
-    <h2 class="cta__title" id="cta-heading">{{ title() }}</h2>
+    <h2 class="cta__title">{{ title() }}</h2>
     @if (description()) {
       <p class="cta__description">{{ description() }}</p>
     }

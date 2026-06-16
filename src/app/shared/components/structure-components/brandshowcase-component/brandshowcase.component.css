@@ -1,7 +1,7 @@
 .showcase {
   display: grid;
   /* grid-template-columns: dynamic binding from Angular */
-  min-height: 460px;
+  min-height: 640px;
   background-color: var(--mc-secondary);
   border: 2px solid var(--mc-white);
   box-sizing: border-box;
@@ -74,7 +74,7 @@
   z-index: 3;
   display: flex;
   flex-direction: column;
-  padding: 44px 36px;
+  padding: 56px 44px;
   height: 100%;
   box-sizing: border-box;
   justify-content: space-between;
