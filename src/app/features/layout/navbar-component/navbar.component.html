@@ -1,0 +1,68 @@
+<header class="minecon-header">
+
+  <!-- Fila superior: Logo + Meta links -->
+  <div class="header-top">
+    <a routerLink="/" class="logo-link" aria-label="MINECON — ir al inicio">
+      <img
+        class="logo-img"
+        src="/MineconIMG/LogoCompanyName.svg"
+        alt="MINECON"
+        width="156"
+        height="36"
+        loading="eager"
+      />
+    </a>
+    <nav class="meta-links" aria-label="Links de utilidad">
+      <a href="#spirit" class="meta-link">Revista Spirit &#10140;</a>
+      <a href="#noticias" class="meta-link">Noticias &#10140;</a>
+    </nav>
+  </div>
+
+  <!-- Fila inferior: Rejilla de navegación modular -->
+  <div class="header-nav-grid" role="navigation" aria-label="Navegación principal">
+
+    <div class="nav-left-group">
+      <button
+        class="sidebar-toggle-btn"
+        (click)="sidebar.open()"
+        aria-label="Abrir menú de operaciones"
+        [attr.aria-expanded]="sidebar.isOpen()"
+        aria-controls="customSidebar"
+      >
+        &#9776;
+      </button>
+
+      <a routerLink="/"            routerLinkActive="nav-cube-link--active" [routerLinkActiveOptions]="{ exact: true }" class="nav-cube-link">Home</a>
+      <a routerLink="/productos"   routerLinkActive="nav-cube-link--active" class="nav-cube-link">Productos</a>
+      <a routerLink="/marcas"      routerLinkActive="nav-cube-link--active" class="nav-cube-link">Marcas</a>
+      <a routerLink="/servicios"   routerLinkActive="nav-cube-link--active" class="nav-cube-link">Servicios</a>
+      <a routerLink="/repuestos"   routerLinkActive="nav-cube-link--active" class="nav-cube-link">Repuestos</a>
+      <a routerLink="/alquiler"    routerLinkActive="nav-cube-link--active" class="nav-cube-link">Alquiler</a>
+      <a routerLink="/nosotros"    routerLinkActive="nav-cube-link--active" class="nav-cube-link">Nosotros</a>
+      <a routerLink="/contacto"    routerLinkActive="nav-cube-link--active" class="nav-cube-link">Contacto</a>
+      <a routerLink="/maquinaria-usada" routerLinkActive="nav-cube-link--active" class="nav-cube-link">Maquinaria Usada</a>
+    </div>
+
+    <div class="nav-right-group">
+      <a
+        href="https://wa.me/"
+        class="nav-cube-link utility"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Contactar por WhatsApp"
+      >
+        <svg
+          class="whatsapp-icon"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.455L0 24zm6.59-4.846c1.66.986 3.292 1.48 4.961 1.481 5.428 0 9.848-4.387 9.851-9.78.001-2.614-1.008-5.074-2.843-6.912-1.836-1.837-4.28-2.847-6.899-2.848-5.435 0-9.856 4.388-9.859 9.783-.001 1.761.47 3.427 1.365 4.912L2.125 21.84l4.522-1.186z"/>
+        </svg>
+        WhatsApp
+      </a>
+    </div>
+
+  </div>
+</header>

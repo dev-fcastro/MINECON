@@ -1,0 +1,10 @@
+<button
+  class="mc-btn-brand"
+  [attr.type]="type()"
+  [attr.aria-label]="ariaLabel() || null"
+>
+  <span class="mc-btn-brand__text">
+    <ng-content></ng-content>
+  </span>
+  <span class="mc-btn-brand__arrow" aria-hidden="true">&#10140;</span>
+</button>

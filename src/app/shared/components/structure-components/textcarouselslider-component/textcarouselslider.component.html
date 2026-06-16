@@ -1,0 +1,20 @@
+<div
+  class="ticker"
+  role="marquee"
+  aria-label="Últimas noticias y datos técnicos MINECON"
+>
+  <div class="ticker__prefix" aria-hidden="true">
+    <span class="ticker__flash">FLASH</span>
+    <span class="ticker__line"></span>
+  </div>
+  <div class="ticker__viewport">
+    <div class="ticker__track">
+      @for (text of duplicatedTexts(); track text + $index) {
+        <span class="ticker__item">
+          <span>{{ text }}</span>
+          <span class="ticker__sep" aria-hidden="true">&nbsp;—&nbsp;</span>
+        </span>
+      }
+    </div>
+  </div>
+</div>

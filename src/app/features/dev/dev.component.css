@@ -1,0 +1,140 @@
+/* ─── Barra de identificación de sección ────────── */
+
+.eval-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 32px;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-top: 1px solid rgba(0, 0, 0, 0.14);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+  flex-wrap: wrap;
+}
+
+.eval-num {
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  color: var(--mc-primary);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.eval-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--mc-secondary);
+  background-color: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 2px 8px;
+  font-family: 'Courier New', monospace;
+}
+
+.eval-desc {
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: rgba(66, 65, 67, 0.45);
+  text-transform: uppercase;
+}
+
+/* ─── Sección blanca con padding ─────────────────── */
+
+.eval-section {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+}
+
+.eval-section--white {
+  padding: 40px 32px;
+  background-color: var(--mc-white);
+}
+
+/* ─── Grid de tipografía ─────────────────────────── */
+
+.eval-type-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.eval-type-col {
+  padding: 32px;
+  border-right: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.eval-type-col:last-child {
+  border-right: none;
+}
+
+.eval-variant-label {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--mc-bg-light);
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.16);
+  font-family: 'Courier New', monospace;
+}
+
+/* ─── Grid de botones ────────────────────────────── */
+
+.eval-btn-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.eval-btn-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.eval-btn-col--wide {
+  grid-column: span 3;
+}
+
+/* ─── Grid de formulario ─────────────────────────── */
+
+.eval-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.eval-form-submit {
+  grid-column: span 3;
+  max-width: 360px;
+}
+
+/* ─── Responsivo básico ──────────────────────────── */
+
+@media (max-width: 900px) {
+  .eval-bar {
+    padding: 10px 20px;
+  }
+
+  .eval-section--white {
+    padding: 28px 20px;
+  }
+
+  .eval-type-grid,
+  .eval-btn-grid,
+  .eval-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .eval-type-col {
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.16);
+  }
+
+  .eval-btn-col--wide,
+  .eval-form-submit {
+    grid-column: span 1;
+  }
+}

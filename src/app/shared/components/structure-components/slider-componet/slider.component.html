@@ -1,0 +1,77 @@
+<section
+  class="slider"
+  aria-label="Galería de maquinaria industrial"
+  aria-roledescription="carrusel"
+>
+  <div class="slider__track">
+    @for (img of images(); track img.url; let i = $index) {
+      <div
+        class="slider__slide"
+        [class.slider__slide--active]="i === currentIndex()"
+        role="tabpanel"
+        [attr.aria-hidden]="i !== currentIndex()"
+        [attr.aria-label]="'Diapositiva ' + (i + 1) + ' de ' + images().length"
+      >
+        <img class="slider__image" [src]="img.url" [alt]="img.alt" />
+        <div class="slider__overlay" aria-hidden="true"></div>
+        @if (img.label || img.caption) {
+          <div class="slider__meta">
+            @if (img.label) {
+              <span class="slider__label">{{ img.label }}</span>
+            }
+            @if (img.caption) {
+              <p class="slider__caption">{{ img.caption }}</p>
+            }
+          </div>
+        }
+      </div>
+    }
+  </div>
+
+  <!-- Zonas de navegación invisibles -->
+  <div
+    class="slider__nav slider__nav--prev"
+    (click)="prevImage()"
+    role="button"
+    aria-label="Imagen anterior"
+    tabindex="0"
+    (keydown.enter)="prevImage()"
+    (keydown.space)="$event.preventDefault(); prevImage()"
+  ></div>
+  <div
+    class="slider__nav slider__nav--next"
+    (click)="nextImage()"
+    role="button"
+    aria-label="Imagen siguiente"
+    tabindex="0"
+    (keydown.enter)="nextImage()"
+    (keydown.space)="$event.preventDefault(); nextImage()"
+  ></div>
+
+  <!-- Indicadores de progreso -->
+  @if (images().length > 1) {
+    <div
+      class="slider__indicators"
+      role="tablist"
+      aria-label="Seleccionar diapositiva"
+    >
+      @for (img of images(); track img.url; let i = $index) {
+        <button
+          class="slider__dot"
+          [class.slider__dot--active]="i === currentIndex()"
+          (click)="goTo(i)"
+          role="tab"
+          [attr.aria-selected]="i === currentIndex()"
+          [attr.aria-label]="'Ir a imagen ' + (i + 1)"
+        ></button>
+      }
+    </div>
+  }
+
+  <!-- Contador -->
+  <div class="slider__counter" aria-live="polite" aria-atomic="true">
+    <span>{{ currentIndex() + 1 }}</span>
+    <span class="slider__counter-sep">/</span>
+    <span>{{ images().length }}</span>
+  </div>
+</section>

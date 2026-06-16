@@ -1,0 +1,166 @@
+.minecon-header {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  background-color: var(--mc-white);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.18);
+}
+
+/* ─── Fila superior ─────────────────────────────── */
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-img {
+  display: block;
+  height: 36px;
+  width: auto;
+}
+
+.meta-links {
+  display: flex;
+}
+
+.meta-link {
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--mc-secondary);
+  text-decoration: none;
+  padding: 6px 16px;
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+  transition: color 0.15s ease;
+}
+
+.meta-link:hover {
+  color: var(--mc-primary);
+}
+
+.meta-link:focus-visible {
+  outline: 2px solid var(--mc-primary);
+  outline-offset: -2px;
+}
+
+/* ─── Rejilla de navegación modular ─────────────── */
+
+.header-nav-grid {
+  display: flex;
+  align-items: stretch;
+  min-height: 44px;
+}
+
+.nav-left-group,
+.nav-right-group {
+  display: flex;
+  align-items: stretch;
+}
+
+.nav-left-group {
+  flex: 1;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.nav-left-group::-webkit-scrollbar {
+  display: none;
+}
+
+/* Toggle sidebar */
+.sidebar-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background-color: var(--mc-secondary);
+  border: none;
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
+  color: var(--mc-white);
+  font-size: 17px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  font-family: inherit;
+}
+
+.sidebar-toggle-btn:hover {
+  background-color: var(--mc-primary);
+  color: var(--mc-white);
+}
+
+.sidebar-toggle-btn:focus-visible {
+  outline: 2px solid var(--mc-primary);
+  outline-offset: -2px;
+}
+
+/* Celdas de rejilla — 1px fusionado con margen negativo */
+.nav-cube-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 18px;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  color: var(--mc-secondary);
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  margin-left: -1px;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.nav-cube-link:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: var(--mc-black);
+}
+
+.nav-cube-link--active {
+  color: var(--mc-primary) !important;
+  border-color: var(--mc-primary) !important;
+}
+
+.nav-cube-link:focus-visible {
+  outline: 2px solid var(--mc-primary);
+  outline-offset: -2px;
+  z-index: 1;
+  position: relative;
+}
+
+/* WhatsApp utility */
+.nav-right-group {
+  border-left: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.nav-cube-link.utility {
+  color: #1da462;
+  background-color: rgba(37, 211, 102, 0.04);
+  border-color: rgba(37, 211, 102, 0.2);
+  padding: 0 20px;
+}
+
+.nav-cube-link.utility:hover {
+  background-color: rgba(37, 211, 102, 0.1);
+  color: #1da462;
+}
+
+.whatsapp-icon {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+  flex-shrink: 0;
+}

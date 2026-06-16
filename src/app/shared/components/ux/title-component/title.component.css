@@ -1,0 +1,42 @@
+:host.has-pillar {
+  display: block;
+  border-left: 5px solid var(--mc-primary);
+  padding-left: 16px;
+}
+
+.mc-title__eyebrow {
+  display: block;
+  font-size: 9px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: var(--mc-primary);
+  margin-bottom: 10px;
+}
+
+.mc-title {
+  margin: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--mc-black);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+/* Display — hero principal */
+.mc-title--display {
+  font-size: clamp(36px, 5vw, 72px);
+  letter-spacing: -0.03em;
+}
+
+/* Section — títulos de sección */
+.mc-title--section {
+  font-size: clamp(24px, 3vw, 44px);
+}
+
+/* Sub — subtítulos de bloque */
+.mc-title--sub {
+  font-size: clamp(16px, 2vw, 24px);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}

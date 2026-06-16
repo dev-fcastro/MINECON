@@ -1,0 +1,21 @@
+@if (eyebrow()) {
+  <span class="mc-title__eyebrow">{{ eyebrow() }}</span>
+}
+
+@if (level() === 'h1') {
+  <h1 class="mc-title" [class]="'mc-title mc-title--' + variant()">
+    <ng-content></ng-content>
+  </h1>
+} @else if (level() === 'h2') {
+  <h2 class="mc-title" [class]="'mc-title mc-title--' + variant()">
+    <ng-content></ng-content>
+  </h2>
+} @else if (level() === 'h3') {
+  <h3 class="mc-title" [class]="'mc-title mc-title--' + variant()">
+    <ng-content></ng-content>
+  </h3>
+} @else {
+  <h4 class="mc-title" [class]="'mc-title mc-title--' + variant()">
+    <ng-content></ng-content>
+  </h4>
+}

@@ -1,0 +1,15 @@
+<div class="marquee" aria-label="Marcas aliadas" aria-hidden="true">
+  <div class="marquee__track">
+    @for (item of duplicatedItems(); track item.name + $index) {
+      <a class="marquee__item" [routerLink]="item.route" [attr.aria-label]="item.name">
+        <img
+          class="marquee__logo"
+          [src]="item.logoSrc"
+          [alt]="item.name"
+          loading="lazy"
+          (error)="hideImg($event)"
+        />
+      </a>
+    }
+  </div>
+</div>

@@ -1,0 +1,119 @@
+.mc-btnicon {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  cursor: pointer;
+  border: 2px solid transparent;
+  white-space: nowrap;
+  font-family: inherit;
+  line-height: 1;
+  transition: color 0.1s ease, border-color 0.1s ease;
+}
+
+.mc-btnicon--icon-right {
+  flex-direction: row-reverse;
+}
+
+/* Pistón hidráulico compartido */
+.mc-btnicon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: translateX(-101%);
+  transition: transform 0.18s cubic-bezier(0.4, 0, 0, 1);
+  pointer-events: none;
+}
+
+/* Icono y label por encima del pistón */
+.mc-btnicon__icon,
+.mc-btnicon__label {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Primary ──────────────────────────────────── */
+.mc-btnicon--primary {
+  background-color: var(--mc-primary);
+  color: var(--mc-white);
+  border-color: var(--mc-primary);
+}
+
+.mc-btnicon--primary::before {
+  background-color: var(--mc-black);
+}
+
+.mc-btnicon--primary:hover {
+  color: var(--mc-white);
+  border-color: var(--mc-black);
+}
+
+.mc-btnicon--primary:hover::before {
+  transform: translateX(0);
+}
+
+/* ── Secondary ────────────────────────────────── */
+.mc-btnicon--secondary {
+  background-color: transparent;
+  color: var(--mc-secondary);
+  border-color: var(--mc-secondary);
+}
+
+.mc-btnicon--secondary::before {
+  background-color: var(--mc-secondary);
+}
+
+.mc-btnicon--secondary:hover {
+  color: var(--mc-white);
+  border-color: var(--mc-secondary);
+}
+
+.mc-btnicon--secondary:hover::before {
+  transform: translateX(0);
+}
+
+/* ── Ghost: sin fill, solo color snap ────────── */
+.mc-btnicon--ghost {
+  background-color: transparent;
+  color: var(--mc-secondary);
+  border-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+  /* Sin pistón — snap directo de color */
+  transition: color 0.08s steps(1, end);
+}
+
+.mc-btnicon--ghost:hover {
+  color: var(--mc-primary);
+}
+
+.mc-btnicon:focus-visible {
+  outline: 2px solid var(--mc-primary);
+  outline-offset: 3px;
+}
+
+.mc-btnicon:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.mc-btnicon__icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.mc-btnicon__label {
+  line-height: 1;
+}

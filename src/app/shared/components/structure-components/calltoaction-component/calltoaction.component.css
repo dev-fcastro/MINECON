@@ -1,0 +1,107 @@
+.cta {
+  position: relative;
+  min-height: 520px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--mc-secondary);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.cta__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    108deg,
+    rgba(26, 26, 26, 0.95) 0%,
+    rgba(26, 26, 26, 0.78) 50%,
+    rgba(66, 65, 67, 0.4) 100%
+  );
+  z-index: 1;
+}
+
+.cta__content {
+  position: relative;
+  z-index: 2;
+  padding: 88px 72px;
+  max-width: 700px;
+}
+
+.cta__eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  color: var(--mc-primary);
+  margin-bottom: 20px;
+  border-left: 5px solid var(--mc-primary);
+  padding-left: 14px;
+}
+
+.cta__title {
+  font-size: clamp(26px, 3.2vw, 50px);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: var(--mc-white);
+  line-height: 1.06;
+  margin: 0 0 24px;
+  letter-spacing: -0.01em;
+}
+
+.cta__description {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  margin: 0 0 44px;
+  max-width: 500px;
+  letter-spacing: 0.01em;
+}
+
+.cta__actions {
+  display: inline-flex;
+  align-items: stretch;
+}
+
+/* Botones como bloque cúbico continuo — contexto oscuro */
+.cta__actions ::ng-deep .mc-btn {
+  margin-left: -2px;
+  font-size: 12px;
+  padding: 16px 40px;
+  letter-spacing: 0.2em;
+}
+
+.cta__actions ::ng-deep .mc-btn:first-child {
+  margin-left: 0;
+}
+
+.cta__actions ::ng-deep .mc-btn--secondary {
+  color: rgba(255, 255, 255, 0.82);
+  border-color: rgba(255, 255, 255, 0.28);
+  background-color: transparent;
+}
+
+.cta__actions ::ng-deep .mc-btn--secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--mc-white);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+/* Líneas de rejilla decorativas */
+.cta__grid-deco {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.cta__grid-deco span {
+  display: block;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.04);
+  margin: 0 72px;
+}

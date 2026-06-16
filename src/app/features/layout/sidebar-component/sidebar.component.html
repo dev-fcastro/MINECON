@@ -1,0 +1,49 @@
+<div
+  class="sidebar-backdrop"
+  [class.backdrop-active]="sidebar.isOpen()"
+  (click)="sidebar.close()"
+  aria-hidden="true"
+></div>
+
+<aside
+  class="minecon-sidebar"
+  [class.sidebar-active]="sidebar.isOpen()"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Menú de operaciones de taller"
+  [attr.aria-hidden]="!sidebar.isOpen()"
+>
+  <div class="sidebar-top-bar">
+    <h4 class="sidebar-title">Operaciones de Taller</h4>
+    <button
+      class="sidebar-close-btn"
+      (click)="sidebar.close()"
+      aria-label="Cerrar menú lateral"
+    >
+      ✕
+    </button>
+  </div>
+
+  <ul class="sidebar-links-list" role="list">
+    <li>
+      <a href="#portal" class="sidebar-link" (click)="sidebar.close()">
+        Portal de Flotas Activas
+      </a>
+    </li>
+    <li>
+      <a href="#taller" class="sidebar-link" (click)="sidebar.close()">
+        Asignación de Bahías Pesadas
+      </a>
+    </li>
+    <li>
+      <a href="#inventario" class="sidebar-link" (click)="sidebar.close()">
+        Logística de Componentes
+      </a>
+    </li>
+    <li>
+      <a href="#solicitudes" class="sidebar-link" (click)="sidebar.close()">
+        Fichas e Ingeniería de Fábrica
+      </a>
+    </li>
+  </ul>
+</aside>

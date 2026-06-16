@@ -1,0 +1,8 @@
+<button
+  class="mc-btn"
+  [class.mc-btn--primary]="variant() === 'primary'"
+  [class.mc-btn--secondary]="variant() === 'secondary'"
+  [attr.type]="type()"
+>
+  <span class="mc-btn__label"><ng-content></ng-content></span>
+</button>

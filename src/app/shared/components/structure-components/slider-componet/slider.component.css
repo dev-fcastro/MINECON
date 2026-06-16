@@ -1,0 +1,151 @@
+.slider {
+  position: relative;
+  width: 100%;
+  height: 580px;
+  overflow: hidden;
+  background-color: var(--mc-black);
+  border-bottom: 2px solid var(--mc-primary);
+}
+
+.slider__track {
+  position: absolute;
+  inset: 0;
+}
+
+.slider__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.75s ease;
+  pointer-events: none;
+}
+
+.slider__slide--active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.slider__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.slider__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(26, 26, 26, 0.88) 0%,
+    rgba(26, 26, 26, 0.2) 45%,
+    transparent 100%
+  );
+}
+
+.slider__meta {
+  position: absolute;
+  bottom: 64px;
+  left: 56px;
+  right: 56px;
+  z-index: 5;
+}
+
+.slider__label {
+  display: inline-block;
+  background-color: var(--mc-primary);
+  color: var(--mc-white);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  margin-bottom: 12px;
+}
+
+.slider__caption {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--mc-bg-light);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1.55;
+  max-width: 620px;
+}
+
+/* Zonas de navegación invisibles */
+.slider__nav {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 10;
+  outline: none;
+  background: transparent;
+  border: none;
+}
+
+.slider__nav--prev {
+  left: 0;
+  cursor: w-resize;
+}
+
+.slider__nav--next {
+  right: 0;
+  cursor: e-resize;
+}
+
+.slider__nav:focus-visible {
+  outline: 2px solid var(--mc-primary);
+  outline-offset: -4px;
+}
+
+/* Indicadores */
+.slider__indicators {
+  position: absolute;
+  bottom: 24px;
+  left: 56px;
+  display: flex;
+  gap: 6px;
+  z-index: 20;
+}
+
+.slider__dot {
+  width: 28px;
+  height: 3px;
+  padding: 0;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+.slider__dot--active {
+  background-color: var(--mc-primary);
+  width: 48px;
+}
+
+.slider__dot:focus-visible {
+  outline: 2px solid var(--mc-primary);
+  outline-offset: 2px;
+}
+
+/* Contador */
+.slider__counter {
+  position: absolute;
+  bottom: 24px;
+  right: 56px;
+  z-index: 20;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.45);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.slider__counter-sep {
+  color: var(--mc-primary);
+}

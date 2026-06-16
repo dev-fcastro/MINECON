@@ -1,0 +1,15 @@
+<button
+  class="mc-btnicon"
+  [class.mc-btnicon--primary]="variant() === 'primary'"
+  [class.mc-btnicon--secondary]="variant() === 'secondary'"
+  [class.mc-btnicon--ghost]="variant() === 'ghost'"
+  [class.mc-btnicon--icon-right]="iconPosition() === 'right'"
+  [attr.type]="type()"
+>
+  <span class="mc-btnicon__icon" aria-hidden="true">
+    <ng-content select="[slot=icon]"></ng-content>
+  </span>
+  <span class="mc-btnicon__label">
+    <ng-content></ng-content>
+  </span>
+</button>

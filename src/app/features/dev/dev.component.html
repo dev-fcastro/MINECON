@@ -1,0 +1,188 @@
+<!-- ══════════════════════════════════════════════════
+     COMPONENT EVALUATION — MINECON DESIGN SYSTEM
+══════════════════════════════════════════════════ -->
+
+<!-- ─── 01 SLIDER ─────────────────────────────────── -->
+<div class="eval-bar">
+  <span class="eval-num">01</span>
+  <code class="eval-tag">app-slider</code>
+  <span class="eval-desc">Navegación por zonas invisibles — click izq. / click der.</span>
+</div>
+<app-slider [images]="sliderImages" />
+
+<!-- ─── 02 TICKER ─────────────────────────────────── -->
+<div class="eval-bar">
+  <span class="eval-num">02</span>
+  <code class="eval-tag">app-textcarouselslider</code>
+  <span class="eval-desc">Ticker lineal continuo</span>
+</div>
+<app-textcarouselslider [tickerTexts]="tickerTexts" />
+
+<!-- ─── 03 LOGO MARQUEE ───────────────────────────── -->
+<div class="eval-bar">
+  <span class="eval-num">03</span>
+  <code class="eval-tag">app-infinitelogomarquee</code>
+  <span class="eval-desc">Cinta de marcas — pausa en hover</span>
+</div>
+<app-infinitelogomarquee [items]="marqueeItems" />
+
+<!-- ─── 04 CALL TO ACTION ─────────────────────────── -->
+<div class="eval-bar">
+  <span class="eval-num">04</span>
+  <code class="eval-tag">app-calltoaction</code>
+  <span class="eval-desc">Hero con fondo imagen dinámico y ng-content</span>
+</div>
+<app-calltoaction
+  eyebrow="Soluciones de Alta Productividad"
+  title="Maquinaria pesada de clase mundial para minería e infraestructura"
+  description="Más de 25 años de experiencia respaldando las operaciones más exigentes de Latinoamérica. Representantes exclusivos de marcas premium con cobertura técnica nacional 7×24."
+  [bgImageUrl]="ctaBgUrl"
+>
+  <app-btn variant="primary">Solicitar Cotización</app-btn>
+  <app-btn variant="secondary">Ver Catálogo 2026</app-btn>
+</app-calltoaction>
+
+<!-- ─── 05 TIPOGRAFÍA ─────────────────────────────── -->
+<div class="eval-bar">
+  <span class="eval-num">05</span>
+  <code class="eval-tag">app-title · app-paragraph</code>
+  <span class="eval-desc">Componentes tipográficos — 3 variantes c/u</span>
+</div>
+<div class="eval-section eval-section--white">
+  <div class="eval-type-grid">
+    <div class="eval-type-col">
+      <p class="eval-variant-label">variant="display"</p>
+      <app-title level="h1" variant="display" eyebrow="Tipografía Display">
+        Maquinaria de Impacto
+      </app-title>
+    </div>
+    <div class="eval-type-col">
+      <p class="eval-variant-label">variant="section"</p>
+      <app-title level="h2" variant="section" eyebrow="Sección Principal">
+        Soluciones Industriales
+      </app-title>
+    </div>
+    <div class="eval-type-col">
+      <p class="eval-variant-label">variant="sub" + párrafos</p>
+      <app-title level="h3" variant="sub">Servicio Técnico Certificado</app-title>
+      <br />
+      <app-paragraph variant="lead">
+        Flota activa respaldada por técnicos especializados con más de 15 años de experiencia en terreno.
+      </app-paragraph>
+      <br />
+      <app-paragraph variant="body">
+        Contamos con talleres propios y móviles en las principales faenas mineras del país, con stock de repuestos críticos disponibles 24/7.
+      </app-paragraph>
+      <br />
+      <app-paragraph variant="caption">
+        Fuente: Informe de operaciones MINECON Q1 2026 — ISO 9001:2015
+      </app-paragraph>
+    </div>
+  </div>
+</div>
+
+<!-- ─── 06 BOTONES ────────────────────────────────── -->
+<div class="eval-bar">
+  <span class="eval-num">06</span>
+  <code class="eval-tag">app-btn · app-btnbrand · app-btnicon</code>
+  <span class="eval-desc">Sistema de botones — 5 variantes</span>
+</div>
+<div class="eval-section eval-section--white">
+  <div class="eval-btn-grid">
+
+    <div class="eval-btn-col">
+      <p class="eval-variant-label">app-btn — primary</p>
+      <app-btn variant="primary">Activar Equipo</app-btn>
+    </div>
+
+    <div class="eval-btn-col">
+      <p class="eval-variant-label">app-btn — secondary</p>
+      <app-btn variant="secondary">Ver Ficha Técnica</app-btn>
+    </div>
+
+    <div class="eval-btn-col">
+      <p class="eval-variant-label">app-btnicon — primary / left</p>
+      <app-btnicon variant="primary" iconPosition="left">
+        <span slot="icon">⚙</span>
+        Configurar Flota
+      </app-btnicon>
+    </div>
+
+    <div class="eval-btn-col">
+      <p class="eval-variant-label">app-btnicon — secondary / right</p>
+      <app-btnicon variant="secondary" iconPosition="right">
+        Ver Informe
+        <span slot="icon">→</span>
+      </app-btnicon>
+    </div>
+
+    <div class="eval-btn-col">
+      <p class="eval-variant-label">app-btnicon — ghost</p>
+      <app-btnicon variant="ghost">
+        <span slot="icon">↗</span>
+        Portal de Flotas
+      </app-btnicon>
+    </div>
+
+    <div class="eval-btn-col eval-btn-col--wide">
+      <p class="eval-variant-label">app-btnbrand — full width + flecha</p>
+      <app-btnbrand>Solicitar Disponibilidad de Stock Inmediato</app-btnbrand>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── 07 CONTROLES DE FORMULARIO ───────────────── -->
+<div class="eval-bar">
+  <span class="eval-num">07</span>
+  <code class="eval-tag">app-input-field · app-primary-dropdown</code>
+  <span class="eval-desc">Controles cúbicos — model() two-way binding</span>
+</div>
+<div class="eval-section eval-section--white">
+  <div class="eval-form-grid">
+
+    <app-input-field
+      label="Razón Social"
+      placeholder="Empresa Minera S.A."
+      fieldId="ev-empresa"
+    />
+
+    <app-input-field
+      label="Email de Contacto"
+      type="email"
+      placeholder="ejecutivo@empresa.cl"
+      fieldId="ev-email"
+    />
+
+    <app-input-field
+      label="Flota Activa (N° Unidades)"
+      type="number"
+      placeholder="0"
+      hint="Total de equipos activos en operación actual"
+      fieldId="ev-flota"
+    />
+
+    <app-primary-dropdown
+      label="Tipo de Equipo"
+      placeholder="Seleccione categoría"
+      [options]="equipOptions"
+      fieldId="ev-tipo"
+    />
+
+    <app-primary-dropdown
+      label="Región de Operación"
+      placeholder="Seleccione región"
+      [options]="[
+        { value: 'norte', label: 'Norte Grande (I – II)' },
+        { value: 'centro', label: 'Zona Central (V – VII)' },
+        { value: 'sur', label: 'Zona Sur (VIII – XIV)' }
+      ]"
+      fieldId="ev-region"
+    />
+
+    <div class="eval-form-submit">
+      <app-btnbrand>Enviar Solicitud de Contacto</app-btnbrand>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,85 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.mc-btn-brand {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 18px 24px;
+  background-color: var(--mc-primary);
+  color: var(--mc-white);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  cursor: pointer;
+  border: 2px solid var(--mc-primary);
+  font-family: inherit;
+  line-height: 1;
+  /* Solo color/borde transicionan — fill lo hace ::before */
+  transition: color 0.1s ease, border-color 0.1s ease;
+}
+
+/* Pistón negro entra desde la izquierda */
+.mc-btn-brand::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--mc-black);
+  transform: translateX(-101%);
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0, 1);
+  pointer-events: none;
+}
+
+/* Solid Border Shift: sube 2px a la izquierda + sombra plana */
+.mc-btn-brand:hover {
+  color: var(--mc-primary);
+  border-color: var(--mc-black);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--mc-secondary);
+}
+
+.mc-btn-brand:hover::before {
+  transform: translateX(0);
+}
+
+/* Texto y flecha siempre encima del pistón */
+.mc-btn-brand__text {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  text-align: left;
+}
+
+.mc-btn-brand__arrow {
+  position: relative;
+  z-index: 1;
+  font-size: 17px;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-left: 16px;
+  /* Salto mecánico instantáneo — sin deslizamiento suave */
+  transition: transform 0.08s steps(1, end);
+}
+
+.mc-btn-brand:hover .mc-btn-brand__arrow {
+  transform: translateX(6px);
+}
+
+.mc-btn-brand:focus-visible {
+  outline: 2px solid var(--mc-primary);
+  outline-offset: 3px;
+}
+
+.mc-btn-brand:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}

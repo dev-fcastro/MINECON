@@ -1,0 +1,19 @@
+/* Fold: ocupa exactamente el viewport disponible debajo del navbar */
+.home-fold {
+  display: flex;
+  flex-direction: column;
+  height: calc(100svh - 103px); /* 103px = altura del header */
+}
+
+/* Hero: crece para llenar todo lo que sobre después del marquee */
+.hero {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.hero__img {
+  object-fit: cover;
+  object-position: center;
+}

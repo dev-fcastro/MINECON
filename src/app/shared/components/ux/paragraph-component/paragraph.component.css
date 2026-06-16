@@ -1,0 +1,31 @@
+.mc-paragraph {
+  margin: 0;
+  color: var(--mc-secondary);
+  line-height: 1.7;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* Lead — párrafo destacado, intro de sección */
+.mc-paragraph--lead {
+  font-size: 18px;
+  color: var(--mc-black);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Body — cuerpo estándar */
+.mc-paragraph--body {
+  font-size: 15px;
+  color: var(--mc-secondary);
+}
+
+/* Caption — pie de foto o dato secundario */
+.mc-paragraph--caption {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(66, 65, 67, 0.55);
+  line-height: 1.5;
+}
