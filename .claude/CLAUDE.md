@@ -253,13 +253,13 @@ public/
   MontabertIMG/montabert-logo-texto.png     (fondos rojo/verde eliminados con ImageMagick)
   MichelinIMG/michelin-logo-texto.png
   SinotrukIMG/sinotruk-logo-texto.png       (WebP real)
-  GHHRandIMG/ghhrand-logo-texto.png
+  GHHRandIMG/ghhrand-logo-texto.webp
   TokuIMG/tuku-logo-texto.png               ← typo intencional "tuku" en filename
   HiabIMG/hiab-logo-texto.png               (bg blanco eliminado con ImageMagick)
   IngersollRandIMG/ingersollrand-logo-texto.png
   DonaldsonIMG/donaldson-logo-texto.png
   ParkerIMG/parker-logo-texto.png
-  FirmanIMG/firman-logo-texto.png
+  FirmanIMG/firman-logo-texto.svg
   BullIMG/bull-logo-texto.png
 ```
 
