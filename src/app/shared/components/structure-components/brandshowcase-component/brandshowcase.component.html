@@ -1,0 +1,45 @@
+<div 
+  class="showcase" 
+  [style.grid-template-columns]="gridCols()"
+  (mouseleave)="resetActive()"
+>
+  @for (item of items(); track item.name; let i = $index) {
+    <div
+      class="showcase__panel"
+      [class.showcase__panel--active]="activeIndex() === i"
+      [class.showcase__panel--inactive]="activeIndex() !== i && activeIndex() !== -1"
+      (mouseenter)="select(i)"
+      (focus)="select(i)"
+      role="region"
+      [attr.aria-label]="item.name"
+      tabindex="0"
+    >
+      @if (item.bgImage) {
+        <div class="showcase__bg" [style.background-image]="'url(' + item.bgImage + ')'"></div>
+      }
+      <div class="showcase__overlay"></div>
+
+      <div class="showcase__content">
+
+        <img
+          class="showcase__logo"
+          [src]="item.logoSrc"
+          [alt]="item.name"
+          [style.width.px]="item.logoWidth ?? 180"
+          [style.height.px]="item.logoHeight ?? 48"
+        />
+
+        <ul class="showcase__categories" aria-label="Líneas de producto">
+          @for (cat of item.categories; track cat) {
+            <li class="showcase__category">{{ cat }}</li>
+          }
+        </ul>
+
+        <a class="showcase__cta" [routerLink]="item.route">
+          {{ item.ctaLabel ?? 'Ver catálogo' }} <span aria-hidden="true">→</span>
+        </a>
+
+      </div>
+    </div>
+  }
+</div>

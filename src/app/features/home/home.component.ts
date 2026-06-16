@@ -4,15 +4,49 @@ import {
   InfiniteLogoMarqueeComponent,
   MarqueeItem,
 } from '../../shared/components/structure-components/infinitelogomarquee-component/infinitelogomarquee.component';
+import {
+  BrandShowcaseComponent,
+  BrandShowcaseItem,
+} from '../../shared/components/structure-components/brandshowcase-component/brandshowcase.component';
 
 @Component({
   selector: 'app-home',
-  imports: [NgOptimizedImage, InfiniteLogoMarqueeComponent],
+  imports: [NgOptimizedImage, InfiniteLogoMarqueeComponent, BrandShowcaseComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
+  readonly showcaseItems: BrandShowcaseItem[] = [
+    {
+      name: 'Volvo Construction Equipment',
+      logoSrc: '/VolvoConstructionEquipmentIMG/volvo-logo-texto.svg',
+      route: '/marcas/volvo-construction-equipment',
+      logoWidth: 200, logoHeight: 48,
+      categories: ['Excavadoras', 'Cargadores Frontales', 'Compactadoras', 'Pavimentadoras'],
+      ctaLabel: 'Ver catálogo',
+      bgImage: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1200&auto=format&fit=crop',
+    },
+    {
+      name: 'Sinotruk',
+      logoSrc: '/SinotrukIMG/sinotruk-logo-texto.png',
+      route: '/marcas/sinotruk',
+      logoWidth: 200, logoHeight: 48,
+      categories: ['Camiones de Volteo', 'Tractocamiones', 'Camiones de Carga Pesada'],
+      ctaLabel: 'Ver catálogo',
+      bgImage: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1200&auto=format&fit=crop',
+    },
+    {
+      name: 'Michelin',
+      logoSrc: '/MichelinIMG/michelin-logo-texto.png',
+      route: '/marcas/michelin',
+      logoWidth: 180, logoHeight: 48,
+      categories: ['Neumáticos OTR', 'Neumáticos Industriales', 'Neumáticos para Minería'],
+      ctaLabel: 'Ver catálogo',
+      bgImage: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1200&auto=format&fit=crop',
+    },
+  ];
+
   readonly marqueeItems: MarqueeItem[] = [
     { name: 'Volvo Construction Equipment', logoSrc: '/VolvoConstructionEquipmentIMG/volvo-logo-texto.svg', route: '/marcas/volvo-construction-equipment', logoWidth: 180, logoHeight: 60 },
     { name: 'Bobcat',                       logoSrc: '/BobcatIMG/bobcat-logo-texto.png',                   route: '/marcas/bobcat',                       logoWidth: 180, logoHeight: 60 },

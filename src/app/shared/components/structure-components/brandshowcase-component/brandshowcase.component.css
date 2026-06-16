@@ -1,0 +1,152 @@
+.showcase {
+  display: grid;
+  /* grid-template-columns: dynamic binding from Angular */
+  min-height: 460px;
+  background-color: var(--mc-secondary);
+  border: 2px solid var(--mc-white);
+  box-sizing: border-box;
+  transition: grid-template-columns 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  overflow: hidden;
+}
+
+/* ── Panel base ───────────────────────────────────── */
+
+.showcase__panel {
+  position: relative;
+  overflow: hidden;
+  border-right: 2px solid var(--mc-white);
+  display: flex;
+  flex-direction: column;
+  outline: none;
+  cursor: pointer;
+}
+
+.showcase__panel:last-child {
+  border-right: none;
+}
+
+/* ── Background & Overlays ────────────────────────── */
+
+.showcase__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.showcase__panel--active .showcase__bg {
+  transform: scale(1.08);
+}
+
+.showcase__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 20, 20, 0.45) 0%,
+    rgba(10, 10, 10, 0.85) 100%
+  );
+  z-index: 2;
+  transition: background 0.4s ease;
+}
+
+/* Make overlay darker for non-hovered items to emphasize the active one */
+.showcase__panel--inactive .showcase__overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.65) 0%,
+    rgba(5, 5, 5, 0.95) 100%
+  );
+}
+
+/* ── Content Layout ───────────────────────────────── */
+
+.showcase__content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  padding: 44px 36px;
+  height: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.showcase__logo {
+  display: block;
+  object-fit: contain;
+  object-position: left center;
+  filter: brightness(0) invert(1);
+  margin-bottom: 28px;
+  flex-shrink: 0;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.showcase__panel--inactive .showcase__logo {
+  opacity: 0.6;
+  transform: scale(0.95);
+}
+
+.showcase__categories {
+  list-style: none;
+  margin: 0 0 28px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  transition: opacity 0.35s ease;
+}
+
+.showcase__panel--inactive .showcase__categories {
+  opacity: 0.5;
+}
+
+.showcase__category {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.55);
+  padding-left: 14px;
+  border-left: 2px solid rgba(255, 255, 255, 0.18);
+  line-height: 1.2;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.showcase__category:hover {
+  color: var(--mc-white);
+  border-left-color: var(--mc-primary);
+}
+
+.showcase__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--mc-primary);
+  text-decoration: none;
+  padding-top: 20px;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  transition: color 0.2s ease, opacity 0.35s ease;
+}
+
+.showcase__panel--inactive .showcase__cta {
+  opacity: 0.5;
+}
+
+.showcase__cta:hover {
+  color: var(--mc-white);
+}
