@@ -111,6 +111,15 @@
   max-width: 360px;
 }
 
+/* ─── Grid de category cards ─────────────────────── */
+
+.eval-category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  background-color: var(--mc-black);
+}
+
 /* ─── Responsivo básico ──────────────────────────── */
 
 @media (max-width: 900px) {
@@ -124,7 +133,8 @@
 
   .eval-type-grid,
   .eval-btn-grid,
-  .eval-form-grid {
+  .eval-form-grid,
+  .eval-category-grid {
     grid-template-columns: 1fr;
   }
 
