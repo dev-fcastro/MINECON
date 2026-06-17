@@ -37,13 +37,13 @@ export interface UsedMachine {
 export class MaquinariaUsadaComponent {
   readonly heroSlides: SliderImage[] = [
     {
-      url: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1400&auto=format&fit=crop',
+      url: '/VolvoConstructionEquipmentIMG/Volvo_Bauma_2019_04_07_586_96dpi_Web.jpg',
       alt: 'Maquinaria usada certificada — MINECON',
       label: 'Maquinaria Usada',
       caption: 'EQUIPOS CERTIFICADOS, DESEMPEÑO GARANTIZADO.',
     },
     {
-      url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop',
+      url: '/VolvoConstructionEquipmentIMG/VolvoCE-Rigid-Haulers.jpg',
       alt: 'Equipos de construcción y minería seminuevos disponibles',
       label: 'Stock Disponible',
       caption: 'INSPECCIÓN TÉCNICA Y RESPALDO POSVENTA INCLUIDOS.',
@@ -63,7 +63,7 @@ export class MaquinariaUsadaComponent {
     {
       title: 'Excavadora EC220E',
       brand: 'Volvo CE',
-      image: 'https://images.unsplash.com/photo-1579616790875-af7fbc5a5cf2?q=80&w=900&auto=format&fit=crop',
+      image: '/VolvoConstructionEquipmentIMG/EXC_EC200E_T4f_2_W_RF.jpg',
       route: '/contacto',
       specs: ['Año 2019', '3,200 horas', 'Motor Volvo D6J', 'Balde 1.1 m³'],
       category: 'excavadoras',
@@ -71,7 +71,7 @@ export class MaquinariaUsadaComponent {
     {
       title: 'Cargador Frontal L150H',
       brand: 'Volvo CE',
-      image: 'https://images.unsplash.com/photo-1533512930330-4ac257c86793?q=80&w=900&auto=format&fit=crop',
+      image: '/VolvoConstructionEquipmentIMG/WLO_L150H_EMEA_0164.jpg',
       route: '/contacto',
       specs: ['Año 2018', '4,500 horas', 'Motor Volvo D13J', 'Cucharon 4.5 m³'],
       category: 'cargadores',
@@ -79,7 +79,7 @@ export class MaquinariaUsadaComponent {
     {
       title: 'Compactador SD115',
       brand: 'Volvo CE',
-      image: 'https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=900&auto=format&fit=crop',
+      image: '/VolvoConstructionEquipmentIMG/COS_SD160B_T4f_W_LF.jpg',
       route: '/contacto',
       specs: ['Año 2020', '1,800 horas', 'Tambor de 2.13 m', 'Peso operativo 11.5 t'],
       category: 'compactadoras',
@@ -87,7 +87,7 @@ export class MaquinariaUsadaComponent {
     {
       title: 'Tractocamión HOWO T7H 440',
       brand: 'Sinotruk',
-      image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=900&auto=format&fit=crop',
+      image: '/SinotrukIMG/t7h-440-6x4.png',
       route: '/contacto',
       specs: ['Año 2021', '180,000 km', 'Motor WD615 440 HP', '6×4'],
       category: 'camiones',
@@ -95,7 +95,7 @@ export class MaquinariaUsadaComponent {
     {
       title: 'Compresor Portátil XP375',
       brand: 'Ingersoll Rand',
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=900&auto=format&fit=crop',
+      image: '/IngersollRandIMG/OilFloodedAirCompressor.png',
       route: '/contacto',
       specs: ['Año 2020', '2,100 horas', '375 CFM / 150 PSI', 'Motor Deutz'],
       category: 'compresores',
@@ -103,7 +103,7 @@ export class MaquinariaUsadaComponent {
     {
       title: 'Minicargador S450',
       brand: 'Bobcat',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=900&auto=format&fit=crop',
+      image: '/VolvoConstructionEquipmentIMG/SSL_MC105C_T4f_1_W_LF.jpg',
       route: '/contacto',
       specs: ['Año 2022', '900 horas', 'Capacidad 975 kg', 'Motor Kubota'],
       category: 'cargadores',
