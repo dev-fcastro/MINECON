@@ -9,12 +9,11 @@
     />
     <div class="hero__overlay"></div>
     <div class="hero__content">
-      <app-title variant="display" level="h1" text="MINECON" class="hero__title" />
       <p class="hero__subtitle">
         Representantes de equipos para construcción, minería, industria, transporte y energía en República Dominicana.
       </p>
       <div class="hero__actions">
-        <a routerLink="/productos" class="mc-btn mc-btn--primary">
+        <a routerLink="/productos" class="mc-btn mc-btn--secondary">
           <span class="mc-btn__label">Ver Catálogo</span>
         </a>
       </div>
@@ -33,7 +32,7 @@
   <app-brandshowcase [items]="showcaseItems" />
 </section>
 
-<!-- Propuesta de Valor — imagen + texto alternado -->
+<!-- Propuesta de Valor -->
 <section class="feature-section">
   <div class="section-container">
     <div class="section-header">
@@ -55,17 +54,41 @@
       <app-title variant="section" level="h2" text="Equipos Destacados" />
     </div>
   </div>
-  <div class="machinery-grid">
-    @for (equip of featuredMachinery; track equip.title) {
-      <a class="mach-item" [routerLink]="equip.route" [attr.aria-label]="equip.brand + ' — ' + equip.title">
-        <img class="mach-item__img" [src]="equip.image" [alt]="equip.title" loading="lazy" />
-        <div class="mach-item__overlay" aria-hidden="true"></div>
-        <div class="mach-item__content">
-          <span class="mach-item__brand">{{ equip.brand }}</span>
-          <h3 class="mach-item__title">{{ equip.title }}</h3>
-          <span class="mach-item__cta">Ver marca <span aria-hidden="true">→</span></span>
-        </div>
+
+  <!-- Hero rotativo -->
+  <div class="featured-hero" aria-live="polite" aria-atomic="true">
+    <img
+      class="featured-hero__img"
+      [src]="activeEquip().image"
+      [alt]="activeEquip().title"
+      loading="eager"
+    />
+    <div class="featured-hero__overlay" aria-hidden="true"></div>
+    <div class="featured-hero__content">
+      <span class="featured-hero__brand">{{ activeEquip().brand }}</span>
+      <h3 class="featured-hero__title">{{ activeEquip().title }}</h3>
+      <a [routerLink]="activeEquip().route" class="featured-hero__link">
+        Ver marca <span aria-hidden="true">→</span>
       </a>
+    </div>
+  </div>
+
+  <!-- Miniaturas de selección -->
+  <div class="featured-thumbs" role="group" aria-label="Seleccionar equipo">
+    @for (equip of featuredMachinery; track equip.title; let i = $index) {
+      <button
+        class="featured-thumb"
+        [class.featured-thumb--active]="activeEquipIndex() === i"
+        (click)="activeEquipIndex.set(i)"
+        [attr.aria-label]="equip.brand + ' — ' + equip.title"
+        [attr.aria-pressed]="activeEquipIndex() === i"
+      >
+        <img class="featured-thumb__img" [src]="equip.image" alt="" aria-hidden="true" loading="lazy" />
+        <div class="featured-thumb__overlay" aria-hidden="true"></div>
+        <div class="featured-thumb__info">
+          <span class="featured-thumb__brand">{{ equip.brand }}</span>
+        </div>
+      </button>
     }
   </div>
 </section>
