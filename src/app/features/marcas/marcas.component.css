@@ -1,0 +1,38 @@
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* ── Header intro ───────────────────────────────────── */
+.marcas-header {
+  background-color: var(--mc-white);
+  padding: 88px 0 72px;
+  border-bottom: 3px solid var(--mc-secondary);
+  box-sizing: border-box;
+}
+
+.marcas-header__intro {
+  margin: 24px 0 0;
+  font-size: clamp(15px, 1.5vw, 18px);
+  color: rgba(66, 65, 67, 0.75);
+  line-height: 1.65;
+  max-width: 780px;
+  letter-spacing: 0.01em;
+}
+
+/* ── Brand rows ─────────────────────────────────────── */
+.brands-row {
+  background-color: var(--mc-secondary);
+}
+
+.brands-row--second {
+  border-top: 3px solid var(--mc-primary);
+}
+
+@media (max-width: 767px) {
+  .marcas-header {
+    padding: 56px 0 40px;
+  }
+}

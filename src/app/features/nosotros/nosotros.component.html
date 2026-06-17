@@ -1,0 +1,58 @@
+<app-slider [images]="heroSlides" [intervalMs]="6000" />
+
+<!-- Historia -->
+<section class="nosotros-section">
+  <div class="section-container">
+    <div class="section-header">
+      <app-title
+        variant="section"
+        level="h1"
+        eyebrow="DESDE 1975"
+        text="Acerca de Nosotros"
+      />
+    </div>
+    <app-paragraph variant="lead">
+      Minecon nace en el año 1975 para atender las necesidades crecientes de la industria de la construcción y minería, como un distribuidor dedicado a Ingersoll Rand. Expandió su alcance ese mismo año formando la división industrial, la cual se dedicó a suplir los requerimientos del mercado de aire comprimido.
+    </app-paragraph>
+  </div>
+</section>
+
+<!-- Misión y Visión -->
+<section class="mision-vision-section">
+  <app-feature-split [items]="misionVisionItems" />
+</section>
+
+<!-- Valores -->
+<section class="valores-section">
+  <div class="section-container">
+    <div class="section-header">
+      <app-title
+        variant="section"
+        level="h2"
+        eyebrow="LO QUE NOS DEFINE"
+        text="Nuestros Valores"
+      />
+    </div>
+    <div class="valores-grid">
+      @for (valor of valores; track valor.title) {
+        <div class="valor-card">
+          <div class="valor-card__accent" aria-hidden="true"></div>
+          <h3 class="valor-card__title">{{ valor.title }}</h3>
+          <p class="valor-card__desc">{{ valor.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA Cierre -->
+<app-calltoaction
+  eyebrow="HORARIOS OFICINAS"
+  title="Lunes a viernes 8:00 am — 6:00 pm · Sábados 8:00 am — 12:00 pm"
+  description="Nuestro equipo está disponible para atenderle en nuestras oficinas o a través de nuestros canales de contacto."
+  bgImageUrl="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1600&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Comunícate Hoy</span>
+  </a>
+</app-calltoaction>

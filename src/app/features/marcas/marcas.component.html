@@ -1,0 +1,38 @@
+<app-slider [images]="heroSlides" [intervalMs]="5000" />
+
+<!-- Encabezado -->
+<section class="marcas-header">
+  <div class="section-container">
+    <app-title
+      variant="section"
+      level="h1"
+      eyebrow="RENDIMIENTO PODEROSO"
+      text="Nuestras Marcas"
+    />
+    <p class="marcas-header__intro">
+      Representamos a los fabricantes más reconocidos del mundo en maquinaria industrial, construcción, minería, energía y transporte. Cada marca de nuestro portafolio ha sido seleccionada por su calidad, innovación y respaldo posventa.
+    </p>
+  </div>
+</section>
+
+<!-- Fila 1 de marcas (7 paneles) -->
+<section class="brands-row">
+  <app-brandshowcase [items]="brandsRow1" />
+</section>
+
+<!-- Fila 2 de marcas (6 paneles) -->
+<section class="brands-row brands-row--second">
+  <app-brandshowcase [items]="brandsRow2" />
+</section>
+
+<!-- CTA Cierre -->
+<app-calltoaction
+  eyebrow="HAGA CRECER SU NEGOCIO"
+  title="Hablemos sobre cómo podemos ayudarle"
+  description="Nuestro equipo de asesores especializados está disponible para orientarle en la selección de la marca y equipo que mejor se adapte a su operación."
+  bgImageUrl="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1600&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Contáctenos</span>
+  </a>
+</app-calltoaction>

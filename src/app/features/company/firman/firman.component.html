@@ -1,0 +1,77 @@
+<!-- HERO -->
+<section class="brand-hero">
+  <div class="brand-hero__bg" aria-hidden="true"></div>
+  <div class="brand-hero__overlay" aria-hidden="true"></div>
+  <div class="brand-hero__content">
+    <div class="brand-hero__logo-wrap">
+      <img class="brand-hero__logo" src="/FirmanIMG/firman-logo-texto.svg" alt="Firman" loading="eager" />
+    </div>
+    <p class="brand-hero__tagline">Adventure Runs on Reliable Power.</p>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="brand-strip">
+  <span class="brand-strip__text">RELIABILITY AND POWER THAT TRAVEL WITH YOU</span>
+</div>
+
+<!-- INTRO -->
+<section class="brand-intro">
+  <div class="brand-container">
+    <app-title level="h1" variant="section" eyebrow="FIRMAN POWER EQUIPMENT" text="Energía Confiable para Cada Aplicación" />
+    <app-paragraph variant="lead">
+      Estamos comprometidos con llevar energía de calidad a nuestros consumidores. Los generadores Firman Performance Series son el corazón de la línea, diseñados con tecnología norteamericana para resistir las condiciones de uso más exigentes. Nos enfocamos en generadores eléctricos, motobombas y motores estacionarios para diversas aplicaciones industriales, comerciales y residenciales.
+    </app-paragraph>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section class="brand-products">
+  <div class="brand-container">
+    <app-title level="h2" variant="sub" eyebrow="PRODUCTOS" text="Línea Firman" />
+  </div>
+  <div class="products-grid">
+    @for (p of productLines; track p.title) {
+      <div class="product-card">
+        <div class="product-card__img-wrap">
+          <img class="product-card__img" [src]="p.image" [alt]="p.title" loading="lazy" />
+          <div class="product-card__overlay" aria-hidden="true"></div>
+          <span class="product-card__watt">{{ p.watt }}</span>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__title">{{ p.title }}</h3>
+          <p class="product-card__desc">{{ p.desc }}</p>
+          <a routerLink="/contacto" class="product-card__cta">Ver modelos →</a>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- THE FIRMAN PROMISE -->
+<section class="brand-promise">
+  <div class="brand-container">
+    <app-title level="h2" variant="sub" eyebrow="THE FIRMAN PROMISE" text="Nuestro Compromiso" />
+    <div class="promise-grid">
+      @for (p of promise; track p.title) {
+        <div class="promise-card">
+          <div class="promise-card__accent" aria-hidden="true"></div>
+          <h3 class="promise-card__title">{{ p.title }}</h3>
+          <p class="promise-card__desc">{{ p.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<app-calltoaction
+  eyebrow="FIRMAN EN REPÚBLICA DOMINICANA"
+  title="Energía que no falla cuando más la necesita"
+  description="Consulte disponibilidad de modelos, especificaciones técnicas y planes de financiamiento con nuestros asesores."
+  bgImageUrl="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1600&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Solicitar Cotización</span>
+  </a>
+</app-calltoaction>

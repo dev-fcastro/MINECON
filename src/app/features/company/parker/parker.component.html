@@ -1,0 +1,85 @@
+<!-- HERO -->
+<section class="brand-hero">
+  <div class="brand-hero__bg" aria-hidden="true"></div>
+  <div class="brand-hero__overlay" aria-hidden="true"></div>
+  <div class="brand-hero__content">
+    <div class="brand-hero__logo-wrap">
+      <img class="brand-hero__logo" src="/ParkerIMG/parker-logo-texto.png" alt="Parker" loading="eager" />
+    </div>
+    <p class="brand-hero__tagline">Enabling Engineering Breakthroughs.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="brand-intro">
+  <div class="brand-container">
+    <app-title level="h1" variant="section" eyebrow="PARKER HANNIFIN" text="Sistemas de Aire Comprimido Transair®" />
+    <app-paragraph variant="lead">
+      Parker Hannifin es el líder mundial en tecnologías de movimiento y control. A través de MINECON representamos la línea Transair®, el sistema modular de distribución de aire comprimido, nitrógeno y vacío más avanzado del mercado, diseñado para instalaciones industriales que exigen máxima eficiencia energética y confiabilidad.
+    </app-paragraph>
+  </div>
+</section>
+
+<!-- TRANSAIR FEATURES -->
+<section class="transair-section">
+  <div class="brand-container">
+    <div class="transair-inner">
+      <div class="transair-img-col">
+        <img
+          class="transair-img"
+          src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=900&auto=format&fit=crop"
+          alt="Sistema Transair® Parker — tuberías de aluminio para aire comprimido"
+          loading="lazy"
+        />
+      </div>
+      <div class="transair-text-col">
+        <span class="transair-eyebrow">TRANSAIR® SYSTEM</span>
+        <h2 class="transair-title">El Sistema de Tuberías más Avanzado</h2>
+        <div class="features-list">
+          @for (f of transairFeatures; track f.title) {
+            <div class="feature-item">
+              <div class="feature-item__dot" aria-hidden="true"></div>
+              <div>
+                <h4 class="feature-item__title">{{ f.title }}</h4>
+                <p class="feature-item__desc">{{ f.desc }}</p>
+              </div>
+            </div>
+          }
+        </div>
+        <a routerLink="/contacto" class="transair-cta">Solicitar diseño de sistema →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPLIT — Parker global -->
+<section class="brand-split">
+  <div class="brand-split__img-col">
+    <img
+      class="brand-split__img"
+      src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=900&auto=format&fit=crop"
+      alt="Parker — soluciones de ingeniería industrial"
+      loading="lazy"
+    />
+  </div>
+  <div class="brand-split__text-col">
+    <span class="brand-split__eyebrow">PARKER HANNIFIN CORPORATION</span>
+    <h2 class="brand-split__title">Liderazgo Global en Motion &amp; Control</h2>
+    <p class="brand-split__desc">
+      Con operaciones en 50 países, Parker Hannifin ofrece la mayor variedad de sistemas de movimiento y control del mundo. Sus 445,000 productos sirven a más de 1,000 mercados industriales y comerciales. La marca Transair es la opción preferida por ingenieros de planta en todo el mundo para distribución eficiente de aire comprimido.
+    </p>
+    <a routerLink="/contacto" class="brand-split__link">Contactar especialista →</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<app-calltoaction
+  eyebrow="PARKER TRANSAIR® EN REPÚBLICA DOMINICANA"
+  title="Optimice su sistema de distribución de aire"
+  description="Diseñamos, suministramos e instalamos sistemas Transair® adaptados a su planta. Solicite una visita técnica gratuita."
+  bgImageUrl="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Solicitar Visita Técnica</span>
+  </a>
+</app-calltoaction>

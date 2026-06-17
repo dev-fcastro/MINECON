@@ -1,0 +1,73 @@
+<app-slider [images]="heroSlides" [intervalMs]="6000" />
+
+<!-- Intro -->
+<section class="repuestos-section">
+  <div class="section-container">
+    <div class="section-header">
+      <app-title
+        variant="section"
+        level="h1"
+        eyebrow="REPUESTOS DE CALIDAD"
+        text="Repuestos Originales Volvo"
+      />
+    </div>
+    <app-paragraph variant="lead">
+      Los Repuestos genuinos Volvo ofrecen la más alta calidad y desempeño garantizado para su máquina Volvo. Cada pieza es de importancia vital para el tiempo de máquina disponible y el rendimiento. Utilice solamente repuestos y productos que hayan sido específicamente desarrollados, probados y aprobados para funcionar de manera óptima: una decisión clave para reducir los costos de propiedad y de operación. La oferta de repuestos de calidad de Volvo incluye una amplia gama de componentes y opciones de servicio para un desempeño y ciclo de vida duraderos.
+    </app-paragraph>
+  </div>
+</section>
+
+<!-- 3 tarjetas de categorías -->
+<section class="repuestos-cards-section">
+  <div class="section-container">
+    <div class="cards-grid">
+      @for (card of repuestosCards; track card.title) {
+        <div class="repuesto-card">
+          <div class="repuesto-card__img-container">
+            <img
+              class="repuesto-card__img"
+              [src]="card.image"
+              [alt]="card.alt"
+              loading="lazy"
+            />
+            <div class="repuesto-card__overlay"></div>
+          </div>
+          <div class="repuesto-card__content">
+            <h3 class="repuesto-card__title">{{ card.title }}</h3>
+            <p class="repuesto-card__desc">{{ card.description }}</p>
+            <a routerLink="/contacto" class="repuesto-card__cta">Solicitar →</a>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Volvo Customer Solutions -->
+<section class="customer-solutions-section">
+  <div class="section-container">
+    <div class="section-header">
+      <app-title
+        variant="section"
+        level="h2"
+        eyebrow="VOLVO CUSTOMER SOLUTIONS"
+        text="¿Qué tenemos para ofrecer?"
+      />
+    </div>
+    <app-paragraph variant="lead">
+      Volvo Construction Equipment ofrece una gama completa de productos y servicios pesados. Desde máquinas innovadoras con tecnologías de vanguardia únicas hasta financiación adicional y servicios posventa para que su operación sea más rentable y obtenga los mejores resultados.
+    </app-paragraph>
+  </div>
+</section>
+
+<!-- CTA Cierre -->
+<app-calltoaction
+  eyebrow="¿SABE USTED LO QUE NECESITA?"
+  title="¿Desea ordenar repuestos?"
+  description="Nos dará mucho gusto ayudarle a encontrar la pieza correcta para su equipo y garantizar el tiempo de máquina disponible."
+  bgImageUrl="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1600&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Hacer una Solicitud</span>
+  </a>
+</app-calltoaction>

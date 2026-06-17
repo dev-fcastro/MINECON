@@ -1,0 +1,85 @@
+<!-- HERO -->
+<section class="brand-hero">
+  <div class="brand-hero__bg" aria-hidden="true"></div>
+  <div class="brand-hero__overlay" aria-hidden="true"></div>
+  <div class="brand-hero__content">
+    <div class="brand-hero__logo-wrap">
+      <img class="brand-hero__logo" src="/BullIMG/bull-logo-texto.png" alt="Bull" loading="eager" />
+    </div>
+    <p class="brand-hero__tagline">Bull Driven by Innovation.</p>
+  </div>
+</section>
+
+<!-- STAT BAR -->
+<div class="stat-bar">
+  @for (s of stats; track s.num) {
+    <div class="stat-bar__item">
+      <span class="stat-bar__num">{{ s.num }}</span>
+      <span class="stat-bar__label">{{ s.label }}</span>
+    </div>
+  }
+</div>
+
+<!-- INTRO -->
+<section class="brand-intro">
+  <div class="brand-container">
+    <app-title level="h1" variant="section" eyebrow="BULL MACHINERY" text="Equipos de Construcción de Alto Rendimiento" />
+    <app-paragraph variant="lead">
+      Bull Machines ha causado un impacto en el mundo de la construcción al fabricar equipos de clase mundial de alto rendimiento. Sus tractoras con retroexcavadora se destacan por la eficiencia de combustible, comodidad del operador y seguridad avanzada con cabinas ROPS &amp; FOPS certificadas. Bull continúa siendo un fabricante de retroexcavadoras de talla mundial durante más de 24 años.
+    </app-paragraph>
+  </div>
+</section>
+
+<!-- EQUIPOS -->
+<section class="brand-equipment">
+  <div class="brand-container">
+    <app-title level="h2" variant="sub" eyebrow="CONSTRUCTION EQUIPMENT" text="Línea Bull" />
+  </div>
+  <div class="equipment-grid">
+    @for (eq of equipment; track eq.title) {
+      <div class="eq-card">
+        <div class="eq-card__img-wrap">
+          <img class="eq-card__img" [src]="eq.image" [alt]="eq.title" loading="lazy" />
+          <div class="eq-card__overlay" aria-hidden="true"></div>
+        </div>
+        <div class="eq-card__body">
+          <h3 class="eq-card__title">{{ eq.title }}</h3>
+          <p class="eq-card__desc">{{ eq.desc }}</p>
+          <div class="eq-card__models">
+            @for (m of eq.models; track m) {
+              <span class="model-tag">{{ m }}</span>
+            }
+          </div>
+          <a routerLink="/contacto" class="eq-card__cta">Ver modelos →</a>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- INDUSTRIAS -->
+<section class="brand-industries">
+  <div class="brand-container">
+    <app-title level="h2" variant="sub" eyebrow="INDUSTRIES WE SERVE" text="Industrias que Atendemos" color="#ffffff" />
+    <div class="industries-grid">
+      @for (ind of industries; track ind) {
+        <div class="ind-card">
+          <div class="ind-card__dot" aria-hidden="true"></div>
+          <span class="ind-card__name">{{ ind }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<app-calltoaction
+  eyebrow="BULL EN REPÚBLICA DOMINICANA"
+  title="Equipos robustos para cada proyecto de construcción"
+  description="Consulte disponibilidad de modelos, accesorios opcionales y planes de financiamiento con nuestros asesores especializados."
+  bgImageUrl="https://images.unsplash.com/photo-1533512930330-4ac257c86793?q=80&w=1600&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Solicitar Cotización</span>
+  </a>
+</app-calltoaction>

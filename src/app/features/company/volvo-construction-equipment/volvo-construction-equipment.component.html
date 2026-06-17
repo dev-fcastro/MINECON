@@ -1,0 +1,137 @@
+<!-- HERO -->
+<section class="brand-hero">
+  <div class="brand-hero__img-wrap">
+    <img
+      class="brand-hero__img"
+      src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1600&auto=format&fit=crop"
+      alt="Volvo Construction Equipment — maquinaria pesada en obra"
+      loading="eager"
+    />
+    <div class="brand-hero__overlay" aria-hidden="true"></div>
+  </div>
+  <div class="brand-hero__content">
+    <div class="brand-hero__logo-block">
+      <img
+        class="brand-hero__logo"
+        src="/VolvoConstructionEquipmentIMG/volvo-logo-texto.svg"
+        alt="Volvo Construction Equipment"
+        loading="eager"
+      />
+    </div>
+    <p class="brand-hero__tagline">Built for tomorrow. Ready for today.</p>
+  </div>
+</section>
+
+<!-- STAT BAR -->
+<div class="stat-bar">
+  @for (s of stats; track s.num) {
+    <div class="stat-bar__item">
+      <span class="stat-bar__num">{{ s.num }}</span>
+      <span class="stat-bar__label">{{ s.label }}</span>
+    </div>
+  }
+</div>
+
+<!-- INTRO -->
+<section class="brand-intro">
+  <div class="brand-container">
+    <app-title level="h1" variant="section" eyebrow="VOLVO CONSTRUCTION EQUIPMENT" text="Líder Global en Maquinaria Pesada" />
+    <app-paragraph variant="lead">
+      Volvo Construction Equipment fabrica maquinaria de construcción y minería para los mercados más exigentes del mundo. Con más de 175 años de historia de ingeniería, cada máquina Volvo combina potencia, durabilidad y tecnología avanzada de reducción de emisiones. MINECON es el distribuidor autorizado para República Dominicana.
+    </app-paragraph>
+  </div>
+</section>
+
+<!-- PRODUCTOS GRID -->
+<section class="brand-products">
+  <div class="brand-container">
+    <app-title level="h2" variant="sub" eyebrow="LÍNEA DE PRODUCTOS" text="Equipos Volvo CE" />
+  </div>
+  <div class="products-grid">
+    @for (p of products; track p.title) {
+      <a class="product-card" [routerLink]="p.route">
+        <div class="product-card__img-wrap">
+          <img class="product-card__img" [src]="p.image" [alt]="p.title" loading="lazy" />
+          <div class="product-card__overlay" aria-hidden="true"></div>
+        </div>
+        <div class="product-card__info">
+          <h3 class="product-card__title">{{ p.title }}</h3>
+          <p class="product-card__sub">{{ p.subtitle }}</p>
+          <span class="product-card__cta">Ver más →</span>
+        </div>
+      </a>
+    }
+  </div>
+</section>
+
+<!-- FEATURE SPLIT — Volvo Customer Solutions -->
+<section class="brand-split brand-split--dark">
+  <div class="brand-split__img-col">
+    <img
+      class="brand-split__img"
+      src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=900&auto=format&fit=crop"
+      alt="Servicio técnico Volvo CE"
+      loading="lazy"
+    />
+  </div>
+  <div class="brand-split__text-col">
+    <span class="brand-split__eyebrow">SOPORTE INTEGRAL</span>
+    <h2 class="brand-split__title">Volvo Customer Solutions</h2>
+    <p class="brand-split__desc">
+      Más que una máquina: un ecosistema completo de respaldo. Desde contratos de mantenimiento preventivo hasta repuestos originales, financiamiento flexible y telemática CareTrack para monitoreo remoto de su flota. Maximice su tiempo de máquina disponible con el respaldo del fabricante.
+    </p>
+    <a routerLink="/servicios" class="brand-split__link">Conocer Servicios Volvo →</a>
+  </div>
+</section>
+
+<!-- TECNOLOGÍA -->
+<section class="brand-tech">
+  <div class="brand-container">
+    <app-title level="h2" variant="sub" eyebrow="INNOVACIÓN" text="Tecnología que Marca la Diferencia" color="#ffffff" />
+    <div class="tech-grid">
+      <div class="tech-card">
+        <svg class="tech-card__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M20.38 8.57l-1.23 1.85a8 8 0 0 1-.22 7.58H5.07A8 8 0 0 1 15.58 6.85l1.85-1.23A10 10 0 0 0 3.35 19a2 2 0 0 0 1.72 1h13.85a2 2 0 0 0 1.74-1 10 10 0 0 0-.27-10.44zm-9.79 6.84a2 2 0 0 0 2.83 0l5.66-8.49-8.49 5.66a2 2 0 0 0 0 2.83z"/>
+        </svg>
+        <h3 class="tech-card__title">Motores Stage V</h3>
+        <p class="tech-card__desc">Conformes con las normativas más exigentes de emisiones, con reducción de hasta 80% en partículas y NOx.</p>
+      </div>
+      <div class="tech-card">
+        <svg class="tech-card__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 17.93V18a1 1 0 0 0-2 0v1.93A8 8 0 0 1 4.07 13H6a1 1 0 0 0 0-2H4.07A8 8 0 0 1 11 4.07V6a1 1 0 0 0 2 0V4.07A8 8 0 0 1 19.93 11H18a1 1 0 0 0 0 2h1.93A8 8 0 0 1 13 19.93z"/>
+        </svg>
+        <h3 class="tech-card__title">CareTrack Telemática</h3>
+        <p class="tech-card__desc">Monitoreo remoto en tiempo real de ubicación, consumo, horas de trabajo y alertas de mantenimiento.</p>
+      </div>
+      <div class="tech-card">
+        <svg class="tech-card__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/>
+        </svg>
+        <h3 class="tech-card__title">Repuestos Genuinos</h3>
+        <p class="tech-card__desc">Stock permanente de repuestos originales Volvo. Cada pieza diseñada, probada y aprobada por el fabricante.</p>
+      </div>
+      <div class="tech-card">
+        <svg class="tech-card__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+        </svg>
+        <h3 class="tech-card__title">Garantía Extendida</h3>
+        <p class="tech-card__desc">Contratos de servicio flexibles que cubren mantenimiento programado y reparaciones, con costo predecible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<app-calltoaction
+  eyebrow="DISTRIBUIDOR AUTORIZADO EN RD"
+  title="Solicite una demostración o cotización"
+  description="Nuestros asesores especializados en Volvo CE están disponibles para orientarle en la selección del equipo, modelo y configuración ideal para su proyecto."
+  bgImageUrl="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1600&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Solicitar Cotización</span>
+  </a>
+  <a routerLink="/repuestos" class="mc-btn mc-btn--secondary">
+    <span class="mc-btn__label">Ver Repuestos</span>
+  </a>
+</app-calltoaction>

@@ -1,0 +1,57 @@
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.section-header {
+  text-align: center;
+}
+
+/* ── Intro section ─────────────────────────────────── */
+.productos-section {
+  background-color: var(--mc-white);
+  padding: 88px 0 64px;
+  border-bottom: 3px solid var(--mc-secondary);
+}
+
+/* ── Divisiones feature split ──────────────────────── */
+.divisiones-section {
+  background-color: var(--mc-white);
+  border-bottom: 4px solid var(--mc-secondary);
+}
+
+/* ── Brands sections ───────────────────────────────── */
+.brands-section {
+  background-color: var(--mc-secondary);
+  padding: 72px 0 0;
+  box-sizing: border-box;
+}
+
+.brands-section .section-header {
+  margin-bottom: 32px;
+}
+
+/* Force title color to white on dark bg */
+.brands-section ::ng-deep .mc-title {
+  color: var(--mc-white);
+}
+
+.brands-section ::ng-deep .mc-title__eyebrow {
+  background-color: var(--mc-primary);
+}
+
+.brands-section--cm {
+  border-top: 3px solid var(--mc-primary);
+}
+
+@media (max-width: 767px) {
+  .productos-section {
+    padding: 56px 0 40px;
+  }
+
+  .brands-section {
+    padding: 48px 0 0;
+  }
+}

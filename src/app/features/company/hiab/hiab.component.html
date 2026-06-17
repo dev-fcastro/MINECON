@@ -1,0 +1,85 @@
+<!-- HERO -->
+<section class="brand-hero">
+  <div class="brand-hero__bg" aria-hidden="true"></div>
+  <div class="brand-hero__overlay" aria-hidden="true"></div>
+  <div class="brand-hero__content">
+    <div class="brand-hero__logo-wrap">
+      <img class="brand-hero__logo" src="/HiabIMG/hiab-logo-texto.svg" alt="Hiab" loading="eager" />
+    </div>
+    <p class="brand-hero__tagline">Smart solutions for on-road load handling.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="brand-intro">
+  <div class="brand-container">
+    <div class="brand-intro__inner">
+      <div>
+        <app-title level="h1" variant="section" eyebrow="HIAB — MOFFETT" text="Carretillas Elevadoras Transportables" />
+        <app-paragraph variant="lead">
+          Hiab es el proveedor líder mundial de equipos de manipulación de cargas en carretera. A través de su marca Moffett, ofrece las carretillas elevadoras transportables más reconocidas del mercado — unidades que se montan en la parte trasera de un camión y permiten entregar y retirar mercancía sin necesidad de equipos auxiliares, en cualquier lugar.
+        </app-paragraph>
+        <a routerLink="/contacto" class="brand-intro__link">Solicitar demostración →</a>
+      </div>
+      <div class="brand-intro__img-col">
+        <img
+          class="brand-intro__img"
+          src="/HiabIMG/hiabimg.jpg"
+          alt="Moffett — carretilla elevadora transportable"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASOS DE USO -->
+<section class="brand-uses">
+  <div class="brand-container">
+    <app-title level="h2" variant="sub" eyebrow="APLICACIONES" text="Para Cada Tipo de Trabajo" />
+  </div>
+  <div class="uses-grid">
+    @for (u of useCases; track u.title) {
+      <div class="use-card">
+        <div class="use-card__img-wrap">
+          <img class="use-card__img" [src]="u.image" [alt]="u.title" loading="lazy" />
+          <div class="use-card__overlay" aria-hidden="true"></div>
+          <h3 class="use-card__title-over">{{ u.title }}</h3>
+        </div>
+        <div class="use-card__body">
+          <p class="use-card__desc">{{ u.desc }}</p>
+          <a routerLink="/contacto" class="use-card__cta">Consultar →</a>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- MODELOS -->
+<section class="brand-models">
+  <div class="brand-container">
+    <app-title level="h2" variant="sub" eyebrow="MOFFETT LINEUP" text="Modelos Disponibles" color="#ffffff" />
+    <div class="models-list">
+      @for (m of models; track m.name) {
+        <div class="model-row">
+          <div class="model-row__name">{{ m.name }}</div>
+          <div class="model-row__spec">{{ m.spec }}</div>
+          <div class="model-row__note">{{ m.note }}</div>
+          <a routerLink="/contacto" class="model-row__cta">Solicitar info →</a>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<app-calltoaction
+  eyebrow="HIAB MOFFETT EN REPÚBLICA DOMINICANA"
+  title="Entregue más, con menos recursos"
+  description="Una carretilla Moffett a bordo de su camión elimina la necesidad de montacargas fijo en destino. Consulte opciones y financiamiento."
+  bgImageUrl="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Solicitar Cotización</span>
+  </a>
+</app-calltoaction>

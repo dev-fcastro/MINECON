@@ -1,0 +1,52 @@
+<app-slider [images]="heroSlides" [intervalMs]="3500" />
+
+<!-- Divisiones de Negocios -->
+<section class="productos-section">
+  <div class="section-container">
+    <div class="section-header">
+      <app-title
+        variant="section"
+        level="h1"
+        eyebrow="EFICIENCIA QUE PERDURA"
+        text="Divisiones de Negocios"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- Feature Split — 4 divisiones -->
+<section class="divisiones-section">
+  <app-feature-split [items]="divisionItems" />
+</section>
+
+<!-- Marcas División Industrial -->
+<section class="brands-section brands-section--industrial">
+  <div class="section-container">
+    <div class="section-header">
+      <app-title variant="sub" level="h2" eyebrow="División" text="Industrial" />
+    </div>
+  </div>
+  <app-brandshowcase [items]="industrialBrands" />
+</section>
+
+<!-- Marcas División Construcción & Minería -->
+<section class="brands-section brands-section--cm">
+  <div class="section-container">
+    <div class="section-header">
+      <app-title variant="sub" level="h2" eyebrow="División" text="Construcción &amp; Minería" />
+    </div>
+  </div>
+  <app-brandshowcase [items]="cmBrands" />
+</section>
+
+<!-- CTA Cierre -->
+<app-calltoaction
+  eyebrow="CATÁLOGO COMPLETO"
+  title="Encuentre el equipo adecuado para su proyecto"
+  description="Nuestros asesores están listos para orientarle en la selección del equipo, marca y modelo que mejor se ajuste a sus necesidades operativas."
+  bgImageUrl="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Solicitar Asesoría</span>
+  </a>
+</app-calltoaction>

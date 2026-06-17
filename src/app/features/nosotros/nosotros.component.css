@@ -1,0 +1,101 @@
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.section-header {
+  margin-bottom: 40px;
+}
+
+/* ── Historia ───────────────────────────────────────── */
+.nosotros-section {
+  background-color: var(--mc-white);
+  padding: 88px 0 64px;
+  border-bottom: 3px solid var(--mc-secondary);
+  box-sizing: border-box;
+}
+
+/* ── Misión / Visión ────────────────────────────────── */
+.mision-vision-section {
+  border-bottom: 4px solid var(--mc-secondary);
+}
+
+/* ── Valores ────────────────────────────────────────── */
+.valores-section {
+  background-color: var(--mc-white);
+  padding: 88px 0 96px;
+  border-bottom: 4px solid var(--mc-secondary);
+  box-sizing: border-box;
+}
+
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+}
+
+.valor-card {
+  padding: 40px 28px 44px;
+  background-color: var(--mc-white);
+  border: 1px solid rgba(66, 65, 67, 0.12);
+  border-top: 3px solid var(--mc-secondary);
+  position: relative;
+  overflow: hidden;
+  transition: border-top-color 0.15s steps(1, end);
+  box-sizing: border-box;
+}
+
+.valor-card:hover {
+  border-top-color: var(--mc-primary);
+}
+
+.valor-card__accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  background-color: var(--mc-secondary);
+  opacity: 0.06;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.valor-card__title {
+  font-size: 15px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--mc-secondary);
+  margin: 0 0 14px;
+}
+
+.valor-card__desc {
+  font-size: 13px;
+  color: rgba(66, 65, 67, 0.72);
+  line-height: 1.65;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 1023px) {
+  .valores-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .nosotros-section {
+    padding: 56px 0 40px;
+  }
+
+  .valores-section {
+    padding: 56px 0 64px;
+  }
+
+  .valores-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

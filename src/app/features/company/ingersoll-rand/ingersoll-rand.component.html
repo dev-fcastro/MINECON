@@ -1,0 +1,108 @@
+<!-- HERO -->
+<section class="brand-hero">
+  <div class="brand-hero__bg" aria-hidden="true"></div>
+  <div class="brand-hero__overlay" aria-hidden="true"></div>
+  <div class="brand-hero__content">
+    <div class="brand-hero__logo-wrap">
+      <img
+        class="brand-hero__logo"
+        src="/IngersollRandIMG/ingersollrand-logo-texto.png"
+        alt="Ingersoll Rand"
+        loading="eager"
+      />
+    </div>
+    <p class="brand-hero__tagline">With over 160 years of air compressor knowledge and expertise.</p>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="brand-strip">
+  <span class="brand-strip__text">Air Compressors &amp; Systems — Power Tools — Lifting Solutions — Pumps</span>
+</div>
+
+<!-- INTRO -->
+<section class="brand-intro">
+  <div class="brand-container">
+    <app-title level="h1" variant="section" eyebrow="INGERSOLL RAND" text="160 Años de Excelencia en Ingeniería" />
+    <app-paragraph variant="lead">
+      Ingersoll Rand es un fabricante y distribuidor mundial de soluciones incomparables de aire comprimido, partes, accesorios y servicios para una amplia gama de industrias y aplicaciones. Con más de 160 años de experiencia, sus equipos son el estándar global de confiabilidad y eficiencia.
+    </app-paragraph>
+  </div>
+</section>
+
+<!-- LÍNEAS DE PRODUCTOS -->
+<section class="brand-products">
+  <div class="brand-container">
+    <app-title level="h2" variant="sub" eyebrow="PRODUCTS" text="Líneas de Producto" />
+  </div>
+  <div class="products-grid">
+    @for (line of productLines; track line.title) {
+      <div class="product-card">
+        <div class="product-card__img-wrap">
+          <img class="product-card__img" [src]="line.image" [alt]="line.title" loading="lazy" />
+          <div class="product-card__overlay" aria-hidden="true"></div>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__title">{{ line.title }}</h3>
+          <p class="product-card__desc">{{ line.desc }}</p>
+          <div class="product-card__models">
+            @for (m of line.models; track m) {
+              <span class="model-tag">{{ m }}</span>
+            }
+          </div>
+          <a routerLink="/contacto" class="product-card__cta">Solicitar información →</a>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- INDUSTRIAS -->
+<section class="brand-industries">
+  <div class="brand-container">
+    <app-title level="h2" variant="sub" eyebrow="INDUSTRIES SERVED" text="Industrias que Atendemos" />
+    <div class="industries-grid">
+      @for (ind of industries; track ind.name) {
+        <div class="ind-card">
+          <span class="ind-card__icon" aria-hidden="true">{{ ind.icon }}</span>
+          <span class="ind-card__name">{{ ind.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- SPLIT — PackageCARE -->
+<section class="brand-split">
+  <div class="brand-split__img-col">
+    <img
+      class="brand-split__img"
+      src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=900&auto=format&fit=crop"
+      alt="Servicio técnico certificado Ingersoll Rand"
+      loading="lazy"
+    />
+  </div>
+  <div class="brand-split__text-col">
+    <span class="brand-split__eyebrow">PACKAGECARE™</span>
+    <h2 class="brand-split__title">We Protect You</h2>
+    <p class="brand-split__desc">
+      Al seleccionar el programa de servicio de Ingersoll Rand, usted invierte en su futuro. Nuestros planes de protección PackageCARE representan el mayor valor para la gestión de activos al transferir el riesgo operativo a Ingersoll Rand. Somos responsables del mantenimiento y del análisis predictivo para prevenir interrupciones en su producción.
+    </p>
+    <a routerLink="/servicios" class="brand-split__link">Conocer planes de servicio →</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<app-calltoaction
+  eyebrow="DISTRIBUIDOR AUTORIZADO EN RD"
+  title="Soluciones de Aire Comprimido para su Industria"
+  description="Contáctenos para recibir una auditoría energética gratuita de su sistema de aire comprimido y una propuesta de mejora de eficiencia."
+  bgImageUrl="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1600&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Solicitar Cotización</span>
+  </a>
+  <a routerLink="/servicios" class="mc-btn mc-btn--secondary">
+    <span class="mc-btn__label">Ver Servicios</span>
+  </a>
+</app-calltoaction>

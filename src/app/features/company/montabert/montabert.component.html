@@ -1,0 +1,111 @@
+<!-- HERO -->
+<section class="brand-hero">
+  <div class="brand-hero__bg" aria-hidden="true"></div>
+  <div class="brand-hero__overlay" aria-hidden="true"></div>
+  <div class="brand-hero__content">
+    <div class="brand-hero__logo-wrap">
+      <img
+        class="brand-hero__logo"
+        src="/MontabertIMG/montabert-logo-texto.png"
+        alt="Montabert"
+        loading="eager"
+      />
+    </div>
+    <p class="brand-hero__tagline">Votre partenaire d'avenir — Brise-roches hydrauliques depuis 1921.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="brand-intro">
+  <div class="brand-container">
+    <div class="brand-intro__inner">
+      <div class="brand-intro__text">
+        <app-title level="h1" variant="section" eyebrow="BIENVENUE CHEZ MONTABERT" text="Un Siglo de Innovación en Brise-Roches" />
+        <app-paragraph variant="lead">
+          Fundada en 1921 en Lyon, Francia, Montabert es la empresa pionera en el desarrollo de brise-roches hidráulicos y perforadores. Sus productos, reconocidos mundialmente, son el resultado de más de 100 años de experiencia, investigación y desarrollo. Montabert continúa forjando su historia, siempre a la vanguardia de la innovación.
+        </app-paragraph>
+        <a routerLink="/contacto" class="brand-intro__link">Encontrar un distribuidor →</a>
+      </div>
+      <div class="brand-intro__stats">
+        <div class="intro-stat">
+          <span class="intro-stat__num">100+</span>
+          <span class="intro-stat__label">Años de experiencia</span>
+        </div>
+        <div class="intro-stat">
+          <span class="intro-stat__num">500+</span>
+          <span class="intro-stat__label">Empleados globales</span>
+        </div>
+        <div class="intro-stat">
+          <span class="intro-stat__num">72%</span>
+          <span class="intro-stat__label">Proveedores nacionales</span>
+        </div>
+        <div class="intro-stat">
+          <span class="intro-stat__num">88%</span>
+          <span class="intro-stat__label">Menos de 400 km</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORÍAS DE PRODUCTOS -->
+<section class="brand-categories">
+  <div class="brand-container">
+    <app-title level="h2" variant="sub" eyebrow="NOS CATÉGORIES DE PRODUITS" text="Gamas de Brise-Roches Hidráulicos" />
+  </div>
+  <div class="categories-grid">
+    @for (p of products; track p.range) {
+      <div class="category-card">
+        <div class="category-card__img-wrap">
+          <img class="category-card__img" [src]="p.image" [alt]="p.range" loading="lazy" />
+          <div class="category-card__overlay" aria-hidden="true"></div>
+          <span class="category-card__badge">{{ p.range }}</span>
+        </div>
+        <div class="category-card__body">
+          <div class="category-card__specs">
+            <span class="spec"><strong>Modelos:</strong> {{ p.models }}</span>
+            <span class="spec"><strong>Peso:</strong> {{ p.weight }}</span>
+            <span class="spec"><strong>Energía:</strong> {{ p.impact }}</span>
+          </div>
+          <p class="category-card__desc">{{ p.application }}</p>
+          <a routerLink="/contacto" class="category-card__cta">Consultar →</a>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- SOBRE LA MARCA -->
+<section class="brand-about">
+  <div class="brand-about__img-col" aria-hidden="true">
+    <img
+      class="brand-about__img"
+      src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=900&auto=format&fit=crop"
+      alt="Montabert — sede en Lyon, Francia"
+      loading="lazy"
+    />
+  </div>
+  <div class="brand-about__text-col">
+    <span class="brand-about__eyebrow">NOTRE ENTREPRISE</span>
+    <h2 class="brand-about__title">Pionero de la Industria Francesa</h2>
+    <p class="brand-about__desc">
+      Situada en Lyon, Montabert es un pilar de la industria lyonesa con impacto local significativo. Su política de compras responsables generó 1,688 empleos estables entre sus proveedores nacionales. La empresa reinvierte entre el 4% y el 8% de su facturación en I+D, para entregar siempre equipos más avanzados y eficientes.
+    </p>
+    <p class="brand-about__desc">
+      Los brise-roches y perforadores Montabert se utilizan en proyectos de construcción, demolición, canteras y minería en todo el mundo, con una reconocida fiabilidad y rendimiento superior por impacto.
+    </p>
+    <a routerLink="/contacto" class="brand-about__link">Solicitar información técnica →</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<app-calltoaction
+  eyebrow="DISTRIBUCIÓN EN REPÚBLICA DOMINICANA"
+  title="Soluciones de Demolición y Perforación Montabert"
+  description="Contáctenos para recibir fichas técnicas de los modelos disponibles, cotizaciones y asesoría en la selección de la gama más adecuada para su proyecto."
+  bgImageUrl="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Solicitar Cotización</span>
+  </a>
+</app-calltoaction>

@@ -1,0 +1,80 @@
+<!-- HERO -->
+<section class="brand-hero">
+  <div class="brand-hero__bg" aria-hidden="true"></div>
+  <div class="brand-hero__overlay" aria-hidden="true"></div>
+  <div class="brand-hero__content">
+    <div class="brand-hero__logo-wrap">
+      <img class="brand-hero__logo" src="/TokuIMG/tuku-logo-texto.png" alt="Toku" loading="eager" />
+    </div>
+    <p class="brand-hero__tagline">Strike for Excellence!!</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="brand-intro">
+  <div class="brand-container">
+    <app-title level="h1" variant="section" eyebrow="TOKU PNEUMATIC CO., LTD." text="Herramientas de Alta Precisión y Resistencia" />
+    <app-paragraph variant="lead">
+      Toku Pneumatic Co., Ltd. es un fabricante japonés especializado en herramientas neumáticas, rompedoras hidráulicas y polipastos de alta calidad. Fundada en Japón, la marca combina la precisión de la manufactura japonesa con durabilidad para los entornos de trabajo más exigentes en construcción, minería e industria.
+    </app-paragraph>
+  </div>
+</section>
+
+<!-- CATEGORÍAS -->
+<section class="brand-categories">
+  <div class="brand-container">
+    <app-title level="h2" variant="sub" eyebrow="PRODUCTS" text="Línea de Productos Toku" />
+  </div>
+  <div class="categories-grid">
+    @for (cat of productCategories; track cat.title) {
+      <div class="cat-card">
+        <div class="cat-card__img-wrap">
+          <img class="cat-card__img" [src]="cat.image" [alt]="cat.title" loading="lazy" />
+          <div class="cat-card__overlay" aria-hidden="true"></div>
+          <h3 class="cat-card__title-over">{{ cat.title }}</h3>
+        </div>
+        <div class="cat-card__body">
+          <p class="cat-card__desc">{{ cat.desc }}</p>
+          <div class="cat-card__models">
+            @for (m of cat.models; track m) {
+              <span class="model-tag">{{ m }}</span>
+            }
+          </div>
+          <a routerLink="/contacto" class="cat-card__cta">Consultar →</a>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- SPLIT — Sobre la marca -->
+<section class="brand-split">
+  <div class="brand-split__img-col">
+    <img
+      class="brand-split__img"
+      src="https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=900&auto=format&fit=crop"
+      alt="Toku — precisión japonesa en herramientas neumáticas"
+      loading="lazy"
+    />
+  </div>
+  <div class="brand-split__text-col">
+    <span class="brand-split__eyebrow">TOKU PNEUMATIC CO., LTD. — JAPÓN</span>
+    <h2 class="brand-split__title">Precisión Japonesa para la Industria Global</h2>
+    <p class="brand-split__desc">
+      Las herramientas Toku son el resultado de décadas de ingeniería japonesa aplicada a los entornos de trabajo más demandantes. Desde la demolición de estructuras de hormigón hasta el ajuste de componentes de alta precisión en taller, la línea Toku garantiza rendimiento consistente, durabilidad y seguridad en cada aplicación.
+    </p>
+    <a routerLink="/contacto" class="brand-split__link">Solicitar catálogo técnico →</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<app-calltoaction
+  eyebrow="TOKU EN REPÚBLICA DOMINICANA"
+  title="Herramientas que resisten el trabajo más duro"
+  description="Consulte con nuestros especialistas la herramienta o rompedora adecuada para su proyecto y reciba una cotización sin compromiso."
+  bgImageUrl="https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=1600&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Solicitar Cotización</span>
+  </a>
+</app-calltoaction>

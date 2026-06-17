@@ -1,0 +1,58 @@
+/* Parker: naranja #F36F20, gris oscuro #3C3C3C */
+:host {
+  --brand-primary: #3C3C3C;
+  --brand-accent: #F36F20;
+}
+
+.brand-container { max-width: 1280px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+
+.brand-hero { position: relative; height: 520px; overflow: hidden; display: flex; align-items: flex-end; }
+.brand-hero__bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1600&auto=format&fit=crop'); background-size: cover; background-position: center; }
+.brand-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(60,60,60,0.9) 0%, rgba(60,60,60,0.5) 55%, rgba(0,0,0,0.1) 100%); }
+.brand-hero__content { position: relative; z-index: 2; padding: 52px 64px; display: flex; flex-direction: column; gap: 14px; }
+.brand-hero__logo-wrap { background: rgba(255,255,255,0.07); padding: 14px 24px; display: inline-flex; border-left: 4px solid var(--brand-accent); }
+.brand-hero__logo { height: 44px; width: auto; display: block; filter: brightness(0) invert(1); }
+.brand-hero__tagline { font-size: 13px; font-weight: 700; letter-spacing: 0.18em; color: rgba(255,255,255,0.65); margin: 0; text-transform: uppercase; }
+
+.brand-intro { background: #fff; padding: 80px 0 64px; border-bottom: 3px solid var(--brand-primary); }
+
+.transair-section { background: #f5f5f5; padding: 80px 0; border-bottom: 4px solid var(--brand-primary); }
+
+.transair-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+
+.transair-img { width: 100%; height: 480px; object-fit: cover; display: block; }
+
+.transair-eyebrow { font-size: 9px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.28em; color: var(--brand-accent); display: block; margin-bottom: 12px; }
+
+.transair-title { font-size: clamp(20px, 2.8vw, 32px); font-weight: 900; text-transform: uppercase; color: var(--brand-primary); margin: 0 0 28px; line-height: 1.05; }
+
+.features-list { display: flex; flex-direction: column; gap: 20px; }
+
+.feature-item { display: flex; gap: 16px; align-items: flex-start; }
+
+.feature-item__dot { width: 8px; height: 8px; background-color: var(--brand-accent); flex-shrink: 0; margin-top: 5px; }
+
+.feature-item__title { font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; color: var(--brand-primary); margin: 0 0 4px; }
+
+.feature-item__desc { font-size: 12px; color: rgba(60,60,60,0.7); line-height: 1.6; margin: 0; }
+
+.transair-cta { display: inline-block; margin-top: 24px; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.18em; color: var(--brand-accent); text-decoration: none; transition: letter-spacing 0.15s ease; }
+.transair-cta:hover { letter-spacing: 0.26em; }
+
+.brand-split { display: grid; grid-template-columns: 1fr 1fr; min-height: 440px; background-color: var(--brand-primary); }
+.brand-split__img-col { overflow: hidden; }
+.brand-split__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.brand-split__text-col { padding: 64px 56px; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+.brand-split__eyebrow { font-size: 9px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.28em; color: var(--brand-accent); }
+.brand-split__title { font-size: clamp(20px, 2.8vw, 34px); font-weight: 900; text-transform: uppercase; color: #fff; margin: 0; line-height: 1.05; }
+.brand-split__desc { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.7; margin: 0; max-width: 500px; }
+.brand-split__link { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.18em; color: var(--brand-accent); text-decoration: none; margin-top: 8px; transition: letter-spacing 0.15s ease; }
+.brand-split__link:hover { letter-spacing: 0.26em; }
+
+@media (max-width: 1023px) { .transair-inner { grid-template-columns: 1fr; } }
+@media (max-width: 767px) {
+  .brand-hero { height: 420px; } .brand-hero__content { padding: 32px 24px; }
+  .transair-img { height: 240px; }
+  .brand-split { grid-template-columns: 1fr; }
+  .brand-split__img-col { height: 260px; } .brand-split__text-col { padding: 36px 24px; }
+}
