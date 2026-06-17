@@ -1,0 +1,111 @@
+<app-slider [images]="heroSlides" [intervalMs]="4000" />
+
+<!-- Intro -->
+<section class="usada-intro-section">
+  <div class="section-container">
+    <div class="section-header">
+      <app-title
+        variant="section"
+        level="h1"
+        eyebrow="EQUIPOS CERTIFICADOS"
+        text="Maquinaria Usada"
+      />
+    </div>
+    <app-paragraph variant="lead">
+      Ofrecemos equipos usados de las marcas que representamos, inspeccionados técnicamente y disponibles con respaldo posventa. Cada unidad pasa por un proceso de evaluación de condición mecánica, hidráulica y estructural antes de ser puesta en venta. Una alternativa de alto valor para proyectos con presupuesto ajustado o necesidades inmediatas de equipo.
+    </app-paragraph>
+  </div>
+</section>
+
+<!-- Propuesta de valor — 3 pilares -->
+<section class="usada-pilares-section">
+  <div class="section-container">
+    <div class="pilares-grid">
+
+      <div class="pilar">
+        <div class="pilar__accent" aria-hidden="true"></div>
+        <h3 class="pilar__title">Inspección Técnica</h3>
+        <p class="pilar__desc">
+          Cada equipo es evaluado por nuestros técnicos certificados antes de ser listado. Se verifica el estado mecánico, hidráulico, eléctrico y estructural.
+        </p>
+      </div>
+
+      <div class="pilar">
+        <div class="pilar__accent" aria-hidden="true"></div>
+        <h3 class="pilar__title">Respaldo Posventa</h3>
+        <p class="pilar__desc">
+          Al comprar con MINECON obtiene acceso a repuestos originales, servicio técnico autorizado y planes de mantenimiento preventivo.
+        </p>
+      </div>
+
+      <div class="pilar">
+        <div class="pilar__accent" aria-hidden="true"></div>
+        <h3 class="pilar__title">Financiamiento</h3>
+        <p class="pilar__desc">
+          Contamos con alternativas de financiamiento adaptadas a las necesidades de su empresa. Consulte a nuestros asesores para conocer las opciones disponibles.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Categorías / filtros -->
+<section class="usada-catalog-section">
+  <div class="section-container">
+    <div class="catalog-header">
+      <app-title
+        variant="sub"
+        level="h2"
+        eyebrow="INVENTARIO DISPONIBLE"
+        text="Equipos en Stock"
+      />
+      <div class="catalog-filters" role="group" aria-label="Filtrar por categoría">
+        @for (cat of categories; track cat.slug) {
+          <button class="filter-btn" [class.filter-btn--active]="cat.slug === 'todos'">
+            {{ cat.label }}
+          </button>
+        }
+      </div>
+    </div>
+
+    <div class="machinery-grid">
+      @for (machine of usedMachinery; track machine.title) {
+        <app-machinery-card
+          [title]="machine.title"
+          [brand]="machine.brand"
+          [image]="machine.image"
+          [route]="machine.route"
+          [specs]="machine.specs"
+        />
+      }
+    </div>
+
+    <!-- Nota portal externo Volvo -->
+    <div class="volvo-portal-note">
+      <p class="volvo-portal-note__text">
+        ¿Busca un modelo específico de Volvo CE? Consulte el portal oficial de usados de Volvo Construction Equipment.
+      </p>
+      <a
+        href="https://www.volvousedce.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mc-btn mc-btn--secondary"
+      >
+        <span class="mc-btn__label">Ver Portal Volvo Usados</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Cierre -->
+<app-calltoaction
+  eyebrow="¿INTERESADO EN ALGÚN EQUIPO?"
+  title="Consulte disponibilidad y precios con nuestros asesores"
+  description="Contáctenos para agendar una inspección del equipo, solicitar ficha técnica completa o gestionar el proceso de compra."
+  bgImageUrl="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1600&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Consultar Disponibilidad</span>
+  </a>
+</app-calltoaction>

@@ -1,0 +1,85 @@
+<!-- HERO -->
+<section class="brand-hero">
+  <div class="brand-hero__bg" aria-hidden="true"></div>
+  <div class="brand-hero__overlay" aria-hidden="true"></div>
+  <div class="brand-hero__content">
+    <div class="brand-hero__logo-wrap">
+      <img
+        class="brand-hero__logo"
+        src="/BobcatIMG/bobcat-logo-texto.png"
+        alt="Bobcat"
+        loading="eager"
+      />
+    </div>
+    <p class="brand-hero__tagline">One Tough Animal.</p>
+  </div>
+</section>
+
+<!-- INTRO STRIP -->
+<div class="brand-strip">
+  <span class="brand-strip__text">COMMITTED TO OUR SOCIAL &amp; ENVIRONMENTAL RESPONSIBILITY</span>
+</div>
+
+<!-- INTRO -->
+<section class="brand-intro">
+  <div class="brand-container">
+    <app-title level="h1" variant="section" eyebrow="BOBCAT COMPANY" text="Equipos Compactos de Alto Rendimiento" />
+    <app-paragraph variant="lead">
+      Durante más de 60 años, Bobcat ha construido equipos compactos que le ayudan a trabajar de manera más eficiente y efectiva. Confía en el rendimiento, la resistencia, la comodidad y la versatilidad de las máquinas y accesorios Bobcat. Sus estándares impulsan la innovación — comprometidos a transformar su trabajo.
+    </app-paragraph>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section class="brand-products">
+  <div class="brand-container">
+    <app-title level="h2" variant="sub" eyebrow="EQUIPOS" text="Línea de Productos Bobcat" />
+  </div>
+  <div class="products-grid">
+    @for (p of products; track p.title) {
+      <a class="product-card" [routerLink]="p.route">
+        <div class="product-card__img-wrap">
+          <img class="product-card__img" [src]="p.image" [alt]="p.title" loading="lazy" />
+          <div class="product-card__overlay" aria-hidden="true"></div>
+        </div>
+        <div class="product-card__info">
+          <h3 class="product-card__title">{{ p.title }}</h3>
+          <p class="product-card__desc">{{ p.desc }}</p>
+          <span class="product-card__cta">Ver equipos →</span>
+        </div>
+      </a>
+    }
+  </div>
+</section>
+
+<!-- SPLIT — Dealer Network -->
+<section class="brand-split">
+  <div class="brand-split__img-col">
+    <img
+      class="brand-split__img"
+      src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=900&auto=format&fit=crop"
+      alt="Red de distribuidores Bobcat — servicio técnico"
+      loading="lazy"
+    />
+  </div>
+  <div class="brand-split__text-col">
+    <span class="brand-split__eyebrow">RED DE DISTRIBUIDORES</span>
+    <h2 class="brand-split__title">Soporte donde lo necesita</h2>
+    <p class="brand-split__desc">
+      La red de distribuidores Bobcat está comprometida a ofrecer soporte completo al cliente — eso incluye equipos nuevos y usados, alquiler, financiamiento, repuestos y servicio. Le brindamos los ingredientes necesarios para ser productivo y rentable.
+    </p>
+    <a routerLink="/contacto" class="brand-split__link">Contactar distribuidor →</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<app-calltoaction
+  eyebrow="BOBCAT EN REPÚBLICA DOMINICANA"
+  title="Equipos compactos para cada trabajo"
+  description="Consulte disponibilidad de modelos, accesorios y planes de financiamiento con nuestros asesores especializados."
+  bgImageUrl="https://images.unsplash.com/photo-1533512930330-4ac257c86793?q=80&w=1600&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Solicitar Cotización</span>
+  </a>
+</app-calltoaction>

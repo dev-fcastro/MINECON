@@ -1,0 +1,133 @@
+<app-slider [images]="heroSlides" [intervalMs]="6000" />
+
+<!-- ── SERVICIOS VOLVO ──────────────────────────────── -->
+<section class="servicios-section servicios-section--volvo">
+  <div class="section-container">
+    <div class="section-header">
+      <app-title
+        variant="section"
+        level="h1"
+        eyebrow="SOPORTE INTEGRAL"
+        text="Servicios Volvo"
+      />
+    </div>
+    <app-paragraph variant="lead">
+      Para asegurar que su negocio funcione sin problemas, Volvo invierte en ingeniería inteligente en todas nuestras máquinas, pero no nos detenemos allí. Como su socio, apoyamos lo que hace con el equipo: cómo lo usa, lo mantiene, lo paga e incluso cómo lo vende. Nuestro portafolio de productos y servicios está diseñado para complementar el desempeño de su máquina y aumentar su rentabilidad. Comience con los Servicios Volvo y personalice un Contrato de Servicios Volvo, porque su negocio es nuestro negocio.
+    </app-paragraph>
+  </div>
+</section>
+
+<!-- Tarjetas de servicios Volvo -->
+<section class="volvo-cards-section">
+  <div class="section-container">
+    <div class="cards-grid cards-grid--3">
+
+      <div class="service-card">
+        <div class="service-card__img-container">
+          <img
+            class="service-card__img"
+            src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=900&auto=format&fit=crop"
+            alt="Servicios de Disponibilidad Volvo"
+            loading="lazy"
+          />
+          <div class="service-card__overlay"></div>
+        </div>
+        <div class="service-card__content">
+          <h3 class="service-card__title">Servicios de Disponibilidad</h3>
+          <p class="service-card__desc">Mantenga su máquina y su negocio en funcionamiento.</p>
+          <a routerLink="/contacto" class="service-card__cta">Saber más →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card__img-container">
+          <img
+            class="service-card__img"
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=900&auto=format&fit=crop"
+            alt="Servicios de Eficiencia de Combustible Volvo"
+            loading="lazy"
+          />
+          <div class="service-card__overlay"></div>
+        </div>
+        <div class="service-card__content">
+          <h3 class="service-card__title">Eficiencia de Combustible</h3>
+          <p class="service-card__desc">Obtenga control del consumo de combustible.</p>
+          <a routerLink="/contacto" class="service-card__cta">Saber más →</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <div class="service-card__img-container">
+          <img
+            class="service-card__img"
+            src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?q=80&w=900&auto=format&fit=crop"
+            alt="Servicios de Seguridad Volvo"
+            loading="lazy"
+          />
+          <div class="service-card__overlay"></div>
+        </div>
+        <div class="service-card__content">
+          <h3 class="service-card__title">Servicios de Seguridad</h3>
+          <p class="service-card__desc">Reduzca el riesgo de accidentes, interrupciones operativas y costos inesperados.</p>
+          <a routerLink="/contacto" class="service-card__cta">Saber más →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICIOS INGERSOLL RAND ─────────────────────── -->
+<section class="servicios-section servicios-section--ir">
+  <div class="section-container">
+    <div class="section-header">
+      <app-title
+        variant="section"
+        level="h2"
+        eyebrow="INGERSOLL RAND"
+        text="Servicios Ingersoll Rand"
+      />
+      <p class="servicios-subtitle">
+        Al seleccionar nuestro programa del servicio de Ingersoll Rand, usted invierte en su futuro.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PackageCARE feature split -->
+<section class="packagecare-section">
+  <app-feature-split [items]="packageCareItems" />
+</section>
+
+<!-- Grid de 6 servicios IR -->
+<section class="ir-services-section">
+  <div class="section-container">
+    <app-title
+      variant="sub"
+      level="h3"
+      eyebrow="SERVICIOS ESPECIALIZADOS"
+      text="Servicios para el Compresor de Aire"
+    />
+    <div class="cards-grid cards-grid--2">
+      @for (srv of irServices; track srv.title) {
+        <div class="ir-card">
+          <h4 class="ir-card__title">{{ srv.title }}</h4>
+          <p class="ir-card__desc">{{ srv.description }}</p>
+          <a routerLink="/contacto" class="ir-card__cta">{{ srv.ctaLabel }} →</a>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA Cierre -->
+<app-calltoaction
+  eyebrow="SIEMPRE INCLUIDO"
+  title="Al comprar cualquier máquina, siempre hay soluciones de soporte y garantías incluidas"
+  description="Póngase en contacto con nuestros asesores para conocer los planes de servicio disponibles para su equipo."
+  bgImageUrl="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1600&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Contáctenos</span>
+  </a>
+</app-calltoaction>

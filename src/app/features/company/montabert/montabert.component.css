@@ -1,0 +1,302 @@
+/* Montabert: verde industrial #00843D, fondo oscuro #1A2A1A */
+:host {
+  --brand-primary: #1A2E1A;
+  --brand-accent: #00843D;
+  --brand-accent2: #4CAF50;
+}
+
+.brand-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+/* ── Hero ─────────────────────────────────────────────── */
+.brand-hero {
+  position: relative;
+  height: 560px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.brand-hero__bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=1600&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+}
+
+.brand-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(26,46,26,0.9) 0%,
+    rgba(26,46,26,0.55) 55%,
+    rgba(0,0,0,0.1) 100%
+  );
+}
+
+.brand-hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 56px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.brand-hero__logo-wrap {
+  background: rgba(255,255,255,0.07);
+  padding: 14px 24px;
+  display: inline-flex;
+  border-left: 4px solid var(--brand-accent);
+}
+
+.brand-hero__logo {
+  height: 48px;
+  width: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+.brand-hero__tagline {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.6);
+  margin: 0;
+  font-style: italic;
+}
+
+/* ── Intro ────────────────────────────────────────────── */
+.brand-intro {
+  background-color: #fff;
+  padding: 80px 0 72px;
+  border-bottom: 3px solid var(--brand-primary);
+}
+
+.brand-intro__inner {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 64px;
+  align-items: start;
+}
+
+.brand-intro__link {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--brand-accent);
+  text-decoration: none;
+  transition: letter-spacing 0.15s ease;
+}
+.brand-intro__link:hover { letter-spacing: 0.26em; }
+
+.brand-intro__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  background-color: var(--brand-primary);
+  align-self: center;
+}
+
+.intro-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  gap: 6px;
+  text-align: center;
+}
+
+.intro-stat__num {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--brand-accent);
+  line-height: 1;
+}
+
+.intro-stat__label {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.55);
+}
+
+/* ── Categorías ───────────────────────────────────────── */
+.brand-categories {
+  background-color: #f5f5f5;
+  padding: 72px 0 0;
+  border-bottom: 4px solid var(--brand-primary);
+}
+
+.brand-categories .brand-container { margin-bottom: 40px; }
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  background-color: var(--brand-primary);
+}
+
+.category-card { background-color: var(--brand-primary); overflow: hidden; }
+
+.category-card__img-wrap {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.category-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.25,1,0.5,1);
+}
+
+.category-card:hover .category-card__img { transform: scale(1.06); }
+
+.category-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 30%, rgba(26,46,26,0.75) 100%);
+}
+
+.category-card__badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background-color: var(--brand-accent);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  padding: 4px 10px;
+  z-index: 2;
+}
+
+.category-card__body {
+  padding: 20px 20px 24px;
+  border-top: 3px solid transparent;
+  transition: border-top-color 0.15s steps(1,end);
+}
+
+.category-card:hover .category-card__body { border-top-color: var(--brand-accent); }
+
+.category-card__specs {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+}
+
+.spec {
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.01em;
+}
+
+.spec strong { color: var(--brand-accent); }
+
+.category-card__desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+
+.category-card__cta {
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--brand-accent);
+  text-decoration: none;
+}
+
+/* ── Sobre la marca ───────────────────────────────────── */
+.brand-about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+  background-color: var(--brand-primary);
+}
+
+.brand-about__img-col { overflow: hidden; }
+
+.brand-about__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.brand-about__text-col {
+  padding: 64px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+.brand-about__eyebrow {
+  font-size: 9px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--brand-accent);
+}
+
+.brand-about__title {
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+  line-height: 1.05;
+}
+
+.brand-about__desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 500px;
+}
+
+.brand-about__link {
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--brand-accent);
+  text-decoration: none;
+  margin-top: 8px;
+  transition: letter-spacing 0.15s ease;
+}
+.brand-about__link:hover { letter-spacing: 0.26em; }
+
+@media (max-width: 1023px) {
+  .brand-intro__inner { grid-template-columns: 1fr; }
+  .categories-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 767px) {
+  .brand-hero { height: 420px; }
+  .brand-hero__content { padding: 32px 24px; }
+  .categories-grid { grid-template-columns: 1fr; }
+  .brand-about { grid-template-columns: 1fr; }
+  .brand-about__img-col { height: 260px; }
+  .brand-about__text-col { padding: 36px 24px; }
+}

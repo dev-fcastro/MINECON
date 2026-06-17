@@ -1,0 +1,136 @@
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.section-header {
+  margin-bottom: 40px;
+}
+
+/* ── Intro ──────────────────────────────────────────── */
+.repuestos-section {
+  background-color: var(--mc-white);
+  padding: 88px 0 64px;
+  border-bottom: 3px solid var(--mc-secondary);
+  box-sizing: border-box;
+}
+
+/* ── Cards grid ─────────────────────────────────────── */
+.repuestos-cards-section {
+  background-color: var(--mc-white);
+  padding: 72px 0 80px;
+  border-bottom: 4px solid var(--mc-secondary);
+  box-sizing: border-box;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+
+.repuesto-card {
+  background-color: var(--mc-secondary);
+  overflow: hidden;
+}
+
+.repuesto-card__img-container {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.repuesto-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.repuesto-card:hover .repuesto-card__img {
+  transform: scale(1.05);
+}
+
+.repuesto-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 30%, rgba(10,10,10,0.6) 100%);
+}
+
+.repuesto-card__content {
+  padding: 28px 28px 32px;
+  border-top: 3px solid transparent;
+  transition: border-top-color 0.15s steps(1, end);
+}
+
+.repuesto-card:hover .repuesto-card__content {
+  border-top-color: var(--mc-primary);
+}
+
+.repuesto-card__title {
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--mc-white);
+  margin: 0 0 10px;
+}
+
+.repuesto-card__desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  margin: 0 0 18px;
+  letter-spacing: 0.01em;
+}
+
+.repuesto-card__cta {
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--mc-primary);
+  text-decoration: none;
+  transition: letter-spacing 0.15s ease;
+}
+
+.repuesto-card__cta:hover {
+  letter-spacing: 0.24em;
+}
+
+/* ── Customer Solutions ─────────────────────────────── */
+.customer-solutions-section {
+  background-color: var(--mc-white);
+  padding: 88px 0 80px;
+  border-bottom: 4px solid var(--mc-secondary);
+  box-sizing: border-box;
+}
+
+@media (max-width: 1023px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cards-grid .repuesto-card:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 767px) {
+  .repuestos-section,
+  .customer-solutions-section {
+    padding: 56px 0 40px;
+  }
+  .repuestos-cards-section {
+    padding: 48px 0 56px;
+  }
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .cards-grid .repuesto-card:last-child {
+    grid-column: auto;
+  }
+}

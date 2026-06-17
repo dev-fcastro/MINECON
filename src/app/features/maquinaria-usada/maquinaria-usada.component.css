@@ -1,0 +1,187 @@
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+
+.section-header {
+  margin-bottom: 40px;
+}
+
+/* ── Intro ──────────────────────────────────────────── */
+.usada-intro-section {
+  background-color: var(--mc-white);
+  padding: 88px 0 64px;
+  border-bottom: 3px solid var(--mc-secondary);
+  box-sizing: border-box;
+}
+
+/* ── Pilares ─────────────────────────────────────────── */
+.usada-pilares-section {
+  background-color: var(--mc-secondary);
+  padding: 72px 0 80px;
+  border-bottom: 3px solid var(--mc-primary);
+  box-sizing: border-box;
+}
+
+.pilares-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+
+.pilar {
+  padding: 40px 32px 44px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border-top: 3px solid rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+  transition: border-top-color 0.15s steps(1, end);
+  box-sizing: border-box;
+}
+
+.pilar:hover {
+  border-top-color: var(--mc-primary);
+}
+
+.pilar__accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: var(--mc-primary);
+  opacity: 0.08;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.pilar__title {
+  font-size: 15px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--mc-white);
+  margin: 0 0 14px;
+}
+
+.pilar__desc {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.65;
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+/* ── Catálogo ─────────────────────────────────────────── */
+.usada-catalog-section {
+  background-color: var(--mc-white);
+  padding: 80px 0 96px;
+  border-bottom: 4px solid var(--mc-secondary);
+  box-sizing: border-box;
+}
+
+.catalog-header {
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.catalog-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-family: inherit;
+  background-color: transparent;
+  border: 1px solid rgba(66, 65, 67, 0.25);
+  color: rgba(66, 65, 67, 0.6);
+  cursor: pointer;
+  transition: background-color 0.15s steps(1, end), color 0.15s steps(1, end), border-color 0.15s steps(1, end);
+}
+
+.filter-btn:hover {
+  background-color: var(--mc-secondary);
+  color: var(--mc-white);
+  border-color: var(--mc-secondary);
+}
+
+.filter-btn--active {
+  background-color: var(--mc-primary);
+  color: var(--mc-white);
+  border-color: var(--mc-primary);
+}
+
+.machinery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ── Volvo portal note ──────────────────────────────── */
+.volvo-portal-note {
+  margin-top: 64px;
+  padding: 40px 36px;
+  border: 1px solid rgba(66, 65, 67, 0.12);
+  border-left: 4px solid var(--mc-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  box-sizing: border-box;
+}
+
+.volvo-portal-note__text {
+  font-size: 14px;
+  color: var(--mc-secondary);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 560px;
+  letter-spacing: 0.01em;
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 1023px) {
+  .machinery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .usada-intro-section {
+    padding: 56px 0 40px;
+  }
+
+  .usada-pilares-section {
+    padding: 48px 0 56px;
+  }
+
+  .pilares-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .usada-catalog-section {
+    padding: 56px 0 64px;
+  }
+
+  .machinery-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .volvo-portal-note {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 28px 20px;
+  }
+}

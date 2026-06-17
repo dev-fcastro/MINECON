@@ -1,0 +1,145 @@
+<!-- Hero de la página -->
+<section class="contacto-hero">
+  <div class="contacto-hero__bg" aria-hidden="true"></div>
+  <div class="contacto-hero__overlay" aria-hidden="true"></div>
+  <div class="contacto-hero__content">
+    <p class="contacto-hero__eyebrow">MINECON S.A.</p>
+    <h1 class="contacto-hero__title">Gracias por su interés en MINECON</h1>
+    <p class="contacto-hero__sub">Su contacto es muy importante para nosotros.</p>
+  </div>
+</section>
+
+<!-- Contenido principal -->
+<section class="contacto-main">
+  <div class="section-container">
+    <div class="contacto-layout">
+
+      <!-- Info de empresa -->
+      <div class="contacto-info">
+        <app-title
+          variant="section"
+          level="h2"
+          eyebrow="DISTRIBUIDOR AUTORIZADO"
+          text="Contáctenos"
+        />
+        <app-paragraph variant="body">
+          MINECON S.A. es un distribuidor autorizado de Volvo Construction Equipment en República Dominicana. Nuestros asesores están disponibles para ayudarle con cotizaciones, repuestos, servicios técnicos y más.
+        </app-paragraph>
+
+        <div class="contacto-details">
+          <div class="contacto-detail">
+            <span class="contacto-detail__label">Dirección</span>
+            <p class="contacto-detail__value">
+              Avenida 27 de Febrero (Prolongación), Esq. Autopista Duarte,<br />
+              Alameda, Apto. Postal 10902<br />
+              Santo Domingo, República Dominicana
+            </p>
+          </div>
+          <div class="contacto-detail">
+            <span class="contacto-detail__label">Teléfono</span>
+            <p class="contacto-detail__value">
+              <a href="tel:+18095618851" class="contacto-link">+809 561 8851</a>
+            </p>
+          </div>
+          <div class="contacto-detail">
+            <span class="contacto-detail__label">Correo Electrónico</span>
+            <p class="contacto-detail__value">
+              <a href="mailto:info@minecon.com.do" class="contacto-link">info@minecon.com.do</a>
+            </p>
+          </div>
+          <div class="contacto-detail">
+            <span class="contacto-detail__label">Horarios</span>
+            <p class="contacto-detail__value">
+              Lunes — Viernes: 8:00 am — 6:00 pm<br />
+              Sábados: 8:00 am — 12:00 pm
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="contacto-form-wrapper">
+        <form class="contacto-form" (submit)="onSubmit($event)" novalidate>
+          <p class="form-heading">Envíenos un mensaje</p>
+
+          <div class="form-row form-row--2">
+            <app-input-field
+              label="Nombre"
+              placeholder="Su nombre completo"
+              type="text"
+              fieldId="contact-nombre"
+              [required]="true"
+              [(value)]="nombre"
+            />
+            <app-input-field
+              label="Empresa"
+              placeholder="Nombre de su empresa"
+              type="text"
+              fieldId="contact-empresa"
+            />
+          </div>
+
+          <div class="form-row form-row--2">
+            <app-input-field
+              label="Correo Electrónico"
+              placeholder="correo@empresa.com"
+              type="email"
+              fieldId="contact-email"
+              [required]="true"
+              [(value)]="email"
+            />
+            <app-input-field
+              label="Teléfono"
+              placeholder="+809 000 0000"
+              type="tel"
+              fieldId="contact-telefono"
+              [(value)]="telefono"
+            />
+          </div>
+
+          <div class="form-row">
+            <app-primary-dropdown
+              label="Área de Interés"
+              placeholder="Seleccione una opción"
+              fieldId="contact-interes"
+              [options]="interesOptions"
+              [(value)]="interes"
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="mc-field">
+              <label class="mc-field__label" for="contact-mensaje">Mensaje</label>
+              <textarea
+                id="contact-mensaje"
+                class="mc-field__textarea"
+                placeholder="Describa brevemente su consulta o requerimiento…"
+                rows="5"
+                (input)="onMensajeInput($event)"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="mc-btn mc-btn--primary">
+              <span class="mc-btn__label">Enviar Mensaje</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA Cierre -->
+<app-calltoaction
+  eyebrow="¿DESEA SABER MÁS?"
+  title="Envíenos un mensaje, nos dará mucho gusto ayudarle"
+  description="Cubrimos toda la República Dominicana. Nuestros asesores técnicos están disponibles para visitar su proyecto y orientarle en la mejor solución."
+  bgImageUrl="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop"
+>
+  <a href="mailto:info@minecon.com.do" class="mc-btn mc-btn--secondary">
+    <span class="mc-btn__label">info@minecon.com.do</span>
+  </a>
+</app-calltoaction>

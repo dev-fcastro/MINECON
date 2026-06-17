@@ -1,0 +1,86 @@
+<!-- HERO -->
+<section class="brand-hero">
+  <div class="brand-hero__bg" aria-hidden="true"></div>
+  <div class="brand-hero__overlay" aria-hidden="true"></div>
+  <div class="brand-hero__content">
+    <div class="brand-hero__logo-wrap">
+      <img class="brand-hero__logo" src="/DonaldsonIMG/donaldson-logo-texto.svg" alt="Donaldson" loading="eager" />
+    </div>
+    <p class="brand-hero__tagline">Filtration for heavy-duty equipment and the people who use it.</p>
+  </div>
+</section>
+
+<!-- STAT BAR -->
+<div class="stat-bar">
+  @for (s of stats; track s.num) {
+    <div class="stat-bar__item">
+      <span class="stat-bar__num">{{ s.num }}</span>
+      <span class="stat-bar__label">{{ s.label }}</span>
+    </div>
+  }
+</div>
+
+<!-- INTRO -->
+<section class="brand-intro">
+  <div class="brand-container">
+    <app-title level="h1" variant="section" eyebrow="DONALDSON FILTRATION SOLUTIONS" text="Innovación para Cada Industria" />
+    <app-paragraph variant="lead">
+      Fundada en 1915, Donaldson es un líder global en filtración tecnológica y soluciones para una amplia gama de industrias y mercados avanzados. Sus equipos y soluciones de filtrado entregan un rendimiento superior en las condiciones más exigentes, desde la minería hasta la manufactura de precisión.
+    </app-paragraph>
+  </div>
+</section>
+
+<!-- LÍNEAS DE PRODUCTO -->
+<section class="brand-products">
+  <div class="brand-container">
+    <app-title level="h2" variant="sub" eyebrow="PRODUCTS" text="Soluciones de Filtración" />
+  </div>
+  <div class="products-grid">
+    @for (line of productLines; track line.title) {
+      <div class="product-card">
+        <div class="product-card__img-wrap">
+          <img class="product-card__img" [src]="line.image" [alt]="line.title" loading="lazy" />
+          <div class="product-card__overlay" aria-hidden="true"></div>
+          <span class="product-card__tag">{{ line.tag }}</span>
+        </div>
+        <div class="product-card__body">
+          <h3 class="product-card__title">{{ line.title }}</h3>
+          <p class="product-card__desc">{{ line.desc }}</p>
+          <a routerLink="/contacto" class="product-card__cta">Solicitar información →</a>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- SPLIT — A Pioneering Spirit -->
+<section class="brand-split">
+  <div class="brand-split__img-col">
+    <img
+      class="brand-split__img"
+      src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=900&auto=format&fit=crop"
+      alt="Donaldson — presencia global en filtración"
+      loading="lazy"
+    />
+  </div>
+  <div class="brand-split__text-col">
+    <span class="brand-split__eyebrow">A PIONEERING SPIRIT</span>
+    <h2 class="brand-split__title">Una Presencia Global, un Compromiso Local</h2>
+    <p class="brand-split__desc">
+      Con seis continentes, los equipos especializados de Donaldson trabajan con clientes desde pequeños negocios hasta grandes marcas OEM globales. Su compromiso: proporcionar filtración de la más alta calidad que proteja los equipos y la salud de las personas que los operan.
+    </p>
+    <a routerLink="/contacto" class="brand-split__link">Consultar con nuestros especialistas →</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<app-calltoaction
+  eyebrow="FILTRACIÓN DONALDSON EN REPÚBLICA DOMINICANA"
+  title="Proteja sus equipos y procesos"
+  description="Nuestros especialistas en filtración pueden evaluar sus necesidades actuales y recomendar la solución más eficiente para su operación."
+  bgImageUrl="https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=1600&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Solicitar Asesoría</span>
+  </a>
+</app-calltoaction>

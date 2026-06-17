@@ -1,0 +1,44 @@
+/* Toku: azul oscuro #1B3A5C, naranja #D4771A */
+:host { --brand-primary: #1B3A5C; --brand-accent: #D4771A; }
+
+.brand-container { max-width: 1280px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+
+.brand-hero { position: relative; height: 520px; overflow: hidden; display: flex; align-items: flex-end; }
+.brand-hero__bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=1600&auto=format&fit=crop'); background-size: cover; background-position: center; }
+.brand-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(27,58,92,0.9) 0%, rgba(27,58,92,0.5) 55%, rgba(0,0,0,0.1) 100%); }
+.brand-hero__content { position: relative; z-index: 2; padding: 52px 64px; display: flex; flex-direction: column; gap: 14px; }
+.brand-hero__logo-wrap { background: rgba(255,255,255,0.07); padding: 14px 24px; display: inline-flex; border-left: 4px solid var(--brand-accent); }
+.brand-hero__logo { height: 44px; width: auto; display: block; filter: brightness(0) invert(1); }
+.brand-hero__tagline { font-size: 16px; font-weight: 900; letter-spacing: 0.08em; color: rgba(255,255,255,0.8); margin: 0; font-style: italic; }
+
+.brand-intro { background: #fff; padding: 80px 0 64px; border-bottom: 3px solid var(--brand-primary); }
+
+.brand-categories { background: #f5f5f5; padding: 72px 0 0; border-bottom: 4px solid var(--brand-primary); }
+.brand-categories .brand-container { margin-bottom: 40px; }
+
+.categories-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; background-color: var(--brand-primary); }
+.cat-card { background-color: var(--brand-primary); overflow: hidden; }
+.cat-card__img-wrap { height: 200px; position: relative; overflow: hidden; }
+.cat-card__img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s cubic-bezier(0.25,1,0.5,1); }
+.cat-card:hover .cat-card__img { transform: scale(1.06); }
+.cat-card__overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 25%, rgba(27,58,92,0.85) 100%); }
+.cat-card__title-over { position: absolute; bottom: 12px; left: 14px; right: 14px; font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; color: #fff; margin: 0; z-index: 2; }
+.cat-card__body { padding: 18px 18px 22px; border-top: 3px solid transparent; transition: border-top-color 0.15s steps(1,end); }
+.cat-card:hover .cat-card__body { border-top-color: var(--brand-accent); }
+.cat-card__desc { font-size: 11px; color: rgba(255,255,255,0.55); line-height: 1.55; margin: 0 0 12px; }
+.cat-card__models { display: flex; flex-direction: column; gap: 3px; margin-bottom: 12px; }
+.model-tag { font-size: 10px; color: rgba(255,255,255,0.4); letter-spacing: 0.04em; }
+.cat-card__cta { font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.16em; color: var(--brand-accent); text-decoration: none; }
+
+.brand-split { display: grid; grid-template-columns: 1fr 1fr; min-height: 440px; background-color: var(--brand-primary); }
+.brand-split__img-col { overflow: hidden; }
+.brand-split__img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.brand-split__text-col { padding: 64px 56px; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+.brand-split__eyebrow { font-size: 9px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.24em; color: var(--brand-accent); }
+.brand-split__title { font-size: clamp(20px, 2.8vw, 34px); font-weight: 900; text-transform: uppercase; color: #fff; margin: 0; line-height: 1.05; }
+.brand-split__desc { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.7; margin: 0; max-width: 500px; }
+.brand-split__link { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.18em; color: var(--brand-accent); text-decoration: none; margin-top: 8px; transition: letter-spacing 0.15s ease; }
+.brand-split__link:hover { letter-spacing: 0.26em; }
+
+@media (max-width: 1023px) { .categories-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 767px) { .brand-hero { height: 420px; } .brand-hero__content { padding: 32px 24px; } .categories-grid { grid-template-columns: 1fr; } .brand-split { grid-template-columns: 1fr; } .brand-split__img-col { height: 260px; } .brand-split__text-col { padding: 36px 24px; } }

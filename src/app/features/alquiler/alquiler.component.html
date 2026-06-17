@@ -1,0 +1,35 @@
+<app-slider [images]="heroSlides" [intervalMs]="4000" />
+
+<!-- Intro -->
+<section class="alquiler-section">
+  <div class="section-container">
+    <div class="section-header">
+      <app-title
+        variant="section"
+        level="h1"
+        eyebrow="FLOTA DISPONIBLE"
+        text="Encuentre su Equipo Ideal"
+      />
+    </div>
+    <app-paragraph variant="lead">
+      En Minecon ponemos a disposición una variedad de equipos altamente cualificados para el trabajo de construcción y minería, así como también ofrecemos equipos orientados al manejo y distribución de aire comprimido y otros equipos necesarios en la industria. Nuestra red de distribución está preparada para servirle dondequiera que esté.
+    </app-paragraph>
+  </div>
+</section>
+
+<!-- Feature split — 2 categorías de alquiler -->
+<section class="alquiler-split-section">
+  <app-feature-split [items]="alquilerItems" />
+</section>
+
+<!-- CTA Cierre -->
+<app-calltoaction
+  eyebrow="¿CUÁL EQUIPO NECESITAS?"
+  title="Habla con Nosotros"
+  description="Cuéntenos sobre su proyecto y le asignaremos el equipo más adecuado con disponibilidad inmediata y entrega en su sitio."
+  bgImageUrl="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Hacer una Solicitud</span>
+  </a>
+</app-calltoaction>

@@ -1,0 +1,80 @@
+<!-- HERO -->
+<section class="brand-hero">
+  <div class="brand-hero__bg" aria-hidden="true"></div>
+  <div class="brand-hero__overlay" aria-hidden="true"></div>
+  <div class="brand-hero__content">
+    <div class="brand-hero__logo-wrap">
+      <img class="brand-hero__logo" src="/GHHRandIMG/ghhrand-logo-texto.webp" alt="GHH Rand" loading="eager" />
+    </div>
+    <p class="brand-hero__tagline">Dry &amp; Liquid Bulk Transfer Compressors — Engineered in Germany.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="brand-intro">
+  <div class="brand-container">
+    <app-title level="h1" variant="section" eyebrow="GHH RAND® — INGERSOLL RAND TRANSPORT SOLUTIONS" text="Soluciones de Transferencia a Granel" />
+    <app-paragraph variant="lead">
+      GHH RAND® diseña y entrega soluciones avanzadas para cisternas de transporte europeas, permitiendo la transferencia neumática eficiente de materiales secos y líquidos a granel. Sus paquetes compresores Plug &amp; Play garantizan altas tasas de descarga, operación limpia y confiabilidad superior día a día.
+    </app-paragraph>
+  </div>
+</section>
+
+<!-- SOLUCIONES -->
+<section class="brand-solutions">
+  <div class="brand-container">
+    <app-title level="h2" variant="sub" eyebrow="SOLUTIONS" text="Líneas de Solución" />
+  </div>
+  <div class="solutions-grid">
+    @for (s of solutions; track s.title) {
+      <div class="solution-card">
+        <div class="solution-card__img-wrap">
+          <img class="solution-card__img" [src]="s.image" [alt]="s.title" loading="lazy" />
+          <div class="solution-card__overlay" aria-hidden="true"></div>
+        </div>
+        <div class="solution-card__body">
+          <h3 class="solution-card__title">{{ s.title }}</h3>
+          <p class="solution-card__desc">{{ s.desc }}</p>
+          <div class="solution-card__models">
+            @for (m of s.models; track m) {
+              <span class="model-tag">{{ m }}</span>
+            }
+          </div>
+          <a routerLink="/contacto" class="solution-card__cta">Solicitar información →</a>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- SPLIT — Engineering expertise -->
+<section class="brand-split">
+  <div class="brand-split__img-col">
+    <img
+      class="brand-split__img"
+      src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=900&auto=format&fit=crop"
+      alt="GHH Rand — ingeniería alemana para transporte industrial"
+      loading="lazy"
+    />
+  </div>
+  <div class="brand-split__text-col">
+    <span class="brand-split__eyebrow">GERMAN ENGINEERING EXCELLENCE</span>
+    <h2 class="brand-split__title">Tecnología Alemana para el Transporte Industrial</h2>
+    <p class="brand-split__desc">
+      El equipo de ingeniería GHH RAND® combina profunda especialización industrial con amplio conocimiento del sector del transporte. Nuestros compresores están diseñados para ofrecer una solución completa y funcional para la descarga de cisternas, con alta confiabilidad y bajo costo operativo a lo largo del ciclo de vida del equipo.
+    </p>
+    <a routerLink="/contacto" class="brand-split__link">Contactar especialista →</a>
+  </div>
+</section>
+
+<!-- CTA -->
+<app-calltoaction
+  eyebrow="GHH RAND® EN REPÚBLICA DOMINICANA"
+  title="Soluciones de transferencia a granel para su flota"
+  description="Consulte con nuestros especialistas la configuración adecuada para su cisterna y reciba documentación técnica y propuesta económica."
+  bgImageUrl="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1600&auto=format&fit=crop"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Solicitar Cotización</span>
+  </a>
+</app-calltoaction>
