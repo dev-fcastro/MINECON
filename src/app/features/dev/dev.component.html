@@ -182,3 +182,83 @@
 
   </div>
 </div>
+
+<!-- ─── 08 mc-btn GLOBAL UTILITY ──────────────────── -->
+<div class="eval-bar">
+  <span class="eval-num">08</span>
+  <code class="eval-tag">mc-btn (CSS utility)</code>
+  <span class="eval-desc">Clase global para &lt;a&gt; y &lt;button&gt; — pistón en hover</span>
+</div>
+<div class="eval-section eval-section--white">
+  <div class="eval-btn-grid">
+
+    <div class="eval-btn-col">
+      <p class="eval-variant-label">mc-btn--primary en &lt;a&gt;</p>
+      <a routerLink="/productos" class="mc-btn mc-btn--primary">
+        <span class="mc-btn__label">Ver Catálogo</span>
+      </a>
+    </div>
+
+    <div class="eval-btn-col">
+      <p class="eval-variant-label">mc-btn--secondary en &lt;a&gt;</p>
+      <a routerLink="/contacto" class="mc-btn mc-btn--secondary">
+        <span class="mc-btn__label">Solicitar Información</span>
+      </a>
+    </div>
+
+    <div class="eval-btn-col">
+      <p class="eval-variant-label">mc-btn--primary en &lt;button&gt;</p>
+      <button type="button" class="mc-btn mc-btn--primary">
+        <span class="mc-btn__label">Activar</span>
+      </button>
+    </div>
+
+    <div class="eval-btn-col">
+      <p class="eval-variant-label">mc-btn--secondary en &lt;button&gt;</p>
+      <button type="button" class="mc-btn mc-btn--secondary">
+        <span class="mc-btn__label">Cancelar</span>
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── 09 SERVICES ACCORDION ─────────────────────── -->
+<div class="eval-bar">
+  <span class="eval-num">09</span>
+  <code class="eval-tag">app-services-accordion</code>
+  <span class="eval-desc">Acordeón horizontal con :has() CSS — hover expande panel</span>
+</div>
+<app-services-accordion />
+
+<!-- ─── 10 BRAND SHOWCASE ──────────────────────────── -->
+<div class="eval-bar">
+  <span class="eval-num">10</span>
+  <code class="eval-tag">app-brandshowcase</code>
+  <span class="eval-desc">Panel de marcas — hover expande columna activa con signal</span>
+</div>
+<app-brandshowcase [items]="showcaseItems" />
+
+<!-- ─── 11 FEATURE SPLIT ───────────────────────────── -->
+<div class="eval-bar">
+  <span class="eval-num">11</span>
+  <code class="eval-tag">app-feature-split</code>
+  <span class="eval-desc">Bloques imagen + texto alternados — eyebrow opcional</span>
+</div>
+<app-feature-split [items]="featureSplitItems" />
+
+<!-- ─── 12 CATEGORY CARD ───────────────────────────── -->
+<div class="eval-bar">
+  <span class="eval-num">12</span>
+  <code class="eval-tag">app-category-card</code>
+  <span class="eval-desc">Tarjeta de categoría con imagen de fondo — 3 col / 6 col grid</span>
+</div>
+<div class="eval-category-grid">
+  @for (card of categoryCards; track card.title) {
+    <app-category-card
+      [title]="card.title"
+      [bgImage]="card.bgImage"
+      [route]="card.route"
+    />
+  }
+</div>

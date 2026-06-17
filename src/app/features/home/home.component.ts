@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, computed, afterNextRender, inject, DestroyRef } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import {
@@ -49,6 +49,20 @@ export interface FeaturedEquipmentItem {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
+  private readonly destroyRef = inject(DestroyRef);
+
+  readonly activeEquipIndex = signal(0);
+  readonly activeEquip = computed(() => this.featuredMachinery[this.activeEquipIndex()]);
+
+  constructor() {
+    afterNextRender(() => {
+      const id = setInterval(() => {
+        this.activeEquipIndex.update(i => (i + 1) % this.featuredMachinery.length);
+      }, 4000);
+      this.destroyRef.onDestroy(() => clearInterval(id));
+    });
+  }
+
   readonly solutionSlides: SliderImage[] = [
     {
       url: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop',
