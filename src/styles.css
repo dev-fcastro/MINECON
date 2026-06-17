@@ -47,3 +47,70 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
+
+/* ── mc-btn — global utility (works on <a> and <button>) ── */
+
+.mc-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 30px;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  cursor: pointer;
+  border: 2px solid transparent;
+  white-space: nowrap;
+  font-family: inherit;
+  line-height: 1;
+  text-decoration: none;
+  transition: color 0.1s ease, border-color 0.1s ease;
+}
+
+.mc-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: translateX(-101%);
+  transition: transform 0.18s cubic-bezier(0.4, 0, 0, 1);
+  pointer-events: none;
+}
+
+.mc-btn__label {
+  position: relative;
+  z-index: 1;
+}
+
+.mc-btn--primary {
+  background-color: var(--mc-primary);
+  color: var(--mc-white);
+  border-color: var(--mc-primary);
+}
+
+.mc-btn--primary::before { background-color: var(--mc-black); }
+
+.mc-btn--primary:hover { color: var(--mc-white); border-color: var(--mc-black); }
+
+.mc-btn--primary:hover::before { transform: translateX(0); }
+
+.mc-btn--secondary {
+  background-color: transparent;
+  color: var(--mc-secondary);
+  border-color: var(--mc-secondary);
+}
+
+.mc-btn--secondary::before { background-color: var(--mc-secondary); }
+
+.mc-btn--secondary:hover { color: var(--mc-white); border-color: var(--mc-secondary); }
+
+.mc-btn--secondary:hover::before { transform: translateX(0); }
+
+.mc-btn:focus-visible { outline: 2px solid var(--mc-primary); outline-offset: 3px; }
+
+.mc-btn:disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }

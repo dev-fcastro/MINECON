@@ -1,0 +1,138 @@
+<!-- ── Hero ───────────────────────────────────────── -->
+<section class="brand-hero">
+  <img
+    class="brand-hero__img"
+    ngSrc="/SinotrukIMG/sinotruk-img-header.png"
+    fill
+    priority
+    alt="Sinotruk — Flota de vehículos de carga"
+  />
+  <div class="brand-hero__overlay" aria-hidden="true"></div>
+  <div class="brand-hero__logo-wrap">
+    <img class="brand-hero__logo-icon" src="/SinotrukIMG/SINOTRUK-Logo-Only.webp" alt="" aria-hidden="true" loading="eager" />
+    <img class="brand-hero__logo-text" src="/SinotrukIMG/sinotruk-logo-texto.png" alt="Sinotruk" loading="eager" />
+  </div>
+</section>
+
+<!-- ── Stats ──────────────────────────────────────── -->
+<div class="stat-bar" aria-label="Cifras clave">
+  <div class="stat-bar__item">
+    <span class="stat-bar__num" aria-label="Tercer lugar">3°</span>
+    <span class="stat-bar__label">Mayor fabricante de vehículos del mundo</span>
+  </div>
+  <div class="stat-bar__sep" aria-hidden="true"></div>
+  <div class="stat-bar__item">
+    <span class="stat-bar__num">+50</span>
+    <span class="stat-bar__label">Años fabricando camiones pesados</span>
+  </div>
+  <div class="stat-bar__sep" aria-hidden="true"></div>
+  <div class="stat-bar__item">
+    <span class="stat-bar__num">200K+</span>
+    <span class="stat-bar__label">Unidades producidas anualmente</span>
+  </div>
+</div>
+
+<!-- ── Bienvenida ─────────────────────────────────── -->
+<section class="brand-welcome">
+  <div class="brand-container brand-welcome__inner">
+    <app-title
+      level="h2"
+      variant="section"
+      text="Bienvenidos a Sinotruk"
+    />
+    <app-paragraph variant="lead">
+      CNHTC China National Heavy Truck Company es el tercer mayor
+      fabricante de vehículos en el mundo, dedicado a brindar soluciones
+      de transporte pesado de alto rendimiento para construcción, minería
+      e industria en República Dominicana.
+    </app-paragraph>
+  </div>
+</section>
+
+<!-- ── Tipos de vehículo ──────────────────────────── -->
+<section class="brand-categories" aria-label="Tipos de vehículos Sinotruk">
+  <div class="brand-categories__grid">
+    @for (cat of categories; track cat.title) {
+      <app-category-card
+        [title]="cat.title"
+        [bgImage]="cat.bgImage"
+        [route]="cat.route"
+      />
+    }
+  </div>
+</section>
+
+<!-- ── Sobre la marca ─────────────────────────────── -->
+<section class="brand-about">
+  <div class="brand-about__img-col" aria-hidden="true">
+    <img
+      class="brand-about__img"
+      ngSrc="/SinotrukIMG/sinotruk-img-header.png"
+      fill
+      alt=""
+    />
+  </div>
+  <div class="brand-about__text-col">
+    <app-title
+      level="h2"
+      variant="section"
+      eyebrow="La Marca"
+      text="La primera fábrica de camiones pesados de China"
+    />
+    <app-paragraph variant="body">
+      Fundada hace más de 50 años, CNHTC lidera el mercado chino con
+      estándares de fabricación de clase mundial, fruto de acuerdos de
+      cooperación con <strong>Volvo</strong> y <strong>MAN</strong>. Sus
+      plantas de Jinan producen motores, cajas de cambio, ejes y
+      diferenciales propios, garantizando calidad y disponibilidad de
+      repuestos a nivel global.
+    </app-paragraph>
+    <app-paragraph variant="body">
+      Su gama abarca motorizaciones de <strong>340 CV a 540 CV</strong>:
+      vehículos de faena con robustez y potencia, y unidades de larga
+      distancia con amplias cabinas y alto equipamiento de seguridad para
+      una conducción más confortable y segura.
+    </app-paragraph>
+    <a routerLink="/contacto" class="brand-about__link">
+      Solicitar información <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- ── Ventajas tecnológicas ──────────────────────── -->
+<section class="brand-tech">
+  <div class="brand-container">
+    <app-title
+      level="h2"
+      variant="section"
+      text="Ventajas Tecnológicas"
+      color="#ffffff"
+    />
+  </div>
+  <div class="brand-tech__grid">
+    @for (item of tech; track item.title) {
+      <div class="tech-item">
+        <div class="tech-item__icon-wrap" aria-hidden="true">
+          <svg class="tech-item__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path [attr.d]="item.icon" />
+          </svg>
+        </div>
+        <h3 class="tech-item__title">{{ item.title }}</h3>
+        <p class="tech-item__caption">{{ item.caption }}</p>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- ── CTA ───────────────────────────────────────── -->
+<app-calltoaction
+  eyebrow="Asistencia Comercial"
+  title="Facilidad de Servicio"
+  description="¿Desea ordenar un equipo o necesita asesoría? Nos dará mucho gusto ayudarle."
+  bgImageUrl="/SinotrukIMG/sinotruk-img-header.png"
+  class="sinotruk-cta"
+>
+  <a routerLink="/contacto" class="mc-btn mc-btn--primary">
+    <span class="mc-btn__label">Hacer una solicitud</span>
+  </a>
+</app-calltoaction>
