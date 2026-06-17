@@ -22,7 +22,7 @@
 .brand-hero__bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1600&auto=format&fit=crop');
+  background-image: url('/MichelinIMG/Minas-de-superficie_lightbox_full.jpg');
   background-size: cover;
   background-position: center;
 }

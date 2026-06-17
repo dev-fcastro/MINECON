@@ -23,19 +23,19 @@ import { CallToActionComponent } from '../../shared/components/structure-compone
 export class ProductosComponent {
   readonly heroSlides: SliderImage[] = [
     {
-      url: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop',
+      url: '/IngersollRandIMG/CorpHeroBanners_DedicatedExperts.jpg',
       alt: 'División Industrial — Sistemas de aire comprimido',
       label: 'División Industrial',
       caption: 'OFRECEMOS SOLUCIONES PARA MEDIR, CONTROLAR Y GESTIONAR EL AIRE COMPRIMIDO.',
     },
     {
-      url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop',
+      url: '/VolvoConstructionEquipmentIMG/Megaprojects_Cairo_2019_03.jpg',
       alt: 'División Construcción y Minería — Equipos pesados en obra',
       label: 'Construcción & Minería',
       caption: 'PASIÓN POR EL RENDIMIENTO',
     },
     {
-      url: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1400&auto=format&fit=crop',
+      url: '/SinotrukIMG/sinotruk-img-header.png',
       alt: 'Vehículos de carga Sinotruk',
       label: 'Vehículos de Carga',
       caption: 'GRANDES MARCAS, GRAN RESPALDO',
@@ -54,7 +54,7 @@ export class ProductosComponent {
       title: 'División Industrial',
       description:
         'Nuestra división se enfoca en la distribución e instalación de sistemas de aire comprimido, satisfaciendo las necesidades de tratamiento, filtración y control de sistemas de vacío. Contamos con una alta gama de productos que abarcan desde compresores de tornillo rotativo, colectores de polvo, hasta líneas completas de herramientas neumáticas.',
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop',
+      image: '/IngersollRandIMG/CorpHeroBanners_DedicatedExperts.jpg',
       imageAlt: 'Sistemas de aire comprimido industrial',
       route: '/marcas/ingersoll-rand',
       ctaLabel: 'Ver marcas industriales',
@@ -64,7 +64,7 @@ export class ProductosComponent {
       title: 'División Construcción & Minería',
       description:
         'Somos una empresa líder en la venta y alquiler de equipos para la construcción y la minería, contamos con una reconocida línea de productos que destacan por su calidad y eficiencia. Esta división satisface los requerimientos para los rubros enfocados a la extracción de agregados, construcción, compactación ligera, manipulación de concreto, excavación y movimiento de tierra.',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop',
+      image: '/VolvoConstructionEquipmentIMG/ART_A60H_Customer_GB_008_EMEA.jpg',
       imageAlt: 'Equipos pesados de construcción y minería en obra',
       route: '/marcas/volvo-construction-equipment',
       ctaLabel: 'Ver marcas C&M',
@@ -74,7 +74,7 @@ export class ProductosComponent {
       title: 'Vehículos de Carga',
       description:
         'Nuestra división se enfoca en la distribución y comercialización de vehículos livianos y pesados satisfaciendo las necesidades del consumidor. Contamos con una alta gama de vehículos Sinotruk que abarcan desde camiones livianos hasta pesados.',
-      image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1400&auto=format&fit=crop',
+      image: '/SinotrukIMG/t7h-440-6x4.png',
       imageAlt: 'Camiones de carga Sinotruk',
       route: '/marcas/sinotruk',
       ctaLabel: 'Ver Sinotruk',
@@ -99,7 +99,7 @@ export class ProductosComponent {
       logoWidth: 200,
       logoHeight: 48,
       categories: ['Compresores', 'Herramientas Neumáticas', 'Polipastos'],
-      bgImage: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/IngersollRandIMG/CorpHeroBanners_DedicatedExperts.jpg',
     },
     {
       name: 'Donaldson',
@@ -108,7 +108,7 @@ export class ProductosComponent {
       logoWidth: 200,
       logoHeight: 48,
       categories: ['Filtros', 'Colectores de Polvo', 'Filtración Industrial'],
-      bgImage: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/DonaldsonIMG/cabinet_collector_series60__51299139629018812801280.png',
     },
     {
       name: 'Parker',
@@ -117,7 +117,7 @@ export class ProductosComponent {
       logoWidth: 200,
       logoHeight: 48,
       categories: ['Sistemas de Aire Comprimido', 'Distribución Transair'],
-      bgImage: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/ParkerIMG/CAT-T0061-ES.jpg',
     },
     {
       name: 'GHH Rand',
@@ -147,7 +147,7 @@ export class ProductosComponent {
       logoWidth: 200,
       logoHeight: 48,
       categories: ['Excavadoras', 'Cargadores Frontales', 'Compactadoras', 'Tiendetubos'],
-      bgImage: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/VolvoConstructionEquipmentIMG/Megaprojects_Cairo_2019_03.jpg',
     },
     {
       name: 'Montabert',
@@ -156,7 +156,7 @@ export class ProductosComponent {
       logoWidth: 200,
       logoHeight: 48,
       categories: ['Martillos Hidráulicos', 'Gamas SC/V32/V45/V55'],
-      bgImage: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/MontabertIMG/montabert.jpg',
     },
     {
       name: 'Michelin',
@@ -165,7 +165,7 @@ export class ProductosComponent {
       logoWidth: 200,
       logoHeight: 48,
       categories: ['Neumáticos Minería', 'OTR Subterráneos', 'Infraestructura'],
-      bgImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/MichelinIMG/Minas-de-superficie_lightbox_full.jpg',
     },
     {
       name: 'Bull',
@@ -183,7 +183,7 @@ export class ProductosComponent {
       logoWidth: 200,
       logoHeight: 48,
       categories: ['Demoledores', 'Paving Breakers', 'Herramientas Neumáticas'],
-      bgImage: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/TokuIMG/cp_0112_bwr_cmyk_250p_fixtif_copy.jpg',
     },
     {
       name: 'Hiab',
@@ -192,7 +192,7 @@ export class ProductosComponent {
       logoWidth: 200,
       logoHeight: 48,
       categories: ['Carretillas Elevadoras', 'Montacargas Transportables'],
-      bgImage: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/HiabIMG/moffett-e4-main_1600x845.jpg',
     },
   ];
 }

@@ -8,7 +8,7 @@
 .brand-container { max-width: 1280px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
 
 .brand-hero { position: relative; height: 540px; overflow: hidden; display: flex; align-items: flex-end; }
-.brand-hero__bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1600&auto=format&fit=crop'); background-size: cover; background-position: center; }
+.brand-hero__bg { position: absolute; inset: 0; background-image: url('/DonaldsonIMG/cabinet_collector_series60__51299139629018812801280.png'); background-size: cover; background-position: center; }
 .brand-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(0,45,98,0.9) 0%, rgba(0,45,98,0.5) 55%, rgba(0,0,0,0.1) 100%); }
 .brand-hero__content { position: relative; z-index: 2; padding: 52px 64px; display: flex; flex-direction: column; gap: 16px; }
 .brand-hero__logo-wrap { background: rgba(255,255,255,0.1); padding: 14px 24px; display: inline-flex; border-left: 4px solid var(--brand-accent); }

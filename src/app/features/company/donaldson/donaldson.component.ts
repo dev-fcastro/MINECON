@@ -14,27 +14,27 @@ import { CallToActionComponent } from '../../../shared/components/structure-comp
 export class DonaldsonComponent {
   readonly productLines = [
     {
-      title: 'Filtros Ultra-Web®',
-      desc: 'Tecnología de fibra submicrónica patentada para captura superior de partículas finas sin comprometer el caudal de aire.',
-      image: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=900&auto=format&fit=crop',
+      title: 'Filtros PowerCore®',
+      desc: 'Tecnología de filtro plisado compacto Ultra-Web® para captura superior de partículas finas sin comprometer el caudal.',
+      image: '/DonaldsonIMG/powercore_cased_c2-wbar.png',
       tag: 'Filtración Industrial',
     },
     {
       title: 'Colectores de Polvo',
-      desc: 'Sistemas modulares Torit® para control de polvo en procesos de manufactura, soldadura, madera y metales.',
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=900&auto=format&fit=crop',
+      desc: 'Sistemas modulares Torit® Cabinet Collector para control de polvo en manufactura, soldadura, madera y metales.',
+      image: '/DonaldsonIMG/cabinet_collector_series60__51299139629018812801280.png',
       tag: 'Colección de Polvo',
     },
     {
-      title: 'Filtros de Cartucho',
-      desc: 'PowerCore® y filtros de cartucho plisado para máxima eficiencia en entornos de alta carga de polvo.',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=900&auto=format&fit=crop',
+      title: 'Filtros de Cartucho DFT',
+      desc: 'Filtros de cartucho plisado DFT para máxima eficiencia y larga vida útil en entornos de alta carga de polvo.',
+      image: '/DonaldsonIMG/dft.png',
       tag: 'Cartucho / Plisado',
     },
     {
-      title: 'Filtración de Líquidos',
-      desc: 'Filtros para aceite hidráulico, combustible, refrigerante y agua de proceso en equipos pesados.',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=900&auto=format&fit=crop',
+      title: 'Filtración Hidráulica',
+      desc: 'Filtros para aceite hidráulico, combustible, refrigerante y agua de proceso en equipos pesados y móviles.',
+      image: '/DonaldsonIMG/1151-hydrauliek-3.jpg',
       tag: 'Líquidos',
     },
   ];
