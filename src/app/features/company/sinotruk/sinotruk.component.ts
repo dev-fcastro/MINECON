@@ -95,13 +95,23 @@ export class SinotrukComponent {
     },
     {
       iconPath: 'M17 8C8 10 5.9 16.17 3.82 20.31A4 4 0 0 0 8 22c4 0 6-3 8-6s5-5 8-5c-2-4-5-3-7-3z',
-      title: 'Control de Emisiones',
-      desc: 'Tecnología Euro V y VI para cumplimiento de estándares medioambientales globales.',
+      title: 'Control de Emisiones y Nueva Energía',
+      desc: 'Alianza estratégica para desarrollo de pilas de combustible de hidrógeno (2025) y liderazgo en camiones pesados 100% eléctricos con hasta 800kWh.',
     },
     {
       iconPath: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z',
       title: 'Red Global de Servicio',
-      desc: 'Más de 1,500 centros de servicio en 150+ países con disponibilidad de repuestos.',
+      desc: 'Más de 1,500 centros de servicio en 150+ países con disponibilidad de repuestos. 37 plantas de ensamblaje (KD) a nivel mundial.',
     },
+    {
+      iconPath: 'M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z',
+      title: 'Conducción Autónoma e Inteligencia',
+      desc: 'Pioneros en camiones mineros autónomos (Rango Extendido a Metanol) y tecnología de conducción sin conductor basada en la nube.',
+    },
+    {
+      iconPath: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
+      title: 'Liderazgo Global en Ventas',
+      desc: 'Primer lugar mundial en ventas de camiones pesados en 2025 (304,900 unidades), afianzando su cuota de mercado internacional (+50%).',
+    }
   ];
 }
