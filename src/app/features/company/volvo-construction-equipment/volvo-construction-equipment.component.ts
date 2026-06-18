@@ -1,5 +1,4 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TitleComponent } from '../../../shared/components/ux/title-component/title.component';
 import { ParagraphComponent } from '../../../shared/components/ux/paragraph-component/paragraph.component';
@@ -14,7 +13,7 @@ interface VolvoCEProduct {
 
 @Component({
   selector: 'app-volvo-construction-equipment',
-  imports: [NgOptimizedImage, RouterLink, TitleComponent, ParagraphComponent, CallToActionComponent],
+  imports: [RouterLink, TitleComponent, ParagraphComponent, CallToActionComponent],
   templateUrl: './volvo-construction-equipment.component.html',
   styleUrl: './volvo-construction-equipment.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
