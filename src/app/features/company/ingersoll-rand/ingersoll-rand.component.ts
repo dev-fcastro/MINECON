@@ -40,11 +40,11 @@ export class IngersollRandComponent {
   ];
 
   readonly industries = [
-    { name: 'Manufactura', icon: '🏭' },
-    { name: 'Minería', icon: '⛏' },
-    { name: 'Automotriz', icon: '🚗' },
-    { name: 'Aeroespacial', icon: '✈' },
-    { name: 'Alimentaria', icon: '🌾' },
-    { name: 'Petróleo y Gas', icon: '⛽' },
+    'Manufactura',
+    'Minería',
+    'Automotriz',
+    'Aeroespacial',
+    'Alimentaria',
+    'Petróleo y Gas',
   ];
 }

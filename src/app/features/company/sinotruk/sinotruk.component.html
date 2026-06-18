@@ -50,31 +50,33 @@
   </div>
 </section>
 
-<!-- MODELOS -->
-<section class="brand-models">
-  <div class="brand-container">
-    <app-title level="h2" variant="sub" eyebrow="TRUCKS" text="Modelos Disponibles" color="#ffffff" />
+<!-- FLEET LINEUP -->
+<section class="fleet-lineup">
+  <div class="fleet-lineup__header brand-container">
+    <app-title level="h2" variant="sub" eyebrow="CAMIONES HOWO" text="Flota Disponible" color="#ffffff" />
+    <p class="fleet-lineup__sub">Rendimiento y tecnología alemana a su alcance</p>
   </div>
-  <div class="models-grid">
-    @for (m of models; track m.title) {
-      <div class="model-card">
-        <div class="model-card__img-wrap">
-          <img class="model-card__img" [src]="m.image" [alt]="m.title" loading="lazy" />
-          <div class="model-card__overlay" aria-hidden="true"></div>
-          <span class="model-card__series">{{ m.series }}</span>
+  <div class="fleet-track">
+    @for (truck of lineup; track truck.title + truck.spec) {
+      <div class="fleet-truck" [class]="'fleet-truck--' + truck.size">
+        <div class="fleet-truck__img-wrap">
+          <img
+            class="fleet-truck__img"
+            [src]="truck.image"
+            [alt]="truck.title"
+            loading="lazy"
+          />
         </div>
-        <div class="model-card__body">
-          <h3 class="model-card__title">{{ m.title }}</h3>
-          <div class="model-card__specs">
-            <span class="model-spec"><strong>Potencia:</strong> {{ m.hp }}</span>
-            <span class="model-spec"><strong>Config.:</strong> {{ m.config }}</span>
-          </div>
-          <p class="model-card__use">{{ m.use }}</p>
-          <a routerLink="/contacto" class="model-card__cta">Consultar precio →</a>
+        <div class="fleet-truck__label">
+          <span class="fleet-truck__name">{{ truck.title }}</span>
+          <span class="fleet-truck__spec">{{ truck.spec }}</span>
+          <span class="fleet-truck__config">{{ truck.config }}</span>
+          <a routerLink="/contacto" class="fleet-truck__cta">Consultar →</a>
         </div>
       </div>
     }
   </div>
+  <div class="fleet-lineup__ground" aria-hidden="true"></div>
 </section>
 
 <!-- SOBRE LA MARCA -->

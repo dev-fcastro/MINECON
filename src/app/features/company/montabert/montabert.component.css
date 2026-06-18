@@ -2,6 +2,7 @@
 :host {
   --brand-primary: #1A2E1A;
   --brand-accent: #00843D;
+  --mc-primary: var(--brand-accent);
   --brand-accent2: #4CAF50;
 }
 
@@ -18,7 +19,8 @@
   height: 560px;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .brand-hero__bg {
@@ -32,44 +34,45 @@
 .brand-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(26,46,26,0.9) 0%,
-    rgba(26,46,26,0.55) 55%,
-    rgba(0,0,0,0.1) 100%
-  );
+  background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.08) 45%, rgba(26,46,26,0.45) 100%);
 }
 
 .brand-hero__content {
   position: relative;
   z-index: 2;
-  padding: 56px 64px;
+  padding: 64px 24px 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  width: 100%;
 }
 
 .brand-hero__logo-wrap {
-  background: rgba(255,255,255,0.07);
-  padding: 14px 24px;
+  background: rgba(255,255,255,0.96);
+  padding: 20px 48px;
   display: inline-flex;
-  border-left: 4px solid var(--brand-accent);
+  align-items: center;
+  justify-content: center;
+  border-bottom: 4px solid var(--brand-accent);
 }
 
 .brand-hero__logo {
-  height: 48px;
+  height: 52px;
   width: auto;
   display: block;
-  filter: brightness(0) invert(1);
+  max-width: 280px;
 }
 
 .brand-hero__tagline {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.14em;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.88);
   margin: 0;
   font-style: italic;
+  text-shadow: 0 1px 5px rgba(0,0,0,0.6);
 }
 
 /* ── Intro ────────────────────────────────────────────── */
