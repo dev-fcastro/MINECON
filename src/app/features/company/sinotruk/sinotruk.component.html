@@ -82,8 +82,8 @@
   <div class="brand-about__img-col" aria-hidden="true">
     <img
       class="brand-about__img"
-      src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=900&auto=format&fit=crop"
-      alt="Sinotruk — planta de manufactura"
+      src="/SinotrukIMG/cropped-sinotrukbananer-1.jpg"
+      alt="Sinotruk — planta de manufactura CNHTC"
       loading="lazy"
     />
   </div>
@@ -107,7 +107,7 @@
     <div class="tech-grid">
       @for (t of techItems; track t.title) {
         <div class="tech-item">
-          <span class="tech-item__icon" aria-hidden="true">{{ t.icon }}</span>
+          <svg class="tech-item__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path [attr.d]="t.iconPath" /></svg>
           <h3 class="tech-item__title">{{ t.title }}</h3>
           <p class="tech-item__desc">{{ t.desc }}</p>
         </div>

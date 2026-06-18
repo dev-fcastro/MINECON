@@ -65,7 +65,7 @@ export class HomeComponent {
 
   readonly solutionSlides: SliderImage[] = [
     {
-      url: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop',
+      url: '/IngersollRandIMG/CorpHeroBanners_DedicatedExperts.jpg',
       alt: 'Sistemas de aire comprimido y herramientas neumáticas industriales',
       label: 'División Industrial',
       caption: 'Nuestra división se enfoca en la distribución e instalación de sistemas de aire comprimido, satisfaciendo las necesidades de tratamiento, filtración y control de sistemas de vacío. Contamos con una alta gama de productos que abarcan desde compresores de tornillo rotativo, colectores de polvo, hasta líneas completas de herramientas neumáticas.',
@@ -73,7 +73,7 @@ export class HomeComponent {
       ctaLabel: 'Mostrar Marcas',
     },
     {
-      url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop',
+      url: '/VolvoConstructionEquipmentIMG/Megaprojects_Cairo_2019_03.jpg',
       alt: 'Equipos para construcción y minería en obra',
       label: 'División Construcción & Minería',
       caption: 'Somos una empresa líder en la venta y alquiler de equipos para la construcción y la minería, contamos con una reconocida línea de productos que destacan por su calidad y eficiencia, esta división satisface los requerimientos para los rubros enfocados a la extracción de agregados, construcción, compactación ligera, manipulación de concreto, excavación y movimiento de tierra.',
@@ -81,7 +81,7 @@ export class HomeComponent {
       ctaLabel: 'Mostrar Marcas',
     },
     {
-      url: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1400&auto=format&fit=crop',
+      url: '/SinotrukIMG/sinotruk-img-header.png',
       alt: 'Vehículos de carga ligera y pesada Sinotruk',
       label: 'Vehículos Carga Ligera',
       caption: 'Nuestra división se enfoca en la distribución y comercialización de vehículos livianos y pesados satisfaciendo las necesidades del consumidor. Contamos con una alta gama de vehículos Sinotruk que abarcan desde camiones livianos hasta pesados.',
@@ -102,13 +102,13 @@ export class HomeComponent {
     {
       title: 'Excavadora Hidráulica EC950E',
       brand: 'Volvo CE',
-      image: 'https://images.unsplash.com/photo-1579616790875-af7fbc5a5cf2?q=80&w=1200&auto=format&fit=crop',
+      image: '/VolvoConstructionEquipmentIMG/EXC_EC200E_T4f_2_W_RF.jpg',
       route: '/marcas/volvo-construction-equipment',
     },
     {
       title: 'Tractocamión HOWO T7H',
       brand: 'Sinotruk',
-      image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1200&auto=format&fit=crop',
+      image: '/SinotrukIMG/t7h-440-6x4.png',
       route: '/marcas/sinotruk',
     },
     {
@@ -126,13 +126,13 @@ export class HomeComponent {
     {
       title: 'Compresor Portátil 185 CFM',
       brand: 'Ingersoll Rand',
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop',
+      image: '/IngersollRandIMG/OilFloodedAirCompressor.png',
       route: '/marcas/ingersoll-rand',
     },
     {
       title: 'Neumáticos OTR para Minería',
       brand: 'Michelin',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop',
+      image: '/MichelinIMG/Minas-de-superficie_lightbox_full.jpg',
       route: '/marcas/michelin',
     },
   ];
@@ -150,7 +150,7 @@ export class HomeComponent {
       title: 'Maquinaria Pesada para Proyectos de Gran Escala',
       description:
         'Representamos las marcas más reconocidas del mercado global en maquinaria de construcción, minería y movimiento de tierra. Desde excavadoras hidráulicas hasta compactadoras y cargadores frontales, contamos con el equipo adecuado para cada proyecto.',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop',
+      image: '/VolvoConstructionEquipmentIMG/ART_A60H_Customer_GB_008_EMEA.jpg',
       imageAlt: 'Maquinaria pesada de construcción en obra',
       route: '/productos',
       ctaLabel: 'Ver catálogo',
@@ -159,7 +159,7 @@ export class HomeComponent {
       title: 'Soluciones de Transporte Industrial para la República Dominicana',
       description:
         'Con Sinotruk, ofrecemos camiones de volteo, tractocamiones y camiones de carga pesada diseñados para las exigencias del mercado dominicano. Potencia, durabilidad y servicio posventa garantizado.',
-      image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1400&auto=format&fit=crop',
+      image: '/SinotrukIMG/t7h-440-6x4.png',
       imageAlt: 'Camión de transporte industrial en carretera',
       route: '/marcas/sinotruk',
       ctaLabel: 'Conocer Sinotruk',
@@ -168,7 +168,7 @@ export class HomeComponent {
       title: 'Repuestos Originales y Servicio Técnico Certificado',
       description:
         'Nuestro taller especializado y red de técnicos certificados garantiza la continuidad de sus operaciones. Disponemos de stock de repuestos originales y ofrecemos contratos de mantenimiento preventivo para toda la flota.',
-      image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1400&auto=format&fit=crop',
+      image: '/VolvoConstructionEquipmentIMG/Services_Machine_Operator_Training_H_H_02.jpg',
       imageAlt: 'Técnico especializado en mantenimiento de maquinaria',
       route: '/servicios',
       ctaLabel: 'Nuestros Servicios',
@@ -183,7 +183,7 @@ export class HomeComponent {
       logoWidth: 200, logoHeight: 48,
       categories: ['Excavadoras', 'Cargadores Frontales', 'Compactadoras', 'Pavimentadoras'],
       ctaLabel: 'Ver catálogo',
-      bgImage: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/VolvoConstructionEquipmentIMG/Megaprojects_Cairo_2019_03.jpg',
     },
     {
       name: 'Sinotruk',
@@ -192,7 +192,7 @@ export class HomeComponent {
       logoWidth: 200, logoHeight: 48,
       categories: ['Camiones de Volteo', 'Tractocamiones', 'Camiones de Carga Pesada'],
       ctaLabel: 'Ver catálogo',
-      bgImage: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/SinotrukIMG/sinotruk-img-header.png',
     },
     {
       name: 'Ingersoll Rand',
@@ -201,7 +201,7 @@ export class HomeComponent {
       logoWidth: 200, logoHeight: 48,
       categories: ['Compresores Portátiles', 'Herramientas Neumáticas', 'Sistemas de Aire Comprimido'],
       ctaLabel: 'Ver catálogo',
-      bgImage: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/IngersollRandIMG/CorpHeroBanners_DedicatedExperts.jpg',
     },
   ];
 

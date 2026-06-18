@@ -16,22 +16,22 @@ export class HiabComponent {
     {
       title: 'Uso Urbano',
       desc: 'Entregas de última milla en ciudad. El Moffett E4 se monta/desmonta en segundos sin necesidad de grúa auxiliar.',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=900&auto=format&fit=crop',
+      image: '/HiabIMG/moffett-e4-6_urban-use_320x208.jpg',
     },
     {
       title: 'Industrial',
       desc: 'Para almacenes, plantas industriales y centros de distribución donde se requiere manejo de pallets con movilidad total.',
-      image: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=900&auto=format&fit=crop',
+      image: '/HiabIMG/moffett-m4nx-industrial-use_320x208.jpg',
     },
     {
       title: 'Off-Road / Construcción',
       desc: 'El M5 25.3 con tracción 4WD para terrenos irregulares, obras de construcción y acceso en pendientes.',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=900&auto=format&fit=crop',
+      image: '/HiabIMG/moffett-m5-25-3-offroad-02-irl_1300px.jpg',
     },
     {
       title: 'Semi-Industrial',
       desc: 'Versatilidad entre entorno urbano y semi-rural. Alto rendimiento en distribución de materiales de construcción.',
-      image: 'https://images.unsplash.com/photo-1533512930330-4ac257c86793?q=80&w=900&auto=format&fit=crop',
+      image: '/HiabIMG/moffett-m5-semi-industrial-use_320x208.jpg',
     },
   ];
 

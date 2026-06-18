@@ -23,7 +23,7 @@ import { CallToActionComponent } from '../../shared/components/structure-compone
 export class NosotrosComponent {
   readonly heroSlides: SliderImage[] = [
     {
-      url: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1400&auto=format&fit=crop',
+      url: '/VolvoConstructionEquipmentIMG/Volvo_Bauma_2019_04_07_586_96dpi_Web.jpg',
       alt: 'MINECON — empresa de soluciones industriales en República Dominicana',
       label: 'Acerca de Nosotros',
       caption: 'DESDE 1975 SIRVIENDO A LA INDUSTRIA DE LA CONSTRUCCIÓN Y MINERÍA.',
@@ -36,7 +36,7 @@ export class NosotrosComponent {
       title: 'Nuestra Misión',
       description:
         'Somos una empresa de soluciones que garantiza la excelencia a todos nuestros clientes en los sectores de construcción y minería, ventas de equipos industriales y automotriz, como también equipos de carga ligera y energía. Generamos valores determinados enfocados siempre al respeto de la comunidad y al medio ambiente.',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop',
+      image: '/VolvoConstructionEquipmentIMG/Services_Machine_Operator_Training_H_H_02.jpg',
       imageAlt: 'Equipos MINECON en operación — misión empresarial',
     },
     {
@@ -44,7 +44,7 @@ export class NosotrosComponent {
       title: 'Nuestra Visión',
       description:
         'Ser el líder del mercado de soluciones en las áreas de Construcción, Minería, Industrial y Automotriz. Siendo un ejemplo en la comunidad por los valores que proyectamos.',
-      image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1400&auto=format&fit=crop',
+      image: '/VolvoConstructionEquipmentIMG/Megaprojects_Cairo_2019_03.jpg',
       imageAlt: 'Horizonte industrial — visión MINECON',
     },
   ];
