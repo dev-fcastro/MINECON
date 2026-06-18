@@ -62,10 +62,9 @@
   <div class="brand-container">
     <app-title level="h2" variant="sub" eyebrow="INDUSTRIES SERVED" text="Industrias que Atendemos" />
     <div class="industries-grid">
-      @for (ind of industries; track ind.name) {
+      @for (ind of industries; track ind) {
         <div class="ind-card">
-          <span class="ind-card__icon" aria-hidden="true">{{ ind.icon }}</span>
-          <span class="ind-card__name">{{ ind.name }}</span>
+          <span class="ind-card__name">{{ ind }}</span>
         </div>
       }
     </div>

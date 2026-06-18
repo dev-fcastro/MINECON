@@ -23,6 +23,14 @@ interface SinotrukModel {
 })
 export class SinotrukComponent {
 
+  readonly lineup = [
+    { title: 'HOWO T5G', spec: '210–340 HP', config: '4×2 / 6×4', image: '/SinotrukIMG/t5g-210-240-280-340.png', size: 'sm' },
+    { title: 'HOWO T7H 400', spec: 'Tolva 6×4', config: '380–420 HP', image: '/SinotrukIMG/t7h-400-6x4-tolva.png', size: 'md' },
+    { title: 'HOWO T7H 440', spec: '6×4 Flagship', config: '380–540 HP', image: '/SinotrukIMG/t7h-440-6x4.png', size: 'lg' },
+    { title: 'HOWO C7H 540', spec: 'Premium 4×2', config: '420–540 HP', image: '/SinotrukIMG/c7h-540-4x2.png', size: 'md' },
+    { title: 'HOWO T7H 400', spec: 'Tolva 8×4', config: '380–420 HP', image: '/SinotrukIMG/t7h-400-8x4-tolva.png', size: 'sm' },
+  ];
+
   readonly models: SinotrukModel[] = [
     {
       title: 'HOWO T7H 440',
