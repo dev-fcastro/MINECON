@@ -21,7 +21,7 @@ import { CallToActionComponent } from '../../shared/components/structure-compone
 export class MarcasComponent {
   readonly heroSlides: SliderImage[] = [
     {
-      url: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1400&auto=format&fit=crop',
+      url: '/VolvoConstructionEquipmentIMG/ART_A60H_Customer_GB_008_EMEA.jpg',
       alt: 'Maquinaria pesada — marcas líderes mundiales representadas por MINECON',
       label: 'RENDIMIENTO PODEROSO',
       caption: 'Representamos las marcas más reconocidas del mercado global en maquinaria industrial, construcción, minería, energía y transporte.',
@@ -37,7 +37,7 @@ export class MarcasComponent {
       logoWidth: 200,
       logoHeight: 48,
       categories: ['Excavadoras', 'Cargadores Frontales', 'Compactadoras', 'Tiendetubos'],
-      bgImage: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/VolvoConstructionEquipmentIMG/ART_A60H_Customer_GB_008_EMEA.jpg',
     },
     {
       name: 'Bobcat',
@@ -55,7 +55,7 @@ export class MarcasComponent {
       logoWidth: 200,
       logoHeight: 48,
       categories: ['Martillos Hidráulicos', 'Gamas SC/V32/V45/V55'],
-      bgImage: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/MontabertIMG/montabert.jpg',
     },
     {
       name: 'Michelin',
@@ -64,7 +64,7 @@ export class MarcasComponent {
       logoWidth: 200,
       logoHeight: 48,
       categories: ['Neumáticos Minería Superficie', 'Subterráneos', 'Infraestructura', 'Industriales'],
-      bgImage: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/MichelinIMG/Minas-de-superficie_lightbox_full.jpg',
     },
     {
       name: 'Sinotruk',
@@ -73,7 +73,7 @@ export class MarcasComponent {
       logoWidth: 200,
       logoHeight: 48,
       categories: ['Camiones de Volteo', 'Tractocamiones', 'Camiones Pesados'],
-      bgImage: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/SinotrukIMG/sinotruk-img-header.png',
     },
     {
       name: 'GHH Rand',
@@ -91,7 +91,7 @@ export class MarcasComponent {
       logoWidth: 200,
       logoHeight: 48,
       categories: ['Paving Breakers', 'Chipping Hammers', 'Demoledores'],
-      bgImage: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/TokuIMG/cp_0112_bwr_cmyk_250p_fixtif_copy.jpg',
     },
   ];
 
@@ -103,7 +103,7 @@ export class MarcasComponent {
       logoWidth: 200,
       logoHeight: 48,
       categories: ['Carretillas Elevadoras Transportables', 'Uso Urbano', 'Industrial', 'Off-Road'],
-      bgImage: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/HiabIMG/moffett-e4-main_1600x845.jpg',
     },
     {
       name: 'Ingersoll Rand',
@@ -112,7 +112,7 @@ export class MarcasComponent {
       logoWidth: 200,
       logoHeight: 48,
       categories: ['Aire Comprimido', 'Herramientas Neumáticas', 'Polipastos'],
-      bgImage: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/IngersollRandIMG/CorpHeroBanners_DedicatedExperts.jpg',
     },
     {
       name: 'Donaldson',
@@ -121,7 +121,7 @@ export class MarcasComponent {
       logoWidth: 200,
       logoHeight: 48,
       categories: ['Filtros Ultra-Web', 'Colectores de Polvo', 'Filtros Cartucho'],
-      bgImage: 'https://images.unsplash.com/photo-1565967511849-76a60a516170?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/DonaldsonIMG/cabinet_collector_series60__51299139629018812801280.png',
     },
     {
       name: 'Parker',
@@ -130,7 +130,7 @@ export class MarcasComponent {
       logoWidth: 200,
       logoHeight: 48,
       categories: ['Sistemas de Aire Comprimido', 'Distribución Transair'],
-      bgImage: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop',
+      bgImage: '/ParkerIMG/CAT-T0061-ES.jpg',
     },
     {
       name: 'Firman',

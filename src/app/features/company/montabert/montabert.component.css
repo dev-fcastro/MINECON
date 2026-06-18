@@ -24,7 +24,7 @@
 .brand-hero__bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1580674285054-bed31e145f59?q=80&w=1600&auto=format&fit=crop');
+  background-image: url('/MontabertIMG/montabert.jpg');
   background-size: cover;
   background-position: center;
 }

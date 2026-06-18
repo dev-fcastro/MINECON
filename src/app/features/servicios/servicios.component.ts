@@ -23,7 +23,7 @@ import { CallToActionComponent } from '../../shared/components/structure-compone
 export class ServiciosComponent {
   readonly heroSlides: SliderImage[] = [
     {
-      url: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1400&auto=format&fit=crop',
+      url: '/VolvoConstructionEquipmentIMG/Services_Machine_Operator_Training_H_H_02.jpg',
       alt: 'Servicio técnico certificado — MINECON',
       label: 'Servicios',
       caption: 'Respaldo técnico, repuestos originales y contratos de mantenimiento para mantener su operación en marcha.',
@@ -36,7 +36,7 @@ export class ServiciosComponent {
       title: 'PackageCARE — We Protect You',
       description:
         'Nuestros planes de protección representan el mayor valor para la gestión de activos al transferir el riesgo operativo a Ingersoll Rand. Somos responsables por el mantenimiento programado, así como por el uso de herramientas de análisis y análisis predictivo que ayudan a prevenir las interrupciones inesperadas en su producción.',
-      image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1400&auto=format&fit=crop',
+      image: '/IngersollRandIMG/IRCO_PackageCare_logo_img-min.png',
       imageAlt: 'Servicio PackageCARE — Ingersoll Rand protección total',
       route: '/contacto',
       ctaLabel: 'Consultar planes',

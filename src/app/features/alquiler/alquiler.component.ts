@@ -23,13 +23,13 @@ import { CallToActionComponent } from '../../shared/components/structure-compone
 export class AlquilerComponent {
   readonly heroSlides: SliderImage[] = [
     {
-      url: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop',
+      url: '/VolvoConstructionEquipmentIMG/ART_A60H_Customer_GB_008_EMEA.jpg',
       alt: 'Equipos de construcción y minería disponibles para alquiler — MINECON',
       label: 'Alquiler de Equipos',
       caption: 'ENCUENTRE SU EQUIPO IDEAL',
     },
     {
-      url: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop',
+      url: '/IngersollRandIMG/CorpHeroBanners_DedicatedExperts.jpg',
       alt: 'Equipos industriales de aire comprimido disponibles para alquiler',
       label: 'Alquiler Industrial',
       caption: 'SOLUCIONES FLEXIBLES PARA CADA NECESIDAD',
@@ -42,7 +42,7 @@ export class AlquilerComponent {
       title: 'Alquiler Equipos C&M',
       description:
         'Nuestros equipos de construcción y minería para alquiler permiten mantener la actividad y llevar a cabo operaciones diarias de forma ininterrumpida. Desde emergencias hasta tareas temporales durante una situación de demanda, le proporcionamos equipos de alquiler en cualquier momento con total fiabilidad.',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1400&auto=format&fit=crop',
+      image: '/VolvoConstructionEquipmentIMG/WLO_L220H_T4f_1_22329.jpg',
       imageAlt: 'Equipos de construcción y minería en obra disponibles para alquiler',
       route: '/contacto',
       ctaLabel: 'Solicitar equipo',
@@ -52,7 +52,7 @@ export class AlquilerComponent {
       title: 'Alquiler Equipos Industrial',
       description:
         'Nuestros equipos industriales de alquiler permiten mantener la actividad y llevar a cabo operaciones cruciales sin interrupciones. Desde emergencias hasta aplicaciones temporales durante un pico de demanda, le proporcionamos equipos de alquiler en cualquier momento con total fiabilidad.',
-      image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1400&auto=format&fit=crop',
+      image: '/IngersollRandIMG/OilFloodedAirCompressor.png',
       imageAlt: 'Equipos industriales de aire comprimido disponibles para alquiler',
       route: '/contacto',
       ctaLabel: 'Solicitar equipo',
