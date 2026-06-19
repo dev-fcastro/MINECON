@@ -176,3 +176,43 @@
 .slider__counter-sep {
   color: var(--mc-primary);
 }
+
+/* ── Responsive ──────────────────────────────────── */
+
+@media (max-width: 767px) {
+  .slider {
+    height: 360px;
+  }
+
+  .slider__meta {
+    bottom: 52px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .slider__label {
+    font-size: clamp(24px, 7vw, 40px);
+  }
+
+  .slider__caption {
+    font-size: 13px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .slider__indicators {
+    bottom: 16px;
+    left: 20px;
+  }
+
+  .slider__counter {
+    bottom: 16px;
+    right: 20px;
+  }
+
+  .slider__nav {
+    height: calc(100% - 120px);
+  }
+}

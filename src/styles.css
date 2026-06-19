@@ -20,6 +20,14 @@
   --mc-para-muted: rgba(172, 171, 172, 0.7);
   --mc-section-dark: #363337;
   --mc-border-dark: rgba(255, 255, 255, 0.08);
+  /* Header height — changes at breakpoints so dependant layouts stay in sync */
+  --mc-header-h: 103px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --mc-header-h: 87px;
+  }
 }
 
 html,

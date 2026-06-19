@@ -150,3 +150,64 @@
 .showcase__cta:hover {
   color: var(--mc-white);
 }
+
+/* ── Responsive ──────────────────────────────────── */
+
+/* Tablet: 3-column wrap grid — JS accordion becomes inert */
+@media (max-width: 1199px) {
+  .showcase {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: auto;
+    transition: none;
+    gap: 2px;
+    background-color: var(--mc-white); /* gap shows as white lines */
+    border: 2px solid var(--mc-white);
+  }
+
+  .showcase__panel {
+    flex: 1 1 calc(33.33% - 2px);
+    min-width: 220px;
+    min-height: 320px;
+    border-right: none;
+    border-bottom: none;
+    box-sizing: border-box;
+  }
+}
+
+/* Mobile: single column stack */
+@media (max-width: 767px) {
+  .showcase {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+    gap: 0;
+    background-color: var(--mc-secondary);
+    border: none;
+  }
+
+  .showcase__panel {
+    flex: none;
+    width: 100%;
+    min-height: 200px;
+    border-right: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .showcase__panel:last-child {
+    border-bottom: none;
+  }
+
+  .showcase__content {
+    padding: 28px 20px;
+  }
+
+  .showcase__categories {
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .showcase__logo {
+    margin-bottom: 16px;
+  }
+}

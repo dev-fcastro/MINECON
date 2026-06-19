@@ -80,18 +80,26 @@
 }
 
 /* ── Responsive ─────────────────────────────────── */
+
+@media (max-width: 1023px) {
+  .split__text-col {
+    padding: 52px 40px;
+  }
+}
+
 @media (max-width: 767px) {
   .split__item {
     grid-template-columns: 1fr;
+    min-height: auto;
   }
 
   /* Imagen siempre arriba en móvil */
   .split__image-col {
-    min-height: 280px;
+    min-height: 260px;
     order: -1 !important;
   }
 
   .split__text-col {
-    padding: 40px 24px;
+    padding: 36px 20px;
   }
 }

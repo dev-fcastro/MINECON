@@ -203,12 +203,20 @@
 }
 
 @media (max-width: 767px) {
+  .section-container {
+    padding: 0 16px;
+  }
+
   .servicios-section {
     padding: 56px 0 40px;
   }
 
   .cards-grid--3 {
     grid-template-columns: 1fr;
+  }
+
+  .cards-grid--3 .service-card:last-child {
+    grid-column: auto;
   }
 
   .cards-grid--2 {
@@ -222,5 +230,9 @@
 
   .volvo-cards-section {
     padding-bottom: 56px;
+  }
+
+  .servicios-subtitle {
+    font-size: 13px;
   }
 }

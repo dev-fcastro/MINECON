@@ -23,6 +23,10 @@
 }
 
 @media (max-width: 767px) {
+  .section-container {
+    padding: 0 16px;
+  }
+
   .alquiler-section {
     padding: 56px 0 40px;
   }
