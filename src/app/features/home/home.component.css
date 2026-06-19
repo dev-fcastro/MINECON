@@ -22,52 +22,15 @@
   object-position: center;
 }
 
-.hero__overlay {
+.hero__logo {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    108deg,
-    rgba(20, 20, 20, 0.5) 0%,
-    rgba(20, 20, 20, 0.25) 50%,
-    rgba(0, 0, 0, 0.1) 100%
-  );
-  z-index: 1;
-}
-
-.hero__content {
-  position: relative;
   z-index: 2;
-  padding: 48px 64px;
-  max-width: 800px;
-  box-sizing: border-box;
-}
-
-.hero__title {
-  margin-bottom: 16px;
-}
-
-/* Force override titles within hero to be white */
-.hero__title ::ng-deep .mc-title {
-  color: var(--mc-white) !important;
-  font-size: clamp(40px, 6vw, 76px) !important;
-}
-
-.hero__subtitle {
-  font-size: clamp(16px, 2vw, 22px);
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.5;
-  margin: 0 0 36px 0;
-  font-weight: 500;
-  max-width: 680px;
-  letter-spacing: 0.01em;
-}
-
-.hero__actions {
-  display: flex;
-}
-
-.hero__actions a {
-  text-decoration: none;
+  top: 17%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(240px, 38vw, 560px);
+  height: auto;
+  pointer-events: none;
 }
 
 /* ── Container ────────────────────────────────────── */
@@ -290,14 +253,8 @@
 }
 
 @media (max-width: 767px) {
-  .hero__content {
-    padding: 32px 20px;
-    max-width: 100%;
-  }
-
-  .hero__subtitle {
-    font-size: 15px;
-    margin-bottom: 24px;
+  .hero__logo {
+    width: clamp(180px, 70vw, 320px);
   }
 
   .section-container {
