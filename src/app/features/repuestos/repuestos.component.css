@@ -11,17 +11,17 @@
 
 /* ── Intro ──────────────────────────────────────────── */
 .repuestos-section {
-  background-color: var(--mc-white);
+  background-color: var(--mc-section-dark);
   padding: 88px 0 64px;
-  border-bottom: 3px solid var(--mc-secondary);
+  border-bottom: 3px solid var(--mc-primary);
   box-sizing: border-box;
 }
 
 /* ── Cards grid ─────────────────────────────────────── */
 .repuestos-cards-section {
-  background-color: var(--mc-white);
+  background-color: var(--mc-section-dark);
   padding: 72px 0 80px;
-  border-bottom: 4px solid var(--mc-secondary);
+  border-bottom: 4px solid var(--mc-primary);
   box-sizing: border-box;
 }
 
@@ -104,9 +104,9 @@
 
 /* ── Customer Solutions ─────────────────────────────── */
 .customer-solutions-section {
-  background-color: var(--mc-white);
+  background-color: var(--mc-section-dark);
   padding: 88px 0 80px;
-  border-bottom: 4px solid var(--mc-secondary);
+  border-bottom: 4px solid var(--mc-primary);
   box-sizing: border-box;
 }
 

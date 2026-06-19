@@ -49,42 +49,36 @@ export class ServiciosComponent {
       description:
         'Asegure la confiabilidad de la prestación de su equipo de aire comprimido con nuestros programas de mantenimiento CARE. Con CARE, tenemos una meta: ganarnos el derecho de ser su socio de confianza.',
       ctaLabel: 'Encuentre el plan justo para usted',
-      icon: '⚙',
     },
     {
       title: 'Refabricación',
       description:
         'El reemplazo del equipo de aire comprimido puede tener un impacto sobre los resultados finales. Nuestros productos refabricados pueden reducir ese impacto con una alternativa rentable y sustentable, al equipo nuevo.',
       ctaLabel: 'Ver las opciones disponibles',
-      icon: '🔧',
     },
     {
       title: 'Servicios de Alquiler',
       description:
         'Vuelva a operar en forma más rápida, evite paradas costosas y disfrute de la máxima flexibilidad para sus necesidades de aire comprimido. Obtenga el aire que quiera con el servicio de alquiler Ingersoll Rand.',
       ctaLabel: 'Ver todos los alquileres',
-      icon: '📦',
     },
     {
       title: 'Instalación',
       description:
         'Nuestros gerentes de proyecto son profesionales que entregan procesos simples y claros para garantizarle que esté en control de los objetivos del proyecto sin el problema de administrar cada pequeño detalle.',
       ctaLabel: 'Ver qué se incluye',
-      icon: '🏗',
     },
     {
       title: 'Servicios de Desempeño',
       description:
         'Ingersoll Rand ofrece una variedad de servicios de desempeño. Desde la identificación de fugas hasta evaluaciones completas del sistema, garantizamos que su instalación sea eficiente y confiable.',
       ctaLabel: 'Ver los servicios de desempeño',
-      icon: '📊',
     },
     {
       title: 'Capacitación del Producto',
       description:
         'Ingersoll Rand ofrece capacitación al cliente sobre compresores rotativos y centrífugos, así como también sobre microcontroladores.',
       ctaLabel: 'Ver las clases disponibles',
-      icon: '🎓',
     },
   ];
 }
