@@ -12,7 +12,7 @@
   grid-template-columns: 1fr 1fr 1.2fr 1.3fr 2fr;
   gap: 32px;
   padding: 52px 40px 44px;
-  border-bottom: 1px solid var(--mc-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* ── Columna base ────────────────────────────────── */
@@ -84,7 +84,7 @@
   letter-spacing: 0.1em;
   color: var(--mc-white);
   text-decoration: none;
-  border-bottom: 1px solid var(--mc-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding-bottom: 4px;
   transition: color 0.1s steps(1, end), border-color 0.1s steps(1, end);
 }
@@ -166,7 +166,7 @@
   padding: 12px 14px;
   text-decoration: none;
   border-right: 1px solid var(--mc-secondary);
-  border-bottom: 1px solid var(--mc-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.02);
   transition: background-color 0.12s ease, box-shadow 0.1s steps(1, end);
 }
@@ -190,7 +190,7 @@
 
 .footer-meta-strip {
   background-color: rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid var(--mc-secondary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding: 14px 40px;
 }
 

@@ -7,16 +7,16 @@
 
 /* ── Header intro ───────────────────────────────────── */
 .marcas-header {
-  background-color: var(--mc-white);
+  background-color: var(--mc-section-dark);
   padding: 88px 0 72px;
-  border-bottom: 3px solid var(--mc-secondary);
+  border-bottom: 3px solid var(--mc-primary);
   box-sizing: border-box;
 }
 
 .marcas-header__intro {
   margin: 24px 0 0;
   font-size: clamp(15px, 1.5vw, 18px);
-  color: rgba(66, 65, 67, 0.75);
+  color: rgba(172, 171, 172, 0.75);
   line-height: 1.65;
   max-width: 780px;
   letter-spacing: 0.01em;

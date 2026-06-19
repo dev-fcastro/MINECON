@@ -3,6 +3,9 @@
   --brand-primary: #0055A5;
   --brand-accent: #F47920;
   --mc-primary: var(--brand-accent);
+  --mc-title-color: var(--mc-black);
+  --mc-para-color: var(--mc-secondary);
+  --mc-para-muted: rgba(66, 65, 67, 0.55);
   --brand-dark: #002D62;
 }
 

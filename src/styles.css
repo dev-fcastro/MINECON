@@ -15,6 +15,11 @@
   --mc-white: #ffffff;
   --mc-grid: 1px solid rgba(255, 255, 255, 0.12);
   --mc-grid-dark: 1px solid rgba(0, 0, 0, 0.22);
+  --mc-title-color: var(--mc-white);
+  --mc-para-color: var(--mc-bg-light);
+  --mc-para-muted: rgba(172, 171, 172, 0.7);
+  --mc-section-dark: #363337;
+  --mc-border-dark: rgba(255, 255, 255, 0.08);
 }
 
 html,
@@ -22,8 +27,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Archivo', 'Arial Black', sans-serif;
-  background-color: var(--mc-white);
-  color: var(--mc-secondary);
+  background-color: var(--mc-secondary);
+  color: var(--mc-bg-light);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -11,17 +11,17 @@
 
 /* ── Servicios sections ─────────────────────────────── */
 .servicios-section {
-  background-color: var(--mc-white);
+  background-color: var(--mc-section-dark);
   padding: 88px 0 64px;
   box-sizing: border-box;
 }
 
 .servicios-section--volvo {
-  border-bottom: 3px solid var(--mc-secondary);
+  border-bottom: 3px solid var(--mc-primary);
 }
 
 .servicios-section--ir {
-  border-top: 4px solid var(--mc-secondary);
+  border-top: 4px solid var(--mc-primary);
   padding-bottom: 48px;
 }
 
@@ -31,16 +31,16 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--mc-secondary);
+  color: var(--mc-bg-light);
   max-width: 780px;
   line-height: 1.5;
 }
 
 /* ── Volvo service cards ────────────────────────────── */
 .volvo-cards-section {
-  background-color: var(--mc-white);
+  background-color: var(--mc-section-dark);
   padding: 0 0 80px;
-  border-bottom: 4px solid var(--mc-secondary);
+  border-bottom: 4px solid var(--mc-primary);
 }
 
 .cards-grid {
@@ -138,20 +138,20 @@
 /* ── PackageCARE section ───────────────────────────── */
 .packagecare-section {
   border-top: 3px solid var(--mc-primary);
-  border-bottom: 3px solid var(--mc-secondary);
+  border-bottom: 3px solid var(--mc-primary);
 }
 
 /* ── IR services grid ──────────────────────────────── */
 .ir-services-section {
-  background-color: var(--mc-white);
+  background-color: var(--mc-section-dark);
   padding: 80px 0 96px;
-  border-bottom: 4px solid var(--mc-secondary);
+  border-bottom: 4px solid var(--mc-primary);
 }
 
 .ir-card {
-  background-color: var(--mc-white);
-  border: 1px solid rgba(66, 65, 67, 0.15);
-  border-top: 3px solid var(--mc-secondary);
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 3px solid rgba(255, 255, 255, 0.12);
   padding: 32px 28px;
   transition: border-top-color 0.15s steps(1, end);
   box-sizing: border-box;
@@ -166,13 +166,13 @@
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--mc-secondary);
+  color: var(--mc-white);
   margin: 0 0 12px;
 }
 
 .ir-card__desc {
   font-size: 13px;
-  color: rgba(66, 65, 67, 0.75);
+  color: rgba(255, 255, 255, 0.6);
   line-height: 1.6;
   margin: 0 0 20px;
   letter-spacing: 0.01em;
