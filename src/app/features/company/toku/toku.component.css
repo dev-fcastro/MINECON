@@ -1,15 +1,22 @@
 /* Toku: azul oscuro #1B3A5C, naranja #D4771A */
-:host { --brand-primary: #1B3A5C; --brand-accent: #D4771A; }
+:host {
+  --brand-primary: #1B3A5C;
+  --brand-accent: #D4771A;
+  --mc-primary: var(--brand-accent);
+  --mc-title-color: var(--mc-black);
+  --mc-para-color: var(--mc-secondary);
+  --mc-para-muted: rgba(66, 65, 67, 0.55);
+}
 
 .brand-container { max-width: 1280px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
 
-.brand-hero { position: relative; height: 520px; overflow: hidden; display: flex; align-items: flex-end; }
+.brand-hero { position: relative; height: 520px; overflow: hidden; display: flex; align-items: flex-start; justify-content: center; }
 .brand-hero__bg { position: absolute; inset: 0; background-image: url('/TokuIMG/cp_0112_bwr_cmyk_250p_fixtif_copy.jpg'); background-size: cover; background-position: center; }
-.brand-hero__overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(27,58,92,0.9) 0%, rgba(27,58,92,0.5) 55%, rgba(0,0,0,0.1) 100%); }
-.brand-hero__content { position: relative; z-index: 2; padding: 52px 64px; display: flex; flex-direction: column; gap: 14px; }
-.brand-hero__logo-wrap { background: rgba(255,255,255,0.07); padding: 14px 24px; display: inline-flex; border-left: 4px solid var(--brand-accent); }
-.brand-hero__logo { height: 44px; width: auto; display: block; filter: brightness(0) invert(1); }
-.brand-hero__tagline { font-size: 16px; font-weight: 900; letter-spacing: 0.08em; color: rgba(255,255,255,0.8); margin: 0; font-style: italic; }
+.brand-hero__overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(27,58,92,0.1) 45%, rgba(27,58,92,0.4) 100%); }
+.brand-hero__content { position: relative; z-index: 2; padding: 64px 24px 0; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; width: 100%; }
+.brand-hero__logo-wrap { background: rgba(255,255,255,0.96); padding: 20px 48px; display: inline-flex; align-items: center; justify-content: center; border-bottom: 4px solid var(--brand-accent); }
+.brand-hero__logo { height: 48px; width: auto; display: block; max-width: 280px; }
+.brand-hero__tagline { font-size: 14px; font-weight: 900; letter-spacing: 0.08em; color: rgba(255,255,255,0.9); margin: 0; font-style: italic; text-shadow: 0 1px 6px rgba(0,0,0,0.6); }
 
 .brand-intro { background: #fff; padding: 80px 0 64px; border-bottom: 3px solid var(--brand-primary); }
 

@@ -11,15 +11,15 @@
 
 /* ── Intro section ─────────────────────────────────── */
 .productos-section {
-  background-color: var(--mc-white);
+  background-color: var(--mc-section-dark);
   padding: 88px 0 64px;
-  border-bottom: 3px solid var(--mc-secondary);
+  border-bottom: 3px solid var(--mc-primary);
 }
 
 /* ── Divisiones feature split ──────────────────────── */
 .divisiones-section {
-  background-color: var(--mc-white);
-  border-bottom: 4px solid var(--mc-secondary);
+  background-color: var(--mc-section-dark);
+  border-bottom: 4px solid var(--mc-primary);
 }
 
 /* ── Brands sections ───────────────────────────────── */

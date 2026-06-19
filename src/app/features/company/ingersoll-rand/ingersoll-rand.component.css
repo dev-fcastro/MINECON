@@ -1,7 +1,11 @@
-/* Ingersoll Rand: rojo #E3000F, gris #231F20 */
+/* Ingersoll Rand: rojo #D52B1E, gris #231F20 */
 :host {
   --brand-primary: #231F20;
-  --brand-accent: #E3000F;
+  --brand-accent: #D52B1E;
+  --mc-primary: var(--brand-accent);
+  --mc-title-color: var(--mc-black);
+  --mc-para-color: var(--mc-secondary);
+  --mc-para-muted: rgba(66, 65, 67, 0.55);
 }
 
 .brand-container {
@@ -16,7 +20,8 @@
   height: 560px;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .brand-hero__bg {
@@ -30,45 +35,46 @@
 .brand-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(35,31,32,0.9) 0%,
-    rgba(35,31,32,0.55) 55%,
-    rgba(0,0,0,0.1) 100%
-  );
+  background: linear-gradient(180deg, rgba(0,0,0,0.58) 0%, rgba(35,31,32,0.1) 45%, rgba(35,31,32,0.5) 100%);
 }
 
 .brand-hero__content {
   position: relative;
   z-index: 2;
-  padding: 52px 64px;
+  padding: 64px 24px 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  width: 100%;
 }
 
 .brand-hero__logo-wrap {
-  background: rgba(255,255,255,0.06);
-  padding: 14px 24px;
+  background: var(--brand-primary);
+  padding: 20px 48px;
   display: inline-flex;
-  border-left: 4px solid var(--brand-accent);
+  align-items: center;
+  justify-content: center;
+  border-bottom: 4px solid var(--brand-accent);
 }
 
 .brand-hero__logo {
-  height: 48px;
+  height: 52px;
   width: auto;
   display: block;
-  filter: brightness(0) invert(1);
+  max-width: 300px;
 }
 
 .brand-hero__tagline {
   font-size: 12px;
   letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.9);
   margin: 0;
-  max-width: 500px;
-  line-height: 1.5;
+  max-width: 600px;
+  line-height: 1.6;
   font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 
 .brand-strip {

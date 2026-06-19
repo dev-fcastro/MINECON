@@ -87,10 +87,10 @@
 /* ── Feature Split Section ────────────────────────── */
 
 .feature-section {
-  background-color: var(--mc-white);
+  background-color: var(--mc-section-dark);
   padding-top: 100px;
   padding-bottom: 80px;
-  border-bottom: 4px solid var(--mc-secondary);
+  border-bottom: 4px solid var(--mc-primary);
   box-sizing: border-box;
 }
 
@@ -103,9 +103,9 @@
 /* ── Machinery Section — Featured Rotator ─────────── */
 
 .machinery-section {
-  background-color: var(--mc-white);
+  background-color: var(--mc-section-dark);
   padding-top: 100px;
-  border-bottom: 2px solid var(--mc-secondary);
+  border-bottom: 2px solid var(--mc-primary);
   box-sizing: border-box;
 }
 
@@ -315,9 +315,9 @@
 
 .services-ticker ::ng-deep .ticker {
   height: 52px;
-  background-color: var(--mc-white);
-  border-top: 3px solid var(--mc-secondary);
-  border-bottom: 3px solid var(--mc-secondary);
+  background-color: var(--mc-section-dark);
+  border-top: 3px solid var(--mc-primary);
+  border-bottom: 3px solid var(--mc-primary);
 }
 
 .services-ticker ::ng-deep .ticker__prefix {
@@ -325,7 +325,7 @@
 }
 
 .services-ticker ::ng-deep .ticker__item {
-  color: var(--mc-black);
+  color: var(--mc-bg-light);
 }
 
 .services-ticker ::ng-deep .ticker__sep {
@@ -335,7 +335,7 @@
 /* ── Brands Section ───────────────────────────────── */
 
 .brands-section {
-  background-color: var(--mc-white);
+  background-color: var(--mc-section-dark);
   padding: 100px 0 0 0;
   box-sizing: border-box;
 }

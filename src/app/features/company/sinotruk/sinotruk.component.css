@@ -3,6 +3,10 @@
   --brand-primary: #0A2A2E;
   --brand-accent: #00A0B0;
   --brand-accent2: #006B77;
+  --mc-primary: var(--brand-accent);
+  --mc-title-color: var(--mc-black);
+  --mc-para-color: var(--mc-secondary);
+  --mc-para-muted: rgba(66, 65, 67, 0.55);
 }
 
 .brand-container {
@@ -18,7 +22,8 @@
   height: 560px;
   overflow: hidden;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .brand-hero__img {
@@ -29,53 +34,52 @@
 .brand-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    108deg,
-    rgba(10,42,46,0.85) 0%,
-    rgba(10,42,46,0.4) 55%,
-    rgba(0,0,0,0.05) 100%
-  );
+  background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(10,42,46,0.1) 45%, rgba(10,42,46,0.55) 100%);
 }
 
 .brand-hero__content {
   position: relative;
   z-index: 2;
-  padding: 52px 64px;
+  padding: 64px 24px 0;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  width: 100%;
 }
 
 .brand-hero__logo-wrap {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 16px;
-  background: rgba(255,255,255,0.07);
-  padding: 12px 20px;
-  border-left: 4px solid var(--brand-accent);
+  justify-content: center;
+  gap: 14px;
+  background: rgba(255,255,255,0.96);
+  padding: 20px 48px;
+  border-bottom: 4px solid var(--brand-accent);
 }
 
 .brand-hero__logo-icon {
-  height: 40px;
+  height: 44px;
   width: auto;
   display: block;
 }
 
 .brand-hero__logo-text {
-  height: 32px;
+  height: 36px;
   width: auto;
   display: block;
-  filter: brightness(0) invert(1);
 }
 
 .brand-hero__tagline {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.9);
   margin: 0;
-  max-width: 580px;
-  line-height: 1.5;
+  max-width: 640px;
+  line-height: 1.6;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
 }
 
 /* ── Stat bar ─────────────────────────────────────────── */
@@ -123,105 +127,128 @@
   border-bottom: 3px solid var(--brand-primary);
 }
 
-/* ── Models ───────────────────────────────────────────── */
-.brand-models {
+/* ── Fleet Lineup ─────────────────────────────────────── */
+.fleet-lineup {
   background-color: var(--brand-primary);
-  padding: 72px 0 0;
+  padding-top: 72px;
   border-bottom: 4px solid var(--brand-accent2);
-}
-
-.brand-models .brand-container { margin-bottom: 40px; }
-
-.models-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3px;
-  background-color: var(--brand-accent2);
-}
-
-.model-card { background-color: var(--brand-primary); overflow: hidden; }
-
-.model-card__img-wrap {
-  position: relative;
-  height: 220px;
   overflow: hidden;
+  position: relative;
 }
 
-.model-card__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.5s cubic-bezier(0.25,1,0.5,1);
+.fleet-lineup__header {
+  margin-bottom: 48px;
 }
 
-.model-card:hover .model-card__img { transform: scale(1.05); }
-
-.model-card__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 35%, rgba(10,42,46,0.8) 100%);
-}
-
-.model-card__series {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background-color: var(--brand-accent);
-  color: #fff;
-  font-size: 9px;
-  font-weight: 900;
+.fleet-lineup__sub {
+  font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  padding: 3px 10px;
-  z-index: 2;
+  letter-spacing: 0.22em;
+  color: rgba(255,255,255,0.45);
+  margin: 8px 0 0;
 }
 
-.model-card__body {
-  padding: 20px 20px 24px;
-  border-top: 3px solid transparent;
+.fleet-track {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0;
+  padding: 0 24px;
+  position: relative;
+}
+
+.fleet-truck {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+  cursor: default;
+}
+
+.fleet-truck__img-wrap {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.fleet-truck__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.55));
+  transition: filter 0.2s steps(1,end), transform 0.25s cubic-bezier(0.25,1,0.5,1);
+}
+
+.fleet-truck:hover .fleet-truck__img {
+  filter: drop-shadow(0 16px 32px rgba(0,160,176,0.35)) drop-shadow(0 4px 8px rgba(0,0,0,0.6));
+  transform: translateY(-8px);
+}
+
+.fleet-truck--sm .fleet-truck__img-wrap { height: 180px; }
+.fleet-truck--md .fleet-truck__img-wrap { height: 220px; }
+.fleet-truck--lg .fleet-truck__img-wrap { height: 270px; }
+
+.fleet-truck__label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 16px 8px 28px;
+  text-align: center;
+  border-top: 2px solid rgba(255,255,255,0.06);
+  width: 100%;
   transition: border-top-color 0.15s steps(1,end);
 }
 
-.model-card:hover .model-card__body { border-top-color: var(--brand-accent); }
+.fleet-truck:hover .fleet-truck__label { border-top-color: var(--brand-accent); }
 
-.model-card__title {
-  font-size: 16px;
+.fleet-truck--lg .fleet-truck__label { border-top-color: var(--brand-accent2); }
+
+.fleet-truck__name {
+  font-size: 12px;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.08em;
   color: #fff;
-  margin: 0 0 8px;
+  line-height: 1.2;
 }
 
-.model-card__specs {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  margin-bottom: 8px;
-}
-
-.model-spec {
-  font-size: 11px;
-  color: rgba(255,255,255,0.55);
-}
-
-.model-spec strong { color: var(--brand-accent); }
-
-.model-card__use {
-  font-size: 12px;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.5;
-  margin: 0 0 14px;
-}
-
-.model-card__cta {
+.fleet-truck__spec {
   font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--brand-accent);
+}
+
+.fleet-truck__config {
+  font-size: 9px;
+  color: rgba(255,255,255,0.38);
+  letter-spacing: 0.08em;
+}
+
+.fleet-truck__cta {
+  margin-top: 6px;
+  font-size: 9px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--brand-accent);
+  color: rgba(255,255,255,0.3);
   text-decoration: none;
+  transition: color 0.15s steps(1,end);
+}
+
+.fleet-truck:hover .fleet-truck__cta { color: var(--brand-accent); }
+
+.fleet-lineup__ground {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--brand-accent2), transparent);
+  opacity: 0.4;
 }
 
 /* ── About ────────────────────────────────────────────── */
@@ -333,10 +360,12 @@
 }
 
 @media (max-width: 1023px) {
-  .models-grid { grid-template-columns: repeat(2, 1fr); }
   .tech-grid { grid-template-columns: repeat(2, 1fr); }
   .stat-bar { flex-wrap: wrap; }
   .stat-bar__item { flex: 1 1 40%; }
+  .fleet-truck--sm .fleet-truck__img-wrap { height: 130px; }
+  .fleet-truck--md .fleet-truck__img-wrap { height: 160px; }
+  .fleet-truck--lg .fleet-truck__img-wrap { height: 200px; }
 }
 
 @media (max-width: 767px) {
@@ -344,7 +373,13 @@
   .brand-hero__content { padding: 32px 24px; }
   .stat-bar { flex-direction: column; }
   .stat-bar__sep { display: none; }
-  .models-grid { grid-template-columns: 1fr; }
+  .fleet-track { gap: 0; padding: 0 8px; }
+  .fleet-truck__name { font-size: 9px; }
+  .fleet-truck__spec { font-size: 8px; }
+  .fleet-truck__config, .fleet-truck__cta { display: none; }
+  .fleet-truck--sm .fleet-truck__img-wrap { height: 90px; }
+  .fleet-truck--md .fleet-truck__img-wrap { height: 110px; }
+  .fleet-truck--lg .fleet-truck__img-wrap { height: 140px; }
   .brand-about { grid-template-columns: 1fr; }
   .brand-about__img-col { height: 260px; }
   .brand-about__text-col { padding: 36px 24px; }

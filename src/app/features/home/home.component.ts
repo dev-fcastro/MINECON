@@ -159,7 +159,7 @@ export class HomeComponent {
       title: 'Soluciones de Transporte Industrial para la República Dominicana',
       description:
         'Con Sinotruk, ofrecemos camiones de volteo, tractocamiones y camiones de carga pesada diseñados para las exigencias del mercado dominicano. Potencia, durabilidad y servicio posventa garantizado.',
-      image: '/SinotrukIMG/t7h-440-6x4.png',
+      image: '/SinotrukIMG/camions_sinotruck.jpg',
       imageAlt: 'Camión de transporte industrial en carretera',
       route: '/marcas/sinotruk',
       ctaLabel: 'Conocer Sinotruk',
