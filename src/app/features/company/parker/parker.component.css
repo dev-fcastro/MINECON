@@ -3,6 +3,9 @@
   --brand-primary: #3C3C3C;
   --brand-accent: #F36F20;
   --mc-primary: var(--brand-accent);
+  --mc-title-color: var(--mc-black);
+  --mc-para-color: var(--mc-secondary);
+  --mc-para-muted: rgba(66, 65, 67, 0.55);
 }
 
 .brand-container { max-width: 1280px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }

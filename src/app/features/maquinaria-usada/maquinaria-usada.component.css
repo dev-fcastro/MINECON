@@ -11,9 +11,9 @@
 
 /* ── Intro ──────────────────────────────────────────── */
 .usada-intro-section {
-  background-color: var(--mc-white);
+  background-color: var(--mc-section-dark);
   padding: 88px 0 64px;
-  border-bottom: 3px solid var(--mc-secondary);
+  border-bottom: 3px solid var(--mc-primary);
   box-sizing: border-box;
 }
 
@@ -75,9 +75,9 @@
 
 /* ── Catálogo ─────────────────────────────────────────── */
 .usada-catalog-section {
-  background-color: var(--mc-white);
+  background-color: var(--mc-section-dark);
   padding: 80px 0 96px;
-  border-bottom: 4px solid var(--mc-secondary);
+  border-bottom: 4px solid var(--mc-primary);
   box-sizing: border-box;
 }
 
@@ -102,8 +102,8 @@
   letter-spacing: 0.14em;
   font-family: inherit;
   background-color: transparent;
-  border: 1px solid rgba(66, 65, 67, 0.25);
-  color: rgba(66, 65, 67, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.55);
   cursor: pointer;
   transition: background-color 0.15s steps(1, end), color 0.15s steps(1, end), border-color 0.15s steps(1, end);
 }
@@ -130,7 +130,7 @@
 .volvo-portal-note {
   margin-top: 64px;
   padding: 40px 36px;
-  border: 1px solid rgba(66, 65, 67, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-left: 4px solid var(--mc-primary);
   display: flex;
   align-items: center;
@@ -141,7 +141,7 @@
 
 .volvo-portal-note__text {
   font-size: 14px;
-  color: var(--mc-secondary);
+  color: var(--mc-bg-light);
   line-height: 1.5;
   margin: 0;
   max-width: 560px;
