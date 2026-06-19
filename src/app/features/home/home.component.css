@@ -2,7 +2,7 @@
 .home-fold {
   display: flex;
   flex-direction: column;
-  height: calc(100svh - 103px); /* 103px = header height */
+  height: calc(100svh - var(--mc-header-h));
   border-bottom: 2px solid var(--mc-white);
   box-sizing: border-box;
 }
@@ -290,12 +290,49 @@
 }
 
 @media (max-width: 767px) {
+  .hero__content {
+    padding: 32px 20px;
+    max-width: 100%;
+  }
+
+  .hero__subtitle {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .section-container {
+    padding: 0 16px;
+  }
+
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  .brands-section {
+    padding: 64px 0 0;
+  }
+
+  .feature-section {
+    padding-top: 64px;
+    padding-bottom: 56px;
+  }
+
+  .machinery-section {
+    padding-top: 64px;
+  }
+
   .featured-hero {
-    height: 380px;
+    height: 320px;
   }
 
   .featured-hero__content {
-    padding: 32px 28px;
+    padding: 24px 20px;
+    max-width: 100%;
+    gap: 8px;
+  }
+
+  .featured-hero__title {
+    font-size: clamp(18px, 5vw, 28px);
   }
 
   .featured-thumbs {
@@ -303,7 +340,7 @@
   }
 
   .featured-thumb {
-    height: 100px;
+    height: 88px;
   }
 }
 

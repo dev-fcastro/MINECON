@@ -86,6 +86,10 @@
 }
 
 @media (max-width: 767px) {
+  .section-container {
+    padding: 0 16px;
+  }
+
   .nosotros-section {
     padding: 56px 0 40px;
   }
