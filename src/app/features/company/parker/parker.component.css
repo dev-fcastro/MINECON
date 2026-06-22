@@ -53,10 +53,21 @@
 .brand-split__link { font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.18em; color: var(--brand-accent); text-decoration: none; margin-top: 8px; transition: letter-spacing 0.15s ease; }
 .brand-split__link:hover { letter-spacing: 0.26em; }
 
-@media (max-width: 1023px) { .transair-inner { grid-template-columns: 1fr; } }
+@media (max-width: 1023px) { .transair-inner { grid-template-columns: 1fr; } .field-grid { grid-template-columns: repeat(2, 1fr); } .field-img--wide { grid-column: span 1; } }
 @media (max-width: 767px) {
   .brand-hero { height: 420px; } .brand-hero__content { padding: 32px 24px; }
   .transair-img { height: 240px; }
   .brand-split { grid-template-columns: 1fr; }
   .brand-split__img-col { height: 260px; } .brand-split__text-col { padding: 36px 24px; }
+  .field-grid { grid-template-columns: 1fr; } .field-img { height: 220px; } .field-img--tall { height: 220px; }
 }
+
+/* ── En obra / campo ─────────────────────────────────────── */
+.brand-field { background-color: var(--brand-primary); padding: 80px 0 0; border-top: 3px solid var(--brand-accent); }
+.field-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.7; margin: 16px 0 0; max-width: 720px; }
+.field-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-top: 40px; }
+.field-img { width: 100%; height: 280px; object-fit: cover; display: block; filter: brightness(0.85); transition: filter 0.1s steps(1,end); }
+.field-img:hover { filter: brightness(1.02); }
+.field-img--wide { grid-column: span 2; }
+.field-grid--2col { grid-template-columns: repeat(2, 1fr); }
+.field-img--tall { height: 480px; }

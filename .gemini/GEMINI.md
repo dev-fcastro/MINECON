@@ -245,7 +245,7 @@ export interface MarqueeItem {
 public/
   MineconIMG/
     LogoCompanyName.svg    ← logo principal (st0=none, st1=gris, st2=rojo)
-    header_img.png         ← hero del home
+    header_img.jpeg         ← hero del home
   VolvoConstructionEquipmentIMG/
     volvo-logo-texto.svg   ← SVG real (era .png con extensión incorrecta)
     volvo-imagen-completa-logo.png
