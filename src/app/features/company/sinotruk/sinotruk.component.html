@@ -108,11 +108,16 @@
   <div class="brand-container">
     <app-title level="h2" variant="sub" eyebrow="INTELLIGENT MANUFACTURING" text="Ventajas Tecnológicas" color="#ffffff" />
     <div class="tech-grid">
-      @for (t of techItems; track t.title) {
+      @for (t of techItems; track t.title; let i = $index) {
         <div class="tech-item">
-          <svg class="tech-item__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path [attr.d]="t.iconPath" /></svg>
-          <h3 class="tech-item__title">{{ t.title }}</h3>
-          <p class="tech-item__desc">{{ t.desc }}</p>
+          <div class="tech-item__icon-wrap" aria-hidden="true">
+            <svg class="tech-item__icon" viewBox="0 0 24 24" fill="currentColor"><path [attr.d]="t.iconPath" /></svg>
+          </div>
+          <div class="tech-item__body">
+            <span class="tech-item__num">0{{ i + 1 }}</span>
+            <h3 class="tech-item__title">{{ t.title }}</h3>
+            <p class="tech-item__desc">{{ t.desc }}</p>
+          </div>
         </div>
       }
     </div>

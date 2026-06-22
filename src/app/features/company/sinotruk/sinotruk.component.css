@@ -315,52 +315,93 @@
 
 /* ── Tech ─────────────────────────────────────────────── */
 .brand-tech {
-  background-color: var(--brand-accent2);
+  background-color: var(--brand-primary);
   padding: 80px 0 88px;
-  border-top: 3px solid var(--brand-accent);
+  border-top: 3px solid var(--brand-accent2);
 }
 
 .tech-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
   margin-top: 48px;
-  background-color: rgba(0,0,0,0.15);
+  background-color: rgba(255,255,255,0.05);
 }
 
 .tech-item {
-  padding: 32px 24px;
-  background-color: rgba(255,255,255,0.04);
-  border-top: 3px solid rgba(255,255,255,0.1);
-  transition: border-top-color 0.15s steps(1,end);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 32px 28px;
+  background-color: var(--brand-primary);
+  border-left: 3px solid transparent;
+  transition: border-left-color 0.1s steps(1,end), background-color 0.1s steps(1,end);
 }
 
-.tech-item:hover { border-top-color: var(--brand-accent); }
+.tech-item:hover {
+  border-left-color: var(--brand-accent);
+  background-color: rgba(0,160,176,0.06);
+}
+
+.tech-item__icon-wrap {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  background-color: rgba(0,160,176,0.12);
+  border: 1px solid rgba(0,160,176,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.1s steps(1,end);
+}
+
+.tech-item:hover .tech-item__icon-wrap {
+  background-color: rgba(0,160,176,0.22);
+}
 
 .tech-item__icon {
-  font-size: 26px;
+  width: 26px;
+  height: 26px;
+  color: var(--brand-accent);
   display: block;
-  margin-bottom: 12px;
+}
+
+.tech-item__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tech-item__num {
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  color: var(--brand-accent);
+  opacity: 0.6;
 }
 
 .tech-item__title {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: #fff;
-  margin: 0 0 10px;
+  margin: 0;
+  line-height: 1.3;
 }
 
 .tech-item__desc {
   font-size: 12px;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.5);
   line-height: 1.65;
   margin: 0;
 }
 
 @media (max-width: 1023px) {
   .tech-grid { grid-template-columns: repeat(2, 1fr); }
+  .tech-item { padding: 24px 20px; gap: 16px; }
   .stat-bar { flex-wrap: wrap; }
   .stat-bar__item { flex: 1 1 40%; }
   .fleet-truck--sm .fleet-truck__img-wrap { height: 130px; }
@@ -383,5 +424,6 @@
   .brand-about { grid-template-columns: 1fr; }
   .brand-about__img-col { height: 260px; }
   .brand-about__text-col { padding: 36px 24px; }
-  .tech-grid { grid-template-columns: 1fr; gap: 12px; }
+  .tech-grid { grid-template-columns: 1fr; gap: 2px; }
+  .tech-item { padding: 20px 16px; }
 }
