@@ -1,117 +1,101 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, OnDestroy, afterNextRender, inject } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
 import { TitleComponent } from '../../../shared/components/ux/title-component/title.component';
-import { ParagraphComponent } from '../../../shared/components/ux/paragraph-component/paragraph.component';
 import { CallToActionComponent } from '../../../shared/components/structure-components/calltoaction-component/calltoaction.component';
 
 interface SinotrukModel {
-  title: string;
-  series: string;
-  hp: string;
-  config: string;
-  use: string;
-  image: string;
+  title: string; series: string; hp: string; config: string; use: string; image: string;
 }
+
+const PAGE_TITLE = 'Sinotruk HOWO | Camiones Pesados en República Dominicana — MINECON';
+const PAGE_DESC  = 'Distribuidor autorizado de Sinotruk HOWO en República Dominicana. Gama de camiones pesados 210–540 HP para construcción, minería e industria. Tecnología MAN. Contáctenos.';
+const PAGE_IMAGE = 'https://minecon.com.do/SinotrukIMG/sinotruk-img-header.png';
+const PAGE_URL   = 'https://minecon.com.do/marcas/sinotruk';
 
 @Component({
   selector: 'app-sinotruk',
-  imports: [NgOptimizedImage, RouterLink, TitleComponent, ParagraphComponent, CallToActionComponent],
+  imports: [NgOptimizedImage, RouterLink, TitleComponent, CallToActionComponent],
   templateUrl: './sinotruk.component.html',
   styleUrl: './sinotruk.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SinotrukComponent {
+export class SinotrukComponent implements OnDestroy {
+
+  private readonly meta  = inject(Meta);
+  private readonly title = inject(Title);
+
+  readonly currentSlide = signal(0);
+  private autoTimer: ReturnType<typeof setInterval> | null = null;
+
+  constructor() {
+    this.title.setTitle(PAGE_TITLE);
+    this.meta.updateTag({ name: 'description',        content: PAGE_DESC });
+    // Open Graph
+    this.meta.updateTag({ property: 'og:type',        content: 'website' });
+    this.meta.updateTag({ property: 'og:title',       content: PAGE_TITLE });
+    this.meta.updateTag({ property: 'og:description', content: PAGE_DESC });
+    this.meta.updateTag({ property: 'og:image',       content: PAGE_IMAGE });
+    this.meta.updateTag({ property: 'og:url',         content: PAGE_URL });
+    this.meta.updateTag({ property: 'og:locale',      content: 'es_DO' });
+    // Twitter Card
+    this.meta.updateTag({ name: 'twitter:card',        content: 'summary_large_image' });
+    this.meta.updateTag({ name: 'twitter:title',       content: PAGE_TITLE });
+    this.meta.updateTag({ name: 'twitter:description', content: PAGE_DESC });
+    this.meta.updateTag({ name: 'twitter:image',       content: PAGE_IMAGE });
+
+    afterNextRender(() => this.startAuto());
+  }
+
+  ngOnDestroy(): void { this.stopAuto(); }
+
+  prev(): void { this.currentSlide.update(i => (i - 1 + this.bannerImages.length) % this.bannerImages.length); this.resetAuto(); }
+  next(): void { this.currentSlide.update(i => (i + 1) % this.bannerImages.length); this.resetAuto(); }
+  goTo(i: number): void { this.currentSlide.set(i); this.resetAuto(); }
+  pauseAuto(): void { this.stopAuto(); }
+  resumeAuto(): void { this.startAuto(); }
+
+  private startAuto(): void {
+    this.autoTimer = setInterval(() => {
+      this.currentSlide.update(i => (i + 1) % this.bannerImages.length);
+    }, 4500);
+  }
+  private stopAuto(): void {
+    if (this.autoTimer !== null) { clearInterval(this.autoTimer); this.autoTimer = null; }
+  }
+  private resetAuto(): void { this.stopAuto(); this.startAuto(); }
+
+  readonly bannerImages = [
+    { src: '/SinotrukIMG/2025041613414457817.jpg', alt: 'Flota HOWO Sinotruk — formación de camiones' },
+    { src: '/SinotrukIMG/2025041613414475023.jpg', alt: 'Convoy HOWO Sinotruk en carretera' },
+    { src: '/SinotrukIMG/2025041613414484729.jpg', alt: 'HOWO Sinotruk — gama completa en acción' },
+    { src: '/SinotrukIMG/2025041613414496226.jpg', alt: 'HOWO Sinotruk — distribuidores MINECON' },
+  ];
 
   readonly lineup = [
-    { title: 'HOWO T5G', spec: '210–340 HP', config: '4×2 / 6×4', image: '/SinotrukIMG/t5g-210-240-280-340.png', size: 'sm' },
-    { title: 'HOWO T7H 400', spec: 'Tolva 6×4', config: '380–420 HP', image: '/SinotrukIMG/t7h-400-6x4-tolva.png', size: 'md' },
-    { title: 'HOWO T7H 440', spec: '6×4 Flagship', config: '380–540 HP', image: '/SinotrukIMG/t7h-440-6x4.png', size: 'lg' },
-    { title: 'HOWO C7H 540', spec: 'Premium 4×2', config: '420–540 HP', image: '/SinotrukIMG/c7h-540-4x2.png', size: 'md' },
-    { title: 'HOWO T7H 400', spec: 'Tolva 8×4', config: '380–420 HP', image: '/SinotrukIMG/t7h-400-8x4-tolva.png', size: 'sm' },
+    { title: 'HOWO T5G',    spec: '210–340 HP',    config: '4×2 / 6×4', image: '/SinotrukIMG/t5g-210-240-280-340.png',  size: 'sm' },
+    { title: 'HOWO T7H 400', spec: 'Tolva 6×4',    config: '380–420 HP', image: '/SinotrukIMG/t7h-400-6x4-tolva.png',   size: 'md' },
+    { title: 'HOWO T7H 440', spec: '6×4 Flagship', config: '380–540 HP', image: '/SinotrukIMG/t7h-440-6x4.png',         size: 'lg' },
+    { title: 'HOWO C7H 540', spec: 'Premium 4×2',  config: '420–540 HP', image: '/SinotrukIMG/c7h-540-4x2.png',         size: 'md' },
+    { title: 'HOWO T7H 400', spec: 'Tolva 8×4',    config: '380–420 HP', image: '/SinotrukIMG/t7h-400-8x4-tolva.png',   size: 'sm' },
   ];
 
   readonly models: SinotrukModel[] = [
-    {
-      title: 'HOWO T7H 440',
-      series: 'Heavy Truck',
-      hp: '380 — 540 HP',
-      config: '4×2 / 6×4 / 8×4',
-      use: 'Tractocamión de larga distancia y faena pesada.',
-      image: '/SinotrukIMG/t7h-440-6x4.png',
-    },
-    {
-      title: 'HOWO T5G',
-      series: 'Heavy Truck',
-      hp: '210 — 340 HP',
-      config: '4×2 / 6×4',
-      use: 'Transporte de carga pesada en rutas nacionales.',
-      image: '/SinotrukIMG/SINOTRUK_HOWO_T5G_280_6x2_5_650237c7d9586bb87c6e4f9e2f08186e.jpg',
-    },
-    {
-      title: 'HOWO A7 Tolva 6×4',
-      series: 'Volquete',
-      hp: '380 — 420 HP',
-      config: '6×4',
-      use: 'Camión volquete para minería y construcción.',
-      image: '/SinotrukIMG/t7h-400-6x4-tolva.png',
-    },
-    {
-      title: 'HOWO A7 Tolva 8×4',
-      series: 'Volquete',
-      hp: '380 — 420 HP',
-      config: '8×4',
-      use: 'Máxima capacidad de carga para minería intensiva.',
-      image: '/SinotrukIMG/t7h-400-8x4-tolva.png',
-    },
-    {
-      title: 'HOWO FN-A7',
-      series: 'Heavy Truck',
-      hp: '420 HP',
-      config: '6×4',
-      use: 'Tractocamión de alto rendimiento para cargas pesadas.',
-      image: '/SinotrukIMG/fn-a7-420-6x4.jpg',
-    },
-    {
-      title: 'HOWO C7H',
-      series: 'Heavy Truck',
-      hp: '420 — 540 HP',
-      config: '6×4',
-      use: 'Tractor premium de larga distancia y alto tonelaje.',
-      image: '/SinotrukIMG/c7h-540-4x2.png',
-    },
+    { title: 'HOWO T7H 440',    series: 'Heavy Truck', hp: '380 — 540 HP', config: '4×2 / 6×4 / 8×4', use: 'Tractocamión de larga distancia y faena pesada.',         image: '/SinotrukIMG/t7h-440-6x4.png' },
+    { title: 'HOWO T5G',        series: 'Heavy Truck', hp: '210 — 340 HP', config: '4×2 / 6×4',       use: 'Transporte de carga pesada en rutas nacionales.',        image: '/SinotrukIMG/SINOTRUK_HOWO_T5G_280_6x2_5_650237c7d9586bb87c6e4f9e2f08186e.jpg' },
+    { title: 'HOWO A7 Tolva 6×4', series: 'Volquete', hp: '380 — 420 HP', config: '6×4',              use: 'Camión volquete para minería y construcción.',           image: '/SinotrukIMG/t7h-400-6x4-tolva.png' },
+    { title: 'HOWO A7 Tolva 8×4', series: 'Volquete', hp: '380 — 420 HP', config: '8×4',              use: 'Máxima capacidad de carga para minería intensiva.',       image: '/SinotrukIMG/t7h-400-8x4-tolva.png' },
+    { title: 'HOWO FN-A7',      series: 'Heavy Truck', hp: '420 HP',       config: '6×4',              use: 'Tractocamión de alto rendimiento para cargas pesadas.',  image: '/SinotrukIMG/fn-a7-420-6x4.jpg' },
+    { title: 'HOWO C7H',        series: 'Heavy Truck', hp: '420 — 540 HP', config: '6×4',              use: 'Tractor premium de larga distancia y alto tonelaje.',    image: '/SinotrukIMG/c7h-540-4x2.png' },
   ];
 
   readonly techItems = [
-    {
-      iconPath: 'M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.92c.04-.3.07-.62.07-.96 0-.34-.03-.66-.07-1l2.16-1.68c.2-.16.25-.44.12-.66l-2.04-3.54c-.13-.22-.41-.3-.63-.22l-2.54 1.03c-.54-.42-1.12-.76-1.74-1.04l-.38-2.68C14.16 3.26 14 3.1 13.76 3H10.24c-.24 0-.4.16-.44.4l-.38 2.68c-.62.28-1.2.62-1.74 1.04L5.14 6.09c-.22-.08-.5 0-.63.22L2.47 9.85c-.13.22-.08.5.12.66l2.16 1.68c-.04.34-.07.67-.07 1 0 .33.03.66.07.96l-2.16 1.68c-.2.16-.25.44-.12.66l2.04 3.54c.13.22.41.3.63.22l2.54-1.03c.54.42 1.12.76 1.74 1.04l.38 2.68c.04.24.2.4.44.4h3.52c.24 0 .4-.16.44-.4l.38-2.68c.62-.28 1.2-.62 1.74-1.04l2.54 1.03c.22.08.5 0 .63-.22l2.04-3.54c.13-.22.08-.5-.12-.66l-2.16-1.68z',
-      title: 'Potencia 210–540 CV',
-      desc: 'Motores propios de alta eficiencia fabricados en Jinan, con tecnología derivada de la cooperación con MAN.',
-    },
-    {
-      iconPath: 'M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z',
-      title: 'Seguridad Activa',
-      desc: 'Cabinas de alta resistencia y sistemas de seguridad certificados internacionalmente.',
-    },
-    {
-      iconPath: 'M17 8C8 10 5.9 16.17 3.82 20.31A4 4 0 0 0 8 22c4 0 6-3 8-6s5-5 8-5c-2-4-5-3-7-3z',
-      title: 'Control de Emisiones y Nueva Energía',
-      desc: 'Alianza estratégica para desarrollo de pilas de combustible de hidrógeno (2025) y liderazgo en camiones pesados 100% eléctricos con hasta 800kWh.',
-    },
-    {
-      iconPath: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z',
-      title: 'Red Global de Servicio',
-      desc: 'Más de 1,500 centros de servicio en 150+ países con disponibilidad de repuestos. 37 plantas de ensamblaje (KD) a nivel mundial.',
-    },
-    {
-      iconPath: 'M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z',
-      title: 'Conducción Autónoma e Inteligencia',
-      desc: 'Pioneros en camiones mineros autónomos (Rango Extendido a Metanol) y tecnología de conducción sin conductor basada en la nube.',
-    },
-    {
-      iconPath: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z',
-      title: 'Liderazgo Global en Ventas',
-      desc: 'Primer lugar mundial en ventas de camiones pesados en 2025 (304,900 unidades), afianzando su cuota de mercado internacional (+50%).',
-    }
+    { iconPath: 'M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.92c.04-.3.07-.62.07-.96 0-.34-.03-.66-.07-1l2.16-1.68c.2-.16.25-.44.12-.66l-2.04-3.54c-.13-.22-.41-.3-.63-.22l-2.54 1.03c-.54-.42-1.12-.76-1.74-1.04l-.38-2.68C14.16 3.26 14 3.1 13.76 3H10.24c-.24 0-.4.16-.44.4l-.38 2.68c-.62.28-1.2.62-1.74 1.04L5.14 6.09c-.22-.08-.5 0-.63.22L2.47 9.85c-.13.22-.08.5.12.66l2.16 1.68c-.04.34-.07.67-.07 1 0 .33.03.66.07.96l-2.16 1.68c-.2.16-.25.44-.12.66l2.04 3.54c.13.22.41.3.63.22l2.54-1.03c.54.42 1.12.76 1.74 1.04l.38 2.68c.04.24.2.4.44.4h3.52c.24 0 .4-.16.44-.4l.38-2.68c.62-.28 1.2-.62 1.74-1.04l2.54 1.03c.22.08.5 0 .63-.22l2.04-3.54c.13-.22.08-.5-.12-.66l-2.16-1.68z', title: 'Potencia 210–540 CV', desc: 'Motores propios de alta eficiencia fabricados en Jinan, con tecnología derivada de la cooperación con MAN.' },
+    { iconPath: 'M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z', title: 'Seguridad Activa', desc: 'Cabinas de alta resistencia y sistemas de seguridad certificados internacionalmente.' },
+    { iconPath: 'M17 8C8 10 5.9 16.17 3.82 20.31A4 4 0 0 0 8 22c4 0 6-3 8-6s5-5 8-5c-2-4-5-3-7-3z', title: 'Control de Emisiones y Nueva Energía', desc: 'Alianza estratégica para desarrollo de pilas de combustible de hidrógeno (2025) y liderazgo en camiones pesados 100% eléctricos con hasta 800kWh.' },
+    { iconPath: 'M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z', title: 'Red Global de Servicio', desc: 'Más de 1,500 centros de servicio en 150+ países con disponibilidad de repuestos. 37 plantas de ensamblaje (KD) a nivel mundial.' },
+    { iconPath: 'M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm0 18a8 8 0 0 1-8-8 8 8 0 0 1 8-8 8 8 0 0 1 8 8 8 8 0 0 1-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z', title: 'Conducción Autónoma e Inteligencia', desc: 'Pioneros en camiones mineros autónomos (Rango Extendido a Metanol) y tecnología de conducción sin conductor basada en la nube.' },
+    { iconPath: 'M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z', title: 'Liderazgo Global en Ventas', desc: 'Primer lugar mundial en ventas de camiones pesados en 2025 (304,900 unidades), afianzando su cuota de mercado internacional (+50%).' },
   ];
 }

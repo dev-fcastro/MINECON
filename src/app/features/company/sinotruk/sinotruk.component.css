@@ -1,12 +1,15 @@
-/* Sinotruk: teal #006B77, dark #0A2A2E */
+/* Sinotruk — esquema invertido: blanco como bg, teal como acento visual */
 :host {
-  --brand-primary: #0A2A2E;
-  --brand-accent: #00A0B0;
-  --brand-accent2: #006B77;
-  --mc-primary: var(--brand-accent);
-  --mc-title-color: var(--mc-black);
-  --mc-para-color: var(--mc-secondary);
-  --mc-para-muted: rgba(66, 65, 67, 0.55);
+  --brand-dark:    #0A2A2E;   /* verde oscuro: texto, títulos */
+  --brand-teal:    #00A0B0;   /* teal vivo: bordes, números, íconos */
+  --brand-teal2:   #006B77;   /* teal profundo: stat bar, hover */
+  --brand-bg:      #ffffff;
+  --brand-bg-alt:  #f2f8f9;   /* tint teal muy sutil */
+  /* overrides de shared components */
+  --mc-primary:        var(--brand-teal);
+  --mc-title-color:    var(--brand-dark);
+  --mc-para-color:     var(--brand-dark);
+  --mc-para-muted:     rgba(10,42,46,0.5);
 }
 
 .brand-container {
@@ -19,24 +22,21 @@
 /* ── Hero ─────────────────────────────────────────────── */
 .brand-hero {
   position: relative;
-  height: 560px;
+  height: 100svh;
   overflow: hidden;
   display: flex;
   align-items: flex-start;
   justify-content: center;
 }
-
 .brand-hero__img {
   object-fit: cover;
   object-position: center 40%;
 }
-
 .brand-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(10,42,46,0.1) 45%, rgba(10,42,46,0.55) 100%);
+  background: linear-gradient(180deg,rgba(0,0,0,0.55) 0%,rgba(10,42,46,0.05) 45%,rgba(10,42,46,0.5) 100%);
 }
-
 .brand-hero__content {
   position: relative;
   z-index: 2;
@@ -48,29 +48,17 @@
   gap: 20px;
   width: 100%;
 }
-
 .brand-hero__logo-wrap {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 14px;
-  background: rgba(255,255,255,0.96);
+  background: rgba(255,255,255,0.97);
   padding: 20px 48px;
-  border-bottom: 4px solid var(--brand-accent);
+  border-bottom: 4px solid var(--brand-teal);
 }
-
-.brand-hero__logo-icon {
-  height: 44px;
-  width: auto;
-  display: block;
-}
-
-.brand-hero__logo-text {
-  height: 36px;
-  width: auto;
-  display: block;
-}
-
+.brand-hero__logo-icon { height: 44px; width: auto; display: block; }
+.brand-hero__logo-text { height: 36px; width: auto; display: block; }
 .brand-hero__tagline {
   font-size: 12px;
   font-weight: 600;
@@ -85,9 +73,8 @@
 /* ── Stat bar ─────────────────────────────────────────── */
 .stat-bar {
   display: flex;
-  background-color: var(--brand-accent2);
+  background-color: var(--brand-teal2);
 }
-
 .stat-bar__item {
   flex: 1;
   display: flex;
@@ -97,21 +84,18 @@
   gap: 6px;
   text-align: center;
 }
-
 .stat-bar__sep {
   width: 1px;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.18);
   align-self: stretch;
   margin: 12px 0;
 }
-
 .stat-bar__num {
-  font-size: clamp(20px, 3vw, 30px);
+  font-size: clamp(20px,3vw,30px);
   font-weight: 900;
   color: #fff;
   line-height: 1;
 }
-
 .stat-bar__label {
   font-size: 9px;
   font-weight: 700;
@@ -120,44 +104,31 @@
   color: rgba(255,255,255,0.65);
 }
 
-/* ── Welcome ──────────────────────────────────────────── */
-.brand-welcome {
-  background-color: #fff;
-  padding: 80px 0 64px;
-  border-bottom: 3px solid var(--brand-primary);
-}
 
-/* ── Fleet Lineup ─────────────────────────────────────── */
+/* ── Fleet Lineup — ahora en BLANCO ──────────────────── */
 .fleet-lineup {
-  background-color: var(--brand-primary);
+  background-color: var(--brand-bg);
   padding-top: 72px;
-  border-bottom: 4px solid var(--brand-accent2);
+  border-bottom: 4px solid var(--brand-teal);
   overflow: hidden;
   position: relative;
 }
-
-.fleet-lineup__header {
-  margin-bottom: 48px;
-}
-
+.fleet-lineup__header { margin-bottom: 48px; }
 .fleet-lineup__sub {
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  color: rgba(255,255,255,0.45);
+  color: rgba(10,42,46,0.38);
   margin: 8px 0 0;
 }
-
 .fleet-track {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: 0;
   padding: 0 24px;
   position: relative;
 }
-
 .fleet-truck {
   display: flex;
   flex-direction: column;
@@ -166,29 +137,25 @@
   min-width: 0;
   cursor: default;
 }
-
 .fleet-truck__img-wrap {
   width: 100%;
   display: flex;
   align-items: flex-end;
   justify-content: center;
 }
-
 .fleet-truck__img {
   display: block;
   width: 100%;
   height: auto;
   object-fit: contain;
   object-position: bottom center;
-  filter: drop-shadow(0 12px 24px rgba(0,0,0,0.55));
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,0.18));
   transition: filter 0.2s steps(1,end), transform 0.25s cubic-bezier(0.25,1,0.5,1);
 }
-
 .fleet-truck:hover .fleet-truck__img {
-  filter: drop-shadow(0 16px 32px rgba(0,160,176,0.35)) drop-shadow(0 4px 8px rgba(0,0,0,0.6));
+  filter: drop-shadow(0 14px 28px rgba(0,160,176,0.28)) drop-shadow(0 4px 8px rgba(0,0,0,0.15));
   transform: translateY(-8px);
 }
-
 .fleet-truck--sm .fleet-truck__img-wrap { height: 180px; }
 .fleet-truck--md .fleet-truck__img-wrap { height: 220px; }
 .fleet-truck--lg .fleet-truck__img-wrap { height: 270px; }
@@ -200,240 +167,394 @@
   gap: 2px;
   padding: 16px 8px 28px;
   text-align: center;
-  border-top: 2px solid rgba(255,255,255,0.06);
+  border-top: 2px solid rgba(10,42,46,0.08);
   width: 100%;
-  transition: border-top-color 0.15s steps(1,end);
+  transition: border-top-color 0.1s steps(1,end);
 }
-
-.fleet-truck:hover .fleet-truck__label { border-top-color: var(--brand-accent); }
-
-.fleet-truck--lg .fleet-truck__label { border-top-color: var(--brand-accent2); }
-
+.fleet-truck:hover .fleet-truck__label,
+.fleet-truck--lg .fleet-truck__label { border-top-color: var(--brand-teal); }
 .fleet-truck__name {
   font-size: 12px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #fff;
+  color: var(--brand-dark);
   line-height: 1.2;
 }
-
 .fleet-truck__spec {
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--brand-accent);
+  color: var(--brand-teal);
 }
-
 .fleet-truck__config {
   font-size: 9px;
-  color: rgba(255,255,255,0.38);
+  color: rgba(10,42,46,0.35);
   letter-spacing: 0.08em;
 }
-
 .fleet-truck__cta {
   margin-top: 6px;
   font-size: 9px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: rgba(255,255,255,0.3);
+  color: rgba(10,42,46,0.28);
   text-decoration: none;
-  transition: color 0.15s steps(1,end);
+  transition: color 0.1s steps(1,end);
 }
-
-.fleet-truck:hover .fleet-truck__cta { color: var(--brand-accent); }
-
+.fleet-truck:hover .fleet-truck__cta { color: var(--brand-teal); }
 .fleet-lineup__ground {
   height: 1px;
-  background: linear-gradient(to right, transparent, var(--brand-accent2), transparent);
-  opacity: 0.4;
+  background: linear-gradient(to right, transparent, var(--brand-teal), transparent);
+  opacity: 0.25;
 }
 
-/* ── About ────────────────────────────────────────────── */
+
+/* ── About — ahora en BLANCO ──────────────────────────── */
 .brand-about {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 480px;
-  background-color: var(--brand-primary);
+  background-color: var(--brand-bg);
 }
-
 .brand-about__img-col { overflow: hidden; }
-
-.brand-about__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
+.brand-about__img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .brand-about__text-col {
   padding: 64px 56px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 18px;
+  background-color: var(--brand-bg);
+  border-left: 4px solid var(--brand-teal);
 }
-
 .brand-about__eyebrow {
   font-size: 9px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.28em;
-  color: var(--brand-accent);
+  color: var(--brand-teal);
 }
-
 .brand-about__title {
-  font-size: clamp(20px, 2.8vw, 34px);
+  font-size: clamp(20px,2.8vw,34px);
   font-weight: 900;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--brand-dark);
   margin: 0;
   line-height: 1.05;
 }
-
 .brand-about__desc {
   font-size: 13px;
-  color: rgba(255,255,255,0.65);
+  color: rgba(10,42,46,0.62);
   line-height: 1.7;
   margin: 0;
   max-width: 500px;
 }
-
 .brand-about__link {
   font-size: 11px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--brand-accent);
+  color: var(--brand-teal2);
   text-decoration: none;
   margin-top: 8px;
   transition: letter-spacing 0.15s ease;
 }
 .brand-about__link:hover { letter-spacing: 0.26em; }
 
-/* ── Tech ─────────────────────────────────────────────── */
+/* ── Tech — ahora en BLANCO ──────────────────────────── */
 .brand-tech {
-  background-color: var(--brand-primary);
+  background-color: var(--brand-bg);
   padding: 80px 0 88px;
-  border-top: 3px solid var(--brand-accent2);
+  border-top: 4px solid var(--brand-teal);
 }
-
 .tech-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 2px;
   margin-top: 48px;
-  background-color: rgba(255,255,255,0.05);
+  background-color: rgba(10,42,46,0.06);
 }
-
 .tech-item {
   display: flex;
   align-items: flex-start;
   gap: 20px;
   padding: 32px 28px;
-  background-color: var(--brand-primary);
+  background-color: var(--brand-bg);
   border-left: 3px solid transparent;
   transition: border-left-color 0.1s steps(1,end), background-color 0.1s steps(1,end);
 }
-
 .tech-item:hover {
-  border-left-color: var(--brand-accent);
-  background-color: rgba(0,160,176,0.06);
+  border-left-color: var(--brand-teal);
+  background-color: rgba(0,160,176,0.04);
 }
-
 .tech-item__icon-wrap {
   flex-shrink: 0;
   width: 52px;
   height: 52px;
-  background-color: rgba(0,160,176,0.12);
-  border: 1px solid rgba(0,160,176,0.2);
+  background-color: rgba(0,160,176,0.1);
+  border: 1px solid rgba(0,160,176,0.22);
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background-color 0.1s steps(1,end);
 }
-
-.tech-item:hover .tech-item__icon-wrap {
-  background-color: rgba(0,160,176,0.22);
-}
-
-.tech-item__icon {
-  width: 26px;
-  height: 26px;
-  color: var(--brand-accent);
-  display: block;
-}
-
-.tech-item__body {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
+.tech-item:hover .tech-item__icon-wrap { background-color: rgba(0,160,176,0.18); }
+.tech-item__icon { width: 26px; height: 26px; color: var(--brand-teal); display: block; }
+.tech-item__body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
 .tech-item__num {
   font-size: 9px;
   font-weight: 900;
   letter-spacing: 0.2em;
-  color: var(--brand-accent);
-  opacity: 0.6;
+  color: var(--brand-teal);
+  opacity: 0.7;
 }
-
 .tech-item__title {
   font-size: 12px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #fff;
+  color: var(--brand-dark);
   margin: 0;
   line-height: 1.3;
 }
-
 .tech-item__desc {
   font-size: 12px;
-  color: rgba(255,255,255,0.5);
+  color: rgba(10,42,46,0.52);
   line-height: 1.65;
   margin: 0;
 }
 
-/* ── Galería ─────────────────────────────────────────────── */
-.gallery-desc {
-  font-size: 13px;
+/* ── Bolden Pickup ────────────────────────────────────────── */
+/* ── Bolden Pickup ────────────────────────────────────── */
+.brand-bolden {
+  background-color: var(--brand-dark);
+  border-top: 4px solid var(--brand-teal);
+  overflow: hidden;
+}
+.bolden-header {
+  padding-top: 64px;
+  padding-bottom: 0;
+}
+.bolden-eyebrow {
+  display: block;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--brand-teal);
+  opacity: 0.8;
+  margin-bottom: 14px;
+}
+.bolden-title {
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
   color: rgba(255,255,255,0.55);
+  margin: 0 0 20px;
+  line-height: 1.05;
+}
+.bolden-title strong {
+  font-weight: 900;
+  color: #fff;
+  display: block;
+}
+.bolden-pitch {
+  font-size: 13px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.42);
+  max-width: 560px;
+  margin: 0;
+}
+/* Truck hero — el producto en primer plano */
+.bolden-hero {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 480px;
+  margin-top: -24px;
+}
+.bolden-hero__truck {
+  height: 100%;
+  width: auto;
+  max-width: 92%;
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 32px 56px rgba(0,0,0,0.65));
+  transition: transform 0.45s cubic-bezier(0.25,1,0.5,1);
+}
+.brand-bolden:hover .bolden-hero__truck { transform: translateY(-10px); }
+/* Specs + CTA */
+.bolden-footer {
+  border-top: 1px solid rgba(0,160,176,0.2);
+  padding-top: 36px;
+  padding-bottom: 56px;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+.bolden-specs {
+  display: flex;
+  flex: 1;
+  gap: 0;
+}
+.bolden-spec {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 12px;
+  border-right: 1px solid rgba(0,160,176,0.14);
+}
+.bolden-spec:first-child { padding-left: 0; align-items: flex-start; }
+.bolden-spec:last-child { border-right: none; }
+.bolden-spec strong {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--brand-teal);
+  line-height: 1;
+}
+.bolden-spec span {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.38);
+  margin-top: 3px;
+}
+.bolden-spec small {
+  font-size: 7px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.22);
+  margin-top: 4px;
+  white-space: nowrap;
+}
+.bolden-spec--text strong {
+  font-size: 15px;
+  letter-spacing: 0.04em;
+}
+.bolden-cta {
+  flex-shrink: 0;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #fff;
+  text-decoration: none;
+  border: 2px solid var(--brand-teal);
+  padding: 14px 28px;
+  transition: background-color 0.1s steps(1,end), color 0.1s steps(1,end);
+}
+.bolden-cta:hover {
+  background-color: var(--brand-teal);
+  color: var(--brand-dark);
+}
+
+/* ── Documental — OSCURO (cinematic) ─────────────────── */
+.brand-documental {
+  background-color: var(--brand-dark);
+  padding-top: 72px;
+  border-top: 4px solid var(--brand-teal);
+}
+.documental-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.52);
   line-height: 1.7;
   margin: 16px 0 0;
-  max-width: 720px;
+  max-width: 640px;
 }
-
-.brand-gallery {
-  background-color: var(--brand-primary);
-  padding: 72px 0 0;
-  border-top: 3px solid var(--mc-primary);
+.documental-video-wrap {
+  aspect-ratio: 2.4 / 1;
+  max-width: 1100px;
+  margin: 36px auto 0;
+  overflow: hidden;
+  background-color: #000;
+  position: relative;
 }
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3px;
-  margin-top: 40px;
-}
-
-.gallery-item {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
+.documental-video {
   display: block;
-  filter: brightness(0.85);
-  transition: filter 0.1s steps(1,end);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 54% center;
 }
 
-.gallery-item:hover { filter: brightness(1); }
+/* ── Carrusel — bg alt claro ──────────────────────────── */
+.brand-carousel {
+  background-color: var(--brand-bg-alt);
+  padding-top: 72px;
+  border-top: 4px solid var(--brand-teal);
+}
+.carousel-outer {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3813 / 1523;
+  margin-top: 36px;
+  background-color: #000;
+}
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.25,1,0.5,1);
+  will-change: transform;
+}
+.carousel-slide { flex: 0 0 100%; height: 100%; overflow: hidden; }
+.carousel-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  background-color: rgba(10,42,46,0.65);
+  border: 2px solid rgba(255,255,255,0.2);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background-color 0.1s steps(1,end), border-color 0.1s steps(1,end);
+}
+.carousel-btn:hover, .carousel-btn:focus-visible {
+  background-color: var(--brand-teal2);
+  border-color: var(--brand-teal);
+  outline: none;
+}
+.carousel-btn--prev { left: 20px; }
+.carousel-btn--next { right: 20px; }
+.carousel-dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255,255,255,0.3);
+  border: 1px solid rgba(255,255,255,0.45);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.1s steps(1,end);
+}
+.carousel-dot--active { background-color: var(--brand-teal); border-color: var(--brand-teal); }
+.carousel-dot:hover { background-color: rgba(255,255,255,0.6); }
 
+/* ── Responsive ───────────────────────────────────────── */
 @media (max-width: 1023px) {
-  .tech-grid { grid-template-columns: repeat(2, 1fr); }
+  .bolden-footer { flex-direction: column; align-items: flex-start; gap: 32px; }
+  .bolden-specs { flex-wrap: wrap; }
+  .bolden-spec { min-width: 30%; }
+  .bolden-hero { height: 340px; }
+  .tech-grid { grid-template-columns: repeat(2,1fr); }
   .tech-item { padding: 24px 20px; gap: 16px; }
   .stat-bar { flex-wrap: wrap; }
   .stat-bar__item { flex: 1 1 40%; }
@@ -443,13 +564,11 @@
 }
 
 @media (max-width: 767px) {
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-  .gallery-item { height: 180px; }
-  .brand-hero { height: 440px; }
+  .brand-hero { height: 100svh; }
   .brand-hero__content { padding: 32px 24px; }
   .stat-bar { flex-direction: column; }
   .stat-bar__sep { display: none; }
-  .fleet-track { gap: 0; padding: 0 8px; }
+  .fleet-track { padding: 0 8px; }
   .fleet-truck__name { font-size: 9px; }
   .fleet-truck__spec { font-size: 8px; }
   .fleet-truck__config, .fleet-truck__cta { display: none; }
@@ -458,7 +577,11 @@
   .fleet-truck--lg .fleet-truck__img-wrap { height: 140px; }
   .brand-about { grid-template-columns: 1fr; }
   .brand-about__img-col { height: 260px; }
-  .brand-about__text-col { padding: 36px 24px; }
+  .brand-about__text-col { padding: 36px 24px; border-left: none; border-top: 4px solid var(--brand-teal); }
   .tech-grid { grid-template-columns: 1fr; gap: 2px; }
   .tech-item { padding: 20px 16px; }
+  .carousel-btn { width: 38px; height: 38px; }
+  .carousel-btn--prev { left: 8px; }
+  .carousel-btn--next { right: 8px; }
+  .documental-video-wrap { max-width: 100%; }
 }
