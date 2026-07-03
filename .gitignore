@@ -42,3 +42,10 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Archivos que no deben entrar al repo
+serve.log
+sinotruk-page.pdf
+WhatsApp*/
+ss-*.png
+screenshot-*.png
