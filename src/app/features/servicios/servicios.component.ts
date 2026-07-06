@@ -24,7 +24,7 @@ export class ServiciosComponent {
   readonly heroSlides: SliderImage[] = [
     {
       url: '/VolvoConstructionEquipmentIMG/Services_Machine_Operator_Training_H_H_02.jpg',
-      alt: 'Servicio técnico certificado — MINECON',
+      alt: 'Servicio técnico certificado  MINECON',
       label: 'Servicios',
       caption: 'Respaldo técnico, repuestos originales y contratos de mantenimiento para mantener su operación en marcha.',
     },
@@ -33,11 +33,12 @@ export class ServiciosComponent {
   readonly packageCareItems: FeatureSplitItem[] = [
     {
       eyebrow: 'PROTECCIÓN TOTAL, ELIMINA EL RIESGO',
-      title: 'PackageCARE — We Protect You',
+      title: 'PackageCARE  We Protect You',
       description:
         'Nuestros planes de protección representan el mayor valor para la gestión de activos al transferir el riesgo operativo a Ingersoll Rand. Somos responsables por el mantenimiento programado, así como por el uso de herramientas de análisis y análisis predictivo que ayudan a prevenir las interrupciones inesperadas en su producción.',
       image: '/IngersollRandIMG/IRCO_PackageCare_logo_img-min.png',
-      imageAlt: 'Servicio PackageCARE — Ingersoll Rand protección total',
+      imageAlt: 'Servicio PackageCARE  Ingersoll Rand protección total',
+      imageFit: 'contain',
       route: '/contacto',
       ctaLabel: 'Consultar planes',
     },

@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TitleComponent } from '../../../shared/components/ux/title-component/title.component';
 import { ParagraphComponent } from '../../../shared/components/ux/paragraph-component/paragraph.component';
@@ -6,7 +7,7 @@ import { CallToActionComponent } from '../../../shared/components/structure-comp
 
 @Component({
   selector: 'app-toku',
-  imports: [RouterLink, TitleComponent, ParagraphComponent, CallToActionComponent],
+  imports: [NgOptimizedImage, RouterLink, TitleComponent, ParagraphComponent, CallToActionComponent],
   templateUrl: './toku.component.html',
   styleUrl: './toku.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -35,7 +36,7 @@ export class TokuComponent {
       title: 'Air Hoist',
       desc: 'Polipastos neumáticos de cadena y cable para elevación industrial segura. Modelos de 0.5 a 5 toneladas.',
       image: '/TokuIMG/TOKU-ConstToolEN-150.jpg',
-      models: ['Air Trolley Hoist', 'Air Manipulator', '0.5T — 5T'],
+      models: ['Air Trolley Hoist', 'Air Manipulator', '0.5T  5T'],
     },
   ];
 }

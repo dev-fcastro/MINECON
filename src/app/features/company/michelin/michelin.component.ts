@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TitleComponent } from '../../../shared/components/ux/title-component/title.component';
 import { ParagraphComponent } from '../../../shared/components/ux/paragraph-component/paragraph.component';
@@ -13,7 +14,7 @@ interface MichelinCategory {
 
 @Component({
   selector: 'app-michelin',
-  imports: [RouterLink, TitleComponent, ParagraphComponent, CallToActionComponent],
+  imports: [NgOptimizedImage, RouterLink, TitleComponent, ParagraphComponent, CallToActionComponent],
   templateUrl: './michelin.component.html',
   styleUrl: './michelin.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

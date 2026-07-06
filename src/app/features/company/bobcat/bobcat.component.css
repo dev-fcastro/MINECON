@@ -19,19 +19,16 @@
 /* ── Hero ─────────────────────────────────────────────── */
 .brand-hero {
   position: relative;
-  height: 560px;
+  height: 100svh;
   overflow: hidden;
   display: flex;
   align-items: flex-start;
   justify-content: center;
 }
 
-.brand-hero__bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1533512930330-4ac257c86793?q=80&w=1600&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center;
+.brand-hero__img {
+  object-fit: cover;
+  object-position: center 35%;
 }
 
 .brand-hero__overlay {
@@ -123,27 +120,28 @@
   background-color: var(--brand-primary);
 }
 
-.product-card__img-wrap {
+.product-card__icon-wrap {
   height: 220px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(242,101,34,0.08);
+  transition: background-color 0.15s steps(1,end);
 }
 
-.product-card__img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.product-card:hover .product-card__icon-wrap { background-color: rgba(242,101,34,0.16); }
+
+.product-card__icon {
+  width: 64px;
+  height: 64px;
+  color: var(--brand-accent);
   display: block;
-  transition: transform 0.5s cubic-bezier(0.25,1,0.5,1);
+  transition: transform 0.3s cubic-bezier(0.25,1,0.5,1);
 }
 
-.product-card:hover .product-card__img { transform: scale(1.06); }
-
-.product-card__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent 40%, rgba(26,26,26,0.7) 100%);
-}
+.product-card:hover .product-card__icon { transform: scale(1.1); }
 
 .product-card__info {
   padding: 22px 22px 26px;
@@ -241,32 +239,85 @@
 
 @media (max-width: 1023px) {
   .products-grid { grid-template-columns: repeat(2, 1fr); }
-  .field-grid { grid-template-columns: repeat(2, 1fr); }
-  .field-img--wide { grid-column: span 1; }
 }
 
 @media (max-width: 767px) {
-  .brand-hero { height: 420px; }
   .brand-hero__content { padding: 32px 24px; }
   .products-grid { grid-template-columns: 1fr; }
   .brand-split { grid-template-columns: 1fr; }
   .brand-split__img-col { height: 260px; }
   .brand-split__text-col { padding: 36px 24px; }
-  .field-grid { grid-template-columns: 1fr; }
-  .field-img { height: 220px; }
-  .field-img--tall { height: 220px; }
+  .carousel-btn { width: 38px; height: 38px; }
+  .carousel-btn--prev { left: 8px; }
+  .carousel-btn--next { right: 8px; }
 }
-
-/* ── En obra / campo ─────────────────────────────────────── */
-.brand-field { background-color: var(--brand-primary); padding: 80px 0 0; border-top: 3px solid var(--brand-accent); }
-.field-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.7; margin: 16px 0 0; max-width: 720px; }
-.field-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-top: 40px; }
-.field-img { width: 100%; height: 280px; object-fit: cover; display: block; filter: brightness(0.85); transition: filter 0.1s steps(1,end); }
-.field-img:hover { filter: brightness(1.02); }
-.field-img--wide { grid-column: span 2; }
-.field-grid--2col { grid-template-columns: repeat(2, 1fr); }
-.field-img--tall { height: 480px; }
 
 .brand-split__list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
 .brand-split__list li { font-size: 12px; color: rgba(255,255,255,0.65); padding-left: 16px; position: relative; line-height: 1.5; }
 .brand-split__list li::before { content: ''; position: absolute; left: 0; top: 6px; width: 6px; height: 6px; background-color: var(--brand-accent); }
+
+/* ── Carrusel — PA185 en detalle ──────────────────────── */
+.brand-carousel {
+  background-color: var(--brand-primary);
+  padding-top: 80px;
+  border-top: 3px solid var(--brand-accent);
+}
+.carousel-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.7; margin: 16px 0 0; max-width: 720px; }
+.carousel-outer {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  margin-top: 40px;
+  background-color: #000;
+}
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.25,1,0.5,1);
+  will-change: transform;
+}
+.carousel-slide { flex: 0 0 100%; height: 100%; overflow: hidden; }
+.carousel-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  background-color: rgba(26,26,26,0.65);
+  border: 2px solid rgba(255,255,255,0.2);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background-color 0.1s steps(1,end), border-color 0.1s steps(1,end);
+}
+.carousel-btn:hover, .carousel-btn:focus-visible {
+  background-color: var(--brand-accent);
+  border-color: var(--brand-accent);
+  outline: none;
+}
+.carousel-btn--prev { left: 20px; }
+.carousel-btn--next { right: 20px; }
+.carousel-dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255,255,255,0.3);
+  border: 1px solid rgba(255,255,255,0.45);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.1s steps(1,end);
+}
+.carousel-dot--active { background-color: var(--brand-accent); border-color: var(--brand-accent); }
+.carousel-dot:hover { background-color: rgba(255,255,255,0.6); }

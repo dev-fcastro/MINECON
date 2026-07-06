@@ -1,4 +1,5 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, OnDestroy, afterNextRender } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TitleComponent } from '../../../shared/components/ux/title-component/title.component';
 import { ParagraphComponent } from '../../../shared/components/ux/paragraph-component/paragraph.component';
@@ -6,12 +7,46 @@ import { CallToActionComponent } from '../../../shared/components/structure-comp
 
 @Component({
   selector: 'app-hiab',
-  imports: [RouterLink, TitleComponent, ParagraphComponent, CallToActionComponent],
+  imports: [NgOptimizedImage, RouterLink, TitleComponent, ParagraphComponent, CallToActionComponent],
   templateUrl: './hiab.component.html',
   styleUrl: './hiab.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HiabComponent {
+export class HiabComponent implements OnDestroy {
+
+  readonly currentSlide = signal(0);
+  private autoTimer: ReturnType<typeof setInterval> | null = null;
+
+  constructor() {
+    afterNextRender(() => this.startAuto());
+  }
+
+  ngOnDestroy(): void { this.stopAuto(); }
+
+  prev(): void { this.currentSlide.update(i => (i - 1 + this.bannerImages.length) % this.bannerImages.length); this.resetAuto(); }
+  next(): void { this.currentSlide.update(i => (i + 1) % this.bannerImages.length); this.resetAuto(); }
+  goTo(i: number): void { this.currentSlide.set(i); this.resetAuto(); }
+  pauseAuto(): void { this.stopAuto(); }
+  resumeAuto(): void { this.startAuto(); }
+
+  private startAuto(): void {
+    this.autoTimer = setInterval(() => {
+      this.currentSlide.update(i => (i + 1) % this.bannerImages.length);
+    }, 4500);
+  }
+  private stopAuto(): void {
+    if (this.autoTimer !== null) { clearInterval(this.autoTimer); this.autoTimer = null; }
+  }
+  private resetAuto(): void { this.stopAuto(); this.startAuto(); }
+
+  readonly bannerImages = [
+    { src: '/HiabIMG/moffett_mount_dismount.jpg', alt: 'Secuencia de montaje y desmontaje de una Moffett en la parte trasera de un camión' },
+    { src: '/HiabIMG/1-0.jpg', alt: 'Moffett cargando un pallet de madera en obra' },
+    { src: '/HiabIMG/moffett-m5-25-3-offroad-02-irl_1300px.jpg', alt: 'Moffett M5 25.3 con tracción 4WD en terreno irregular' },
+    { src: '/HiabIMG/moffett-e4-6_urban-use_320x208.jpg', alt: 'Moffett E4 eléctrico en entrega urbana de última milla' },
+    { src: '/HiabIMG/moffett-m4nx-industrial-use_320x208.jpg', alt: 'Moffett M4 NX operando en entorno industrial' },
+  ];
+
   readonly useCases = [
     {
       title: 'Uso Urbano',

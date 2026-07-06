@@ -29,6 +29,21 @@
   transform: scale(1.04);
 }
 
+/* Variante para logos/insignias: sin recorte, con aire alrededor */
+.split__image-col--contain {
+  background-color: var(--mc-black);
+}
+
+.split__img--contain {
+  object-fit: contain;
+  padding: 48px;
+  box-sizing: border-box;
+}
+
+.split__item:hover .split__img--contain {
+  transform: none;
+}
+
 /* Columna de texto */
 .split__text-col {
   padding: 72px 64px;

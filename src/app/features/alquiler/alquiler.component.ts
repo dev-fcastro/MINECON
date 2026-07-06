@@ -24,7 +24,7 @@ export class AlquilerComponent {
   readonly heroSlides: SliderImage[] = [
     {
       url: '/VolvoConstructionEquipmentIMG/ART_A60H_Customer_GB_008_EMEA.jpg',
-      alt: 'Equipos de construcción y minería disponibles para alquiler — MINECON',
+      alt: 'Equipos de construcción y minería disponibles para alquiler  MINECON',
       label: 'Alquiler de Equipos',
       caption: 'ENCUENTRE SU EQUIPO IDEAL',
     },

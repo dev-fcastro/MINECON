@@ -24,13 +24,13 @@ export class ProductosComponent {
   readonly heroSlides: SliderImage[] = [
     {
       url: '/IngersollRandIMG/CorpHeroBanners_DedicatedExperts.jpg',
-      alt: 'División Industrial — Sistemas de aire comprimido',
+      alt: 'División Industrial  Sistemas de aire comprimido',
       label: 'División Industrial',
       caption: 'OFRECEMOS SOLUCIONES PARA MEDIR, CONTROLAR Y GESTIONAR EL AIRE COMPRIMIDO.',
     },
     {
       url: '/VolvoConstructionEquipmentIMG/Megaprojects_Cairo_2019_03.jpg',
-      alt: 'División Construcción y Minería — Equipos pesados en obra',
+      alt: 'División Construcción y Minería  Equipos pesados en obra',
       label: 'Construcción & Minería',
       caption: 'PASIÓN POR EL RENDIMIENTO',
     },
@@ -42,7 +42,7 @@ export class ProductosComponent {
     },
     {
       url: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1400&auto=format&fit=crop',
-      alt: 'División Energía — Generadores Firman',
+      alt: 'División Energía  Generadores Firman',
       label: 'División Energía',
       caption: 'LOS GENERADORES FIRMAN PERFORMANCE SERIES SON EL CORAZÓN DE LA LÍNEA FIRMAN.',
     },

@@ -61,25 +61,25 @@ export class DevComponent {
     {
       url: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1920&auto=format&fit=crop',
       alt: 'Excavadora de gran tonelaje en operación de minería a cielo abierto',
-      caption: 'EC950E VOLVO CE — Capacidad de extracción 850 T/turno en operación continua',
+      caption: 'EC950E VOLVO CE  Capacidad de extracción 850 T/turno en operación continua',
       label: 'MINERÍA DE SUPERFICIE',
     },
     {
       url: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=1920&auto=format&fit=crop',
       alt: 'Taller industrial de mantenimiento de maquinaria pesada',
-      caption: 'Línea de Servicio Técnico Certificado ISO 9001:2015 — MINECON WORKSHOP',
+      caption: 'Línea de Servicio Técnico Certificado ISO 9001:2015  MINECON WORKSHOP',
       label: 'TALLER CERTIFICADO',
     },
     {
       url: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&w=1920&auto=format&fit=crop',
       alt: 'Planta industrial de ensamblaje de chasis para maquinaria pesada',
-      caption: 'Ensamblaje de chasis estructurales — Estándar SAE J1288 de alta resistencia',
+      caption: 'Ensamblaje de chasis estructurales  Estándar SAE J1288 de alta resistencia',
       label: 'LÍNEA DE ENSAMBLAJE',
     },
     {
       url: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1920&auto=format&fit=crop',
       alt: 'Camión minero de gran tonelaje ADT en operación de extracción',
-      caption: 'CNHTC SITRAK ADT 45T — Rendimiento 18 ciclos/hr en banco de carga continua',
+      caption: 'CNHTC SITRAK ADT 45T  Rendimiento 18 ciclos/hr en banco de carga continua',
       label: 'TRANSPORTE MINERO',
     },
   ];
@@ -102,10 +102,10 @@ export class DevComponent {
 
   readonly tickerTexts: string[] = [
     'STOCK DISPONIBLE: 48 UNIDADES CAT 390F EN DESPACHO INMEDIATO',
-    'CICLO DE MANTENIMIENTO PREVENTIVO — PRÓXIMA JORNADA: 24–26 JUN 2026',
-    'NUEVA ALIANZA: MONTABERT — MINECON CHILE DISTRIBUIDOR OFICIAL CONO SUR',
+    'CICLO DE MANTENIMIENTO PREVENTIVO  PRÓXIMA JORNADA: 24–26 JUN 2026',
+    'NUEVA ALIANZA: MONTABERT  MINECON CHILE DISTRIBUIDOR OFICIAL CONO SUR',
     'RENDIMIENTO DE FLOTA: +12.4% Q1 2026 VS MISMO PERÍODO 2025',
-    'CERTIFICACIÓN ISO 45001 RENOVADA — CERO ACCIDENTES TURNO NOCTURNO Q2 2026',
+    'CERTIFICACIÓN ISO 45001 RENOVADA  CERO ACCIDENTES TURNO NOCTURNO Q2 2026',
   ];
 
   readonly ctaBgUrl =

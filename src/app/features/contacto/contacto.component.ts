@@ -43,6 +43,6 @@ export class ContactoComponent {
 
   onSubmit(event: Event): void {
     event.preventDefault();
-    // Form submission logic — connect to backend/service as needed
+    // Form submission logic  connect to backend/service as needed
   }
 }

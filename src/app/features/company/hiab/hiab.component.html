@@ -1,6 +1,12 @@
 <!-- HERO -->
 <section class="brand-hero">
-  <div class="brand-hero__bg" aria-hidden="true"></div>
+  <img
+    class="brand-hero__img"
+    ngSrc="/HiabIMG/moffett-e4-main_1600x845.jpg"
+    fill
+    priority
+    alt="Moffett E4  carretilla elevadora transportable montada en camión"
+  />
   <div class="brand-hero__overlay" aria-hidden="true"></div>
   <div class="brand-hero__content">
     <div class="brand-hero__logo-wrap">
@@ -15,9 +21,9 @@
   <div class="brand-container">
     <div class="brand-intro__inner">
       <div>
-        <app-title level="h1" variant="section" eyebrow="HIAB — MOFFETT" text="Carretillas Elevadoras Transportables" />
+        <app-title level="h1" variant="section" eyebrow="HIAB  MOFFETT" text="Carretillas Elevadoras Transportables" />
         <app-paragraph variant="lead">
-          Hiab es el proveedor líder mundial de equipos de manipulación de cargas en carretera. A través de su marca Moffett, ofrece las carretillas elevadoras transportables más reconocidas del mercado — unidades que se montan en la parte trasera de un camión y permiten entregar y retirar mercancía sin necesidad de equipos auxiliares, en cualquier lugar.
+          Hiab es el proveedor líder mundial de equipos de manipulación de cargas en carretera. A través de su marca Moffett, ofrece las carretillas elevadoras transportables más reconocidas del mercado  unidades que se montan en la parte trasera de un camión y permiten entregar y retirar mercancía sin necesidad de equipos auxiliares, en cualquier lugar.
         </app-paragraph>
         <a routerLink="/contacto" class="brand-intro__link">Solicitar demostración →</a>
       </div>
@@ -25,7 +31,7 @@
         <img
           class="brand-intro__img"
           src="/HiabIMG/hiabimg.jpg"
-          alt="Moffett — carretilla elevadora transportable"
+          alt="Moffett  carretilla elevadora transportable"
           loading="lazy"
         />
       </div>
@@ -52,6 +58,52 @@
         </div>
       </div>
     }
+  </div>
+</section>
+
+<!-- CARRUSEL  montaje, desmontaje y aplicaciones reales -->
+<section class="brand-carousel">
+  <div class="brand-container">
+    <app-title level="h2" variant="sub" eyebrow="MOFFETT EN OPERACIÓN" text="Montaje, Desmontaje y Aplicaciones" color="#ffffff" />
+  </div>
+  <div
+    class="carousel-outer"
+    (mouseenter)="pauseAuto()"
+    (mouseleave)="resumeAuto()"
+    aria-roledescription="carousel"
+    aria-label="Moffett en operación"
+  >
+    <div class="carousel-track" [style.transform]="'translateX(' + (-currentSlide() * 100) + '%)'">
+      @for (img of bannerImages; track img.src; let i = $index) {
+        <div
+          class="carousel-slide"
+          role="group"
+          [attr.aria-roledescription]="'slide'"
+          [attr.aria-label]="(i + 1) + ' de ' + bannerImages.length"
+          [attr.aria-hidden]="currentSlide() !== i"
+        >
+          <img class="carousel-img" [src]="img.src" [alt]="img.alt" loading="lazy" />
+        </div>
+      }
+    </div>
+    <button class="carousel-btn carousel-btn--prev" (click)="prev()" aria-label="Imagen anterior">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+    </button>
+    <button class="carousel-btn carousel-btn--next" (click)="next()" aria-label="Siguiente imagen">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+    </button>
+    <div class="carousel-dots" role="tablist" aria-label="Seleccionar imagen">
+      @for (img of bannerImages; track img.src; let i = $index) {
+        <button
+          class="carousel-dot"
+          [class.carousel-dot--active]="currentSlide() === i"
+          (click)="goTo(i)"
+          role="tab"
+          [attr.aria-selected]="currentSlide() === i"
+          [attr.aria-label]="'Imagen ' + (i + 1)"
+        ></button>
+      }
+    </div>
   </div>
 </section>
 

@@ -1,6 +1,9 @@
-<!-- HERO -->
+<!-- HERO  sin foto de stock: gráfico industrial (franjas de seguridad amarillo/negro + marca de agua del logo) -->
 <section class="brand-hero">
-  <div class="brand-hero__bg" aria-hidden="true"></div>
+  <div class="brand-hero__bg" aria-hidden="true">
+    <div class="brand-hero__stripes" aria-hidden="true"></div>
+    <img class="brand-hero__mark" src="/FirmanIMG/firman-logo-texto.svg" alt="" aria-hidden="true" loading="eager" />
+  </div>
   <div class="brand-hero__overlay" aria-hidden="true"></div>
   <div class="brand-hero__content">
     <div class="brand-hero__logo-wrap">
@@ -33,9 +36,8 @@
   <div class="products-grid">
     @for (p of productLines; track p.title) {
       <div class="product-card">
-        <div class="product-card__img-wrap">
-          <img class="product-card__img" [src]="p.image" [alt]="p.title" loading="lazy" />
-          <div class="product-card__overlay" aria-hidden="true"></div>
+        <div class="product-card__icon-wrap" aria-hidden="true">
+          <svg class="product-card__icon" viewBox="0 0 24 24" fill="currentColor"><path [attr.d]="p.iconPath" /></svg>
           <span class="product-card__watt">{{ p.watt }}</span>
         </div>
         <div class="product-card__body">
@@ -69,7 +71,6 @@
   eyebrow="FIRMAN EN REPÚBLICA DOMINICANA"
   title="Energía que no falla cuando más la necesita"
   description="Consulte disponibilidad de modelos, especificaciones técnicas y planes de financiamiento con nuestros asesores."
-  bgImageUrl="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=1600&auto=format&fit=crop"
 >
   <a routerLink="/contacto" class="mc-btn mc-btn--primary">
     <span class="mc-btn__label">Solicitar Cotización</span>

@@ -22,7 +22,7 @@ export class RepuestosComponent {
   readonly heroSlides: SliderImage[] = [
     {
       url: '/VolvoConstructionEquipmentIMG/CUS_Classic_Parts_1_21912_01.jpg',
-      alt: 'Repuestos originales Volvo — MINECON',
+      alt: 'Repuestos originales Volvo  MINECON',
       label: 'Repuestos',
       caption: 'REPUESTOS DE CALIDAD',
     },

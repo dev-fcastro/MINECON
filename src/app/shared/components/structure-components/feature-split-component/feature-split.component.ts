@@ -9,6 +9,7 @@ export interface FeatureSplitItem {
   description: string;
   image: string;
   imageAlt: string;
+  imageFit?: 'cover' | 'contain';
   route?: string;
   ctaLabel?: string;
 }

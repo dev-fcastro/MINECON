@@ -22,7 +22,7 @@ export class MarcasComponent {
   readonly heroSlides: SliderImage[] = [
     {
       url: '/VolvoConstructionEquipmentIMG/ART_A60H_Customer_GB_008_EMEA.jpg',
-      alt: 'Maquinaria pesada — marcas líderes mundiales representadas por MINECON',
+      alt: 'Maquinaria pesada  marcas líderes mundiales representadas por MINECON',
       label: 'RENDIMIENTO PODEROSO',
       caption: 'Representamos las marcas más reconocidas del mercado global en maquinaria industrial, construcción, minería, energía y transporte.',
     },
