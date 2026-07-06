@@ -19,7 +19,7 @@
 
 .hero__img {
   object-fit: cover;
-  object-position: center;
+  object-position: center 85%;
 }
 
 .hero__logo {
