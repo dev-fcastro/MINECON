@@ -1,6 +1,12 @@
-<!-- HERO -->
+<!-- HERO  pantalla completa -->
 <section class="brand-hero">
-  <div class="brand-hero__bg" aria-hidden="true"></div>
+  <img
+    class="brand-hero__img"
+    ngSrc="/IngersollRandIMG/CorpHeroBanners_DedicatedExperts.jpg"
+    fill
+    priority
+    alt="Ingersoll Rand  expertos dedicados en soluciones de aire comprimido"
+  />
   <div class="brand-hero__overlay" aria-hidden="true"></div>
   <div class="brand-hero__content">
     <div class="brand-hero__logo-wrap">
@@ -17,7 +23,7 @@
 
 <!-- STRIP -->
 <div class="brand-strip">
-  <span class="brand-strip__text">Air Compressors &amp; Systems — Power Tools — Lifting Solutions — Pumps</span>
+  <span class="brand-strip__text">Air Compressors &amp; Systems  Power Tools  Lifting Solutions  Pumps</span>
 </div>
 
 <!-- INTRO -->
@@ -71,13 +77,13 @@
   </div>
 </section>
 
-<!-- SPLIT — PackageCARE -->
+<!-- SPLIT  PackageCARE -->
 <section class="brand-split">
   <div class="brand-split__img-col">
     <img
       class="brand-split__img"
       src="/IngersollRandIMG/IRCO_PackageCare_logo_img-min.png"
-      alt="Ingersoll Rand PackageCARE — programa de servicio"
+      alt="Ingersoll Rand PackageCARE  programa de servicio"
       loading="lazy"
     />
   </div>
@@ -91,16 +97,50 @@
   </div>
 </section>
 
-<!-- INSTALACIONES EN REPÚBLICA DOMINICANA -->
-<section class="brand-field">
+<!-- CARRUSEL  instalaciones y equipos en República Dominicana -->
+<section class="brand-carousel">
   <div class="brand-container">
     <app-title level="h2" variant="sub" eyebrow="INGERSOLL RAND EN REPÚBLICA DOMINICANA" text="Instalaciones Industriales" color="#ffffff" />
     <p class="field-desc">Compresores Ingersoll Rand instalados y operando en plantas industriales en República Dominicana. MINECON brinda soporte técnico completo, incluyendo mantenimiento preventivo, repuestos y monitoreo de rendimiento.</p>
   </div>
-  <div class="field-grid">
-    <img class="field-img" src="/IngersollRandIMG/ingersollrand-rs315ne.jpeg"        alt="Ingersoll Rand RS315ne — compresor industrial de tornillo rotativo"  loading="lazy" />
-    <img class="field-img" src="/IngersollRandIMG/ingersollrand-oilfree.jpeg"         alt="Ingersoll Rand compresor libre de aceite — instalación industrial"  loading="lazy" />
-    <img class="field-img" src="/IngersollRandIMG/ingersollrand-parker-sistema.jpeg"  alt="Sistema integrado Ingersoll Rand con generadores de nitrógeno Parker" loading="lazy" />
+  <div
+    class="carousel-outer"
+    (mouseenter)="pauseAuto()"
+    (mouseleave)="resumeAuto()"
+    aria-roledescription="carousel"
+    aria-label="Instalaciones Ingersoll Rand en operación"
+  >
+    <div class="carousel-track" [style.transform]="'translateX(' + (-currentSlide() * 100) + '%)'">
+      @for (img of bannerImages; track img.src; let i = $index) {
+        <div
+          class="carousel-slide"
+          role="group"
+          [attr.aria-roledescription]="'slide'"
+          [attr.aria-label]="(i + 1) + ' de ' + bannerImages.length"
+          [attr.aria-hidden]="currentSlide() !== i"
+        >
+          <img class="carousel-img" [src]="img.src" [alt]="img.alt" loading="lazy" />
+        </div>
+      }
+    </div>
+    <button class="carousel-btn carousel-btn--prev" (click)="prev()" aria-label="Imagen anterior">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+    </button>
+    <button class="carousel-btn carousel-btn--next" (click)="next()" aria-label="Siguiente imagen">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+    </button>
+    <div class="carousel-dots" role="tablist" aria-label="Seleccionar imagen">
+      @for (img of bannerImages; track img.src; let i = $index) {
+        <button
+          class="carousel-dot"
+          [class.carousel-dot--active]="currentSlide() === i"
+          (click)="goTo(i)"
+          role="tab"
+          [attr.aria-selected]="currentSlide() === i"
+          [attr.aria-label]="'Imagen ' + (i + 1)"
+        ></button>
+      }
+    </div>
   </div>
 </section>
 
@@ -109,7 +149,7 @@
   eyebrow="DISTRIBUIDOR AUTORIZADO EN RD"
   title="Soluciones de Aire Comprimido para su Industria"
   description="Contáctenos para recibir una auditoría energética gratuita de su sistema de aire comprimido y una propuesta de mejora de eficiencia."
-  bgImageUrl="/IngersollRandIMG/CorpHeroBanners_DedicatedExperts.jpg"
+  bgImageUrl="/IngersollRandIMG/CorpHerro.jpg"
 >
   <a routerLink="/contacto" class="mc-btn mc-btn--primary">
     <span class="mc-btn__label">Solicitar Cotización</span>

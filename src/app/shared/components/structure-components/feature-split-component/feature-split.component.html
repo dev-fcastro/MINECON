@@ -1,8 +1,9 @@
 @for (item of items(); track item.title; let i = $index) {
   <div class="split__item" [class.split__item--reverse]="i % 2 !== 0">
-    <div class="split__image-col">
+    <div class="split__image-col" [class.split__image-col--contain]="item.imageFit === 'contain'">
       <img
         class="split__img"
+        [class.split__img--contain]="item.imageFit === 'contain'"
         [src]="item.image"
         [alt]="item.imageAlt"
         loading="lazy"

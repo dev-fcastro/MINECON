@@ -1,4 +1,5 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, OnDestroy, afterNextRender } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TitleComponent } from '../../../shared/components/ux/title-component/title.component';
 import { ParagraphComponent } from '../../../shared/components/ux/paragraph-component/paragraph.component';
@@ -6,12 +7,45 @@ import { CallToActionComponent } from '../../../shared/components/structure-comp
 
 @Component({
   selector: 'app-donaldson',
-  imports: [RouterLink, TitleComponent, ParagraphComponent, CallToActionComponent],
+  imports: [NgOptimizedImage, RouterLink, TitleComponent, ParagraphComponent, CallToActionComponent],
   templateUrl: './donaldson.component.html',
   styleUrl: './donaldson.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DonaldsonComponent {
+export class DonaldsonComponent implements OnDestroy {
+
+  readonly currentSlide = signal(0);
+  private autoTimer: ReturnType<typeof setInterval> | null = null;
+
+  constructor() {
+    afterNextRender(() => this.startAuto());
+  }
+
+  ngOnDestroy(): void { this.stopAuto(); }
+
+  prev(): void { this.currentSlide.update(i => (i - 1 + this.bannerImages.length) % this.bannerImages.length); this.resetAuto(); }
+  next(): void { this.currentSlide.update(i => (i + 1) % this.bannerImages.length); this.resetAuto(); }
+  goTo(i: number): void { this.currentSlide.set(i); this.resetAuto(); }
+  pauseAuto(): void { this.stopAuto(); }
+  resumeAuto(): void { this.startAuto(); }
+
+  private startAuto(): void {
+    this.autoTimer = setInterval(() => {
+      this.currentSlide.update(i => (i + 1) % this.bannerImages.length);
+    }, 4500);
+  }
+  private stopAuto(): void {
+    if (this.autoTimer !== null) { clearInterval(this.autoTimer); this.autoTimer = null; }
+  }
+  private resetAuto(): void { this.stopAuto(); this.startAuto(); }
+
+  readonly bannerImages = [
+    { src: '/DonaldsonIMG/donaldson-colector-instalado.jpeg', alt: 'Colector de polvo Donaldson Torit instalado junto a silos de granos' },
+    { src: '/DonaldsonIMG/donaldson-colector-grua.jpeg',      alt: 'Instalación del colector Donaldson con grúa telescópica' },
+    { src: '/DonaldsonIMG/2011-install-2-u7434-fr2.jpg',      alt: 'Sistema de ductos y colección de polvo Donaldson en planta industrial' },
+    { src: '/DonaldsonIMG/volantcai_2.jpg',                   alt: 'Detalle de medio filtrante plisado Donaldson' },
+  ];
+
   readonly productLines = [
     {
       title: 'Filtros PowerCore®',

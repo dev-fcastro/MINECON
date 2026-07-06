@@ -1,6 +1,12 @@
 <!-- HERO -->
 <section class="brand-hero">
-  <div class="brand-hero__bg" aria-hidden="true"></div>
+  <img
+    class="brand-hero__img"
+    ngSrc="/MontabertIMG/montabert.jpg"
+    fill
+    priority
+    alt="Montabert  brise-roche hidráulico en plena operación de demolición sobre bloque de roca"
+  />
   <div class="brand-hero__overlay" aria-hidden="true"></div>
   <div class="brand-hero__content">
     <div class="brand-hero__logo-wrap">
@@ -11,7 +17,7 @@
         loading="eager"
       />
     </div>
-    <p class="brand-hero__tagline">Votre partenaire d'avenir — Brise-roches hydrauliques depuis 1921.</p>
+    <p class="brand-hero__tagline">Votre partenaire d'avenir  Brise-roches hydrauliques depuis 1921.</p>
   </div>
 </section>
 
@@ -81,7 +87,7 @@
     <img
       class="brand-about__img"
       src="/MontabertIMG/1632594.jpeg"
-      alt="Montabert — brise-roches hidráulico en acción"
+      alt="Montabert  brise-roches hidráulico en acción"
       loading="lazy"
     />
   </div>
@@ -95,6 +101,52 @@
       Los brise-roches y perforadores Montabert se utilizan en proyectos de construcción, demolición, canteras y minería en todo el mundo, con una reconocida fiabilidad y rendimiento superior por impacto.
     </p>
     <a routerLink="/contacto" class="brand-about__link">Solicitar información técnica →</a>
+  </div>
+</section>
+
+<!-- CARRUSEL  brise-roches Montabert en operación -->
+<section class="brand-carousel">
+  <div class="brand-container">
+    <app-title level="h2" variant="sub" eyebrow="EN EL CAMPO" text="Brise-Roches en Operación" />
+  </div>
+  <div
+    class="carousel-outer"
+    (mouseenter)="pauseAuto()"
+    (mouseleave)="resumeAuto()"
+    aria-roledescription="carousel"
+    aria-label="Galería de brise-roches Montabert en operación"
+  >
+    <div class="carousel-track" [style.transform]="'translateX(' + (-currentSlide() * 100) + '%)'">
+      @for (img of bannerImages; track img.src; let i = $index) {
+        <div
+          class="carousel-slide"
+          role="group"
+          [attr.aria-roledescription]="'slide'"
+          [attr.aria-label]="(i + 1) + ' de ' + bannerImages.length"
+          [attr.aria-hidden]="currentSlide() !== i"
+        >
+          <img class="carousel-img" [src]="img.src" [alt]="img.alt" loading="lazy" />
+        </div>
+      }
+    </div>
+    <button class="carousel-btn carousel-btn--prev" (click)="prev()" aria-label="Imagen anterior">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+    </button>
+    <button class="carousel-btn carousel-btn--next" (click)="next()" aria-label="Siguiente imagen">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+    </button>
+    <div class="carousel-dots" role="tablist" aria-label="Seleccionar imagen">
+      @for (img of bannerImages; track img.src; let i = $index) {
+        <button
+          class="carousel-dot"
+          [class.carousel-dot--active]="currentSlide() === i"
+          (click)="goTo(i)"
+          role="tab"
+          [attr.aria-selected]="currentSlide() === i"
+          [attr.aria-label]="'Imagen ' + (i + 1)"
+        ></button>
+      }
+    </div>
   </div>
 </section>
 

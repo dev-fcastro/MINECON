@@ -24,7 +24,7 @@ export class NosotrosComponent {
   readonly heroSlides: SliderImage[] = [
     {
       url: '/VolvoConstructionEquipmentIMG/Volvo_Bauma_2019_04_07_586_96dpi_Web.jpg',
-      alt: 'MINECON — empresa de soluciones industriales en República Dominicana',
+      alt: 'MINECON  empresa de soluciones industriales en República Dominicana',
       label: 'Acerca de Nosotros',
       caption: 'DESDE 1975 SIRVIENDO A LA INDUSTRIA DE LA CONSTRUCCIÓN Y MINERÍA.',
     },
@@ -37,7 +37,7 @@ export class NosotrosComponent {
       description:
         'Somos una empresa de soluciones que garantiza la excelencia a todos nuestros clientes en los sectores de construcción y minería, ventas de equipos industriales y automotriz, como también equipos de carga ligera y energía. Generamos valores determinados enfocados siempre al respeto de la comunidad y al medio ambiente.',
       image: '/VolvoConstructionEquipmentIMG/Services_Machine_Operator_Training_H_H_02.jpg',
-      imageAlt: 'Equipos MINECON en operación — misión empresarial',
+      imageAlt: 'Equipos MINECON en operación  misión empresarial',
     },
     {
       eyebrow: 'VISIÓN',
@@ -45,7 +45,7 @@ export class NosotrosComponent {
       description:
         'Ser el líder del mercado de soluciones en las áreas de Construcción, Minería, Industrial y Automotriz. Siendo un ejemplo en la comunidad por los valores que proyectamos.',
       image: '/VolvoConstructionEquipmentIMG/Megaprojects_Cairo_2019_03.jpg',
-      imageAlt: 'Horizonte industrial — visión MINECON',
+      imageAlt: 'Horizonte industrial  visión MINECON',
     },
   ];
 

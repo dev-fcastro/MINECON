@@ -1,6 +1,12 @@
 <!-- HERO -->
 <section class="brand-hero">
-  <div class="brand-hero__bg" aria-hidden="true"></div>
+  <img
+    class="brand-hero__img"
+    ngSrc="/BullIMG/bull-cmt-red-soil.jpeg"
+    fill
+    priority
+    alt="Bull CMT retroexcavadora trabajando en suelo rojo bajo cielo despejado"
+  />
   <div class="brand-hero__overlay" aria-hidden="true"></div>
   <div class="brand-hero__content">
     <div class="brand-hero__logo-wrap">
@@ -38,9 +44,8 @@
   <div class="equipment-grid">
     @for (eq of equipment; track eq.title) {
       <div class="eq-card">
-        <div class="eq-card__img-wrap">
-          <img class="eq-card__img" [src]="eq.image" [alt]="eq.title" loading="lazy" />
-          <div class="eq-card__overlay" aria-hidden="true"></div>
+        <div class="eq-card__icon-wrap" aria-hidden="true">
+          <svg class="eq-card__icon" viewBox="0 0 24 24" fill="currentColor"><path [attr.d]="eq.iconPath" /></svg>
         </div>
         <div class="eq-card__body">
           <h3 class="eq-card__title">{{ eq.title }}</h3>
@@ -72,18 +77,50 @@
   </div>
 </section>
 
-<!-- BULL EN OBRA -->
-<section class="brand-field">
+<!-- CARRUSEL  BULL EN OBRA -->
+<section class="brand-carousel">
   <div class="brand-container">
     <app-title level="h2" variant="sub" eyebrow="BULL EN REPÚBLICA DOMINICANA" text="Equipos en Obra" color="#ffffff" />
-    <p class="field-desc">Retroexcavadoras y equipos compactos Bull en plena operación en proyectos de construcción en República Dominicana. Disponibles para entrega con soporte técnico y repuestos MINECON.</p>
+    <p class="carousel-desc">Retroexcavadoras y equipos compactos Bull en plena operación en proyectos de construcción en República Dominicana. Disponibles para entrega con soporte técnico y repuestos MINECON.</p>
   </div>
-  <div class="field-grid">
-    <img class="field-img field-img--wide" src="/BullIMG/bull-cmt-site.jpeg"       alt="Bull CMT retroexcavadora en obra de construcción"       loading="lazy" />
-    <img class="field-img"                 src="/BullIMG/bull-hd-promo.jpeg"        alt="Bull HD retroexcavadora — imagen promocional"           loading="lazy" />
-    <img class="field-img"                 src="/BullIMG/bull-cmt-front.jpeg"       alt="Bull CMT — vista frontal con cazo y martillo"          loading="lazy" />
-    <img class="field-img"                 src="/BullIMG/bull-cmt-red-soil.jpeg"    alt="Bull CMT trabajando en suelo rojo"                     loading="lazy" />
-    <img class="field-img"                 src="/BullIMG/bull-skid-broom.jpeg"      alt="Bull mini cargador con accesorio escoba industrial"    loading="lazy" />
+  <div
+    class="carousel-outer"
+    (mouseenter)="pauseAuto()"
+    (mouseleave)="resumeAuto()"
+    aria-roledescription="carousel"
+    aria-label="Equipos Bull en obra"
+  >
+    <div class="carousel-track" [style.transform]="'translateX(' + (-currentSlide() * 100) + '%)'">
+      @for (img of bannerImages; track img.src; let i = $index) {
+        <div
+          class="carousel-slide"
+          role="group"
+          [attr.aria-roledescription]="'slide'"
+          [attr.aria-label]="(i + 1) + ' de ' + bannerImages.length"
+          [attr.aria-hidden]="currentSlide() !== i"
+        >
+          <img class="carousel-img" [src]="img.src" [alt]="img.alt" loading="lazy" />
+        </div>
+      }
+    </div>
+    <button class="carousel-btn carousel-btn--prev" (click)="prev()" aria-label="Imagen anterior">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+    </button>
+    <button class="carousel-btn carousel-btn--next" (click)="next()" aria-label="Siguiente imagen">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+    </button>
+    <div class="carousel-dots" role="tablist" aria-label="Seleccionar imagen">
+      @for (img of bannerImages; track img.src; let i = $index) {
+        <button
+          class="carousel-dot"
+          [class.carousel-dot--active]="currentSlide() === i"
+          (click)="goTo(i)"
+          role="tab"
+          [attr.aria-selected]="currentSlide() === i"
+          [attr.aria-label]="'Imagen ' + (i + 1)"
+        ></button>
+      }
+    </div>
   </div>
 </section>
 
@@ -92,7 +129,7 @@
   eyebrow="BULL EN REPÚBLICA DOMINICANA"
   title="Equipos robustos para cada proyecto de construcción"
   description="Consulte disponibilidad de modelos, accesorios opcionales y planes de financiamiento con nuestros asesores especializados."
-  bgImageUrl="https://images.unsplash.com/photo-1533512930330-4ac257c86793?q=80&w=1600&auto=format&fit=crop"
+  bgImageUrl="/BullIMG/bull-cmt-red-soil.jpeg"
 >
   <a routerLink="/contacto" class="mc-btn mc-btn--primary">
     <span class="mc-btn__label">Solicitar Cotización</span>

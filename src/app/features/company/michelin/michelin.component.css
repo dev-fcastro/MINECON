@@ -17,19 +17,16 @@
 
 .brand-hero {
   position: relative;
-  height: 560px;
+  height: 100svh;
   overflow: hidden;
   display: flex;
   align-items: flex-start;
   justify-content: center;
 }
 
-.brand-hero__bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('/MichelinIMG/Minas-de-superficie_lightbox_full.jpg');
-  background-size: cover;
-  background-position: center;
+.brand-hero__img {
+  object-fit: cover;
+  object-position: center;
 }
 
 .brand-hero__overlay {
@@ -279,7 +276,6 @@
 }
 
 @media (max-width: 767px) {
-  .brand-hero { height: 420px; }
   .brand-hero__content { padding: 32px 24px; }
   .categories-grid { grid-template-columns: 1fr; }
   .brand-split { grid-template-columns: 1fr; }

@@ -1,6 +1,12 @@
 <!-- HERO -->
 <section class="brand-hero">
-  <div class="brand-hero__bg" aria-hidden="true"></div>
+  <img
+    class="brand-hero__img"
+    ngSrc="/BobcatIMG/bobcat-pa185-instalacion.jpeg"
+    fill
+    priority
+    alt="Bobcat PA185  compresor de aire portátil instalado en taller MINECON"
+  />
   <div class="brand-hero__overlay" aria-hidden="true"></div>
   <div class="brand-hero__content">
     <div class="brand-hero__logo-wrap">
@@ -25,7 +31,7 @@
   <div class="brand-container">
     <app-title level="h1" variant="section" eyebrow="BOBCAT COMPANY" text="Equipos Compactos de Alto Rendimiento" />
     <app-paragraph variant="lead">
-      Durante más de 60 años, Bobcat ha construido equipos compactos que le ayudan a trabajar de manera más eficiente y efectiva. Confía en el rendimiento, la resistencia, la comodidad y la versatilidad de las máquinas y accesorios Bobcat. Sus estándares impulsan la innovación — comprometidos a transformar su trabajo.
+      Durante más de 60 años, Bobcat ha construido equipos compactos que le ayudan a trabajar de manera más eficiente y efectiva. Confía en el rendimiento, la resistencia, la comodidad y la versatilidad de las máquinas y accesorios Bobcat. Sus estándares impulsan la innovación  comprometidos a transformar su trabajo.
     </app-paragraph>
   </div>
 </section>
@@ -38,9 +44,8 @@
   <div class="products-grid">
     @for (p of products; track p.title) {
       <a class="product-card" [routerLink]="p.route">
-        <div class="product-card__img-wrap">
-          <img class="product-card__img" [src]="p.image" [alt]="p.title" loading="lazy" />
-          <div class="product-card__overlay" aria-hidden="true"></div>
+        <div class="product-card__icon-wrap" aria-hidden="true">
+          <svg class="product-card__icon" viewBox="0 0 24 24" fill="currentColor"><path [attr.d]="p.iconPath" /></svg>
         </div>
         <div class="product-card__info">
           <h3 class="product-card__title">{{ p.title }}</h3>
@@ -52,41 +57,76 @@
   </div>
 </section>
 
-<!-- SPLIT — PA185 Compresor Portátil -->
+<!-- SPLIT  PA185 Compresor Portátil -->
 <section class="brand-split">
   <div class="brand-split__img-col">
     <img
       class="brand-split__img"
       src="/BobcatIMG/bobcat-pa185-blanco.jpeg"
-      alt="Bobcat PA185 — compresor de aire portátil con branding MINECON"
+      alt="Bobcat PA185  compresor de aire portátil con branding MINECON"
       loading="lazy"
     />
   </div>
   <div class="brand-split__text-col">
-    <span class="brand-split__eyebrow">BOBCAT PA185 — DISPONIBLE EN RD</span>
+    <span class="brand-split__eyebrow">BOBCAT PA185  DISPONIBLE EN RD</span>
     <h2 class="brand-split__title">Compresor Portátil para Cada Aplicación</h2>
     <p class="brand-split__desc">
       El Bobcat PA185 es un compresor de aire portátil de 185 CFM diseñado para las condiciones más exigentes en campo. Ideal para herramientas neumáticas, obras de pavimentación, perforación y suministro de aire en sitios remotos. MINECON lo distribuye y respalda directamente en República Dominicana.
     </p>
     <ul class="brand-split__list">
-      <li>185 CFM — 100 PSI presión de trabajo</li>
+      <li>185 CFM  100 PSI presión de trabajo</li>
       <li>Motor Diesel de bajo consumo</li>
-      <li>Chasis compacto — carga en pick-up</li>
+      <li>Chasis compacto  carga en pick-up</li>
       <li>Soporte técnico MINECON incluido</li>
     </ul>
     <a routerLink="/contacto" class="brand-split__link">Solicitar cotización PA185 →</a>
   </div>
 </section>
 
-<!-- EN OPERACIÓN -->
-<section class="brand-field">
+<!-- CARRUSEL  PA185 en detalle -->
+<section class="brand-carousel">
   <div class="brand-container">
-    <app-title level="h2" variant="sub" eyebrow="BOBCAT EN REPÚBLICA DOMINICANA" text="Equipos Disponibles" color="#ffffff" />
-    <p class="field-desc">Unidades Bobcat con branding MINECON disponibles para entrega inmediata. Cada equipo viene respaldado por nuestro equipo de servicio técnico local.</p>
+    <app-title level="h2" variant="sub" eyebrow="BOBCAT EN REPÚBLICA DOMINICANA" text="PA185 en Detalle" color="#ffffff" />
+    <p class="carousel-desc">Unidades Bobcat con branding MINECON disponibles para entrega inmediata. Cada equipo viene respaldado por nuestro equipo de servicio técnico local.</p>
   </div>
-  <div class="field-grid field-grid--2col">
-    <img class="field-img field-img--tall" src="/BobcatIMG/bobcat-pa185-blanco.jpeg"  alt="Bobcat PA185 compresor portátil — vista lateral"  loading="lazy" />
-    <img class="field-img field-img--tall" src="/BobcatIMG/bobcat-pa185-instalacion.jpeg"   alt="Bobcat PA185 — instalación con accesorios"   loading="lazy" />
+  <div
+    class="carousel-outer"
+    (mouseenter)="pauseAuto()"
+    (mouseleave)="resumeAuto()"
+    aria-roledescription="carousel"
+    aria-label="Bobcat PA185 en detalle"
+  >
+    <div class="carousel-track" [style.transform]="'translateX(' + (-currentSlide() * 100) + '%)'">
+      @for (img of bannerImages; track img.src; let i = $index) {
+        <div
+          class="carousel-slide"
+          role="group"
+          [attr.aria-roledescription]="'slide'"
+          [attr.aria-label]="(i + 1) + ' de ' + bannerImages.length"
+          [attr.aria-hidden]="currentSlide() !== i"
+        >
+          <img class="carousel-img" [src]="img.src" [alt]="img.alt" loading="lazy" />
+        </div>
+      }
+    </div>
+    <button class="carousel-btn carousel-btn--prev" (click)="prev()" aria-label="Imagen anterior">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+    </button>
+    <button class="carousel-btn carousel-btn--next" (click)="next()" aria-label="Siguiente imagen">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+    </button>
+    <div class="carousel-dots" role="tablist" aria-label="Seleccionar imagen">
+      @for (img of bannerImages; track img.src; let i = $index) {
+        <button
+          class="carousel-dot"
+          [class.carousel-dot--active]="currentSlide() === i"
+          (click)="goTo(i)"
+          role="tab"
+          [attr.aria-selected]="currentSlide() === i"
+          [attr.aria-label]="'Imagen ' + (i + 1)"
+        ></button>
+      }
+    </div>
   </div>
 </section>
 
@@ -95,7 +135,7 @@
   eyebrow="BOBCAT EN REPÚBLICA DOMINICANA"
   title="Equipos compactos para cada trabajo"
   description="Consulte disponibilidad de modelos, accesorios y planes de financiamiento con nuestros asesores especializados."
-  bgImageUrl="https://images.unsplash.com/photo-1533512930330-4ac257c86793?q=80&w=1600&auto=format&fit=crop"
+  bgImageUrl="/BobcatIMG/bobcat-pa185-instalacion.jpeg"
 >
   <a routerLink="/contacto" class="mc-btn mc-btn--primary">
     <span class="mc-btn__label">Solicitar Cotización</span>

@@ -9,7 +9,7 @@ interface SinotrukModel {
   title: string; series: string; hp: string; config: string; use: string; image: string;
 }
 
-const PAGE_TITLE = 'Sinotruk HOWO | Camiones Pesados en República Dominicana — MINECON';
+const PAGE_TITLE = 'Sinotruk HOWO | Camiones Pesados en República Dominicana  MINECON';
 const PAGE_DESC  = 'Distribuidor autorizado de Sinotruk HOWO en República Dominicana. Gama de camiones pesados 210–540 HP para construcción, minería e industria. Tecnología MAN. Contáctenos.';
 const PAGE_IMAGE = 'https://minecon.com.do/SinotrukIMG/sinotruk-img-header.png';
 const PAGE_URL   = 'https://minecon.com.do/marcas/sinotruk';
@@ -67,10 +67,10 @@ export class SinotrukComponent implements OnDestroy {
   private resetAuto(): void { this.stopAuto(); this.startAuto(); }
 
   readonly bannerImages = [
-    { src: '/SinotrukIMG/2025041613414457817.jpg', alt: 'Flota HOWO Sinotruk — formación de camiones' },
+    { src: '/SinotrukIMG/2025041613414457817.jpg', alt: 'Flota HOWO Sinotruk  formación de camiones' },
     { src: '/SinotrukIMG/2025041613414475023.jpg', alt: 'Convoy HOWO Sinotruk en carretera' },
-    { src: '/SinotrukIMG/2025041613414484729.jpg', alt: 'HOWO Sinotruk — gama completa en acción' },
-    { src: '/SinotrukIMG/2025041613414496226.jpg', alt: 'HOWO Sinotruk — distribuidores MINECON' },
+    { src: '/SinotrukIMG/2025041613414484729.jpg', alt: 'HOWO Sinotruk  gama completa en acción' },
+    { src: '/SinotrukIMG/2025041613414496226.jpg', alt: 'HOWO Sinotruk  distribuidores MINECON' },
   ];
 
   readonly lineup = [
@@ -82,12 +82,12 @@ export class SinotrukComponent implements OnDestroy {
   ];
 
   readonly models: SinotrukModel[] = [
-    { title: 'HOWO T7H 440',    series: 'Heavy Truck', hp: '380 — 540 HP', config: '4×2 / 6×4 / 8×4', use: 'Tractocamión de larga distancia y faena pesada.',         image: '/SinotrukIMG/t7h-440-6x4.png' },
-    { title: 'HOWO T5G',        series: 'Heavy Truck', hp: '210 — 340 HP', config: '4×2 / 6×4',       use: 'Transporte de carga pesada en rutas nacionales.',        image: '/SinotrukIMG/SINOTRUK_HOWO_T5G_280_6x2_5_650237c7d9586bb87c6e4f9e2f08186e.jpg' },
-    { title: 'HOWO A7 Tolva 6×4', series: 'Volquete', hp: '380 — 420 HP', config: '6×4',              use: 'Camión volquete para minería y construcción.',           image: '/SinotrukIMG/t7h-400-6x4-tolva.png' },
-    { title: 'HOWO A7 Tolva 8×4', series: 'Volquete', hp: '380 — 420 HP', config: '8×4',              use: 'Máxima capacidad de carga para minería intensiva.',       image: '/SinotrukIMG/t7h-400-8x4-tolva.png' },
+    { title: 'HOWO T7H 440',    series: 'Heavy Truck', hp: '380  540 HP', config: '4×2 / 6×4 / 8×4', use: 'Tractocamión de larga distancia y faena pesada.',         image: '/SinotrukIMG/t7h-440-6x4.png' },
+    { title: 'HOWO T5G',        series: 'Heavy Truck', hp: '210  340 HP', config: '4×2 / 6×4',       use: 'Transporte de carga pesada en rutas nacionales.',        image: '/SinotrukIMG/SINOTRUK_HOWO_T5G_280_6x2_5_650237c7d9586bb87c6e4f9e2f08186e.jpg' },
+    { title: 'HOWO A7 Tolva 6×4', series: 'Volquete', hp: '380  420 HP', config: '6×4',              use: 'Camión volquete para minería y construcción.',           image: '/SinotrukIMG/t7h-400-6x4-tolva.png' },
+    { title: 'HOWO A7 Tolva 8×4', series: 'Volquete', hp: '380  420 HP', config: '8×4',              use: 'Máxima capacidad de carga para minería intensiva.',       image: '/SinotrukIMG/t7h-400-8x4-tolva.png' },
     { title: 'HOWO FN-A7',      series: 'Heavy Truck', hp: '420 HP',       config: '6×4',              use: 'Tractocamión de alto rendimiento para cargas pesadas.',  image: '/SinotrukIMG/fn-a7-420-6x4.jpg' },
-    { title: 'HOWO C7H',        series: 'Heavy Truck', hp: '420 — 540 HP', config: '6×4',              use: 'Tractor premium de larga distancia y alto tonelaje.',    image: '/SinotrukIMG/c7h-540-4x2.png' },
+    { title: 'HOWO C7H',        series: 'Heavy Truck', hp: '420  540 HP', config: '6×4',              use: 'Tractor premium de larga distancia y alto tonelaje.',    image: '/SinotrukIMG/c7h-540-4x2.png' },
   ];
 
   readonly techItems = [

@@ -38,7 +38,7 @@ export class MaquinariaUsadaComponent {
   readonly heroSlides: SliderImage[] = [
     {
       url: '/VolvoConstructionEquipmentIMG/Volvo_Bauma_2019_04_07_586_96dpi_Web.jpg',
-      alt: 'Maquinaria usada certificada — MINECON',
+      alt: 'Maquinaria usada certificada  MINECON',
       label: 'Maquinaria Usada',
       caption: 'EQUIPOS CERTIFICADOS, DESEMPEÑO GARANTIZADO.',
     },

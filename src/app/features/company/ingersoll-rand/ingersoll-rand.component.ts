@@ -1,4 +1,5 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, signal, OnDestroy, afterNextRender } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { TitleComponent } from '../../../shared/components/ux/title-component/title.component';
 import { ParagraphComponent } from '../../../shared/components/ux/paragraph-component/paragraph.component';
@@ -6,12 +7,46 @@ import { CallToActionComponent } from '../../../shared/components/structure-comp
 
 @Component({
   selector: 'app-ingersoll-rand',
-  imports: [RouterLink, TitleComponent, ParagraphComponent, CallToActionComponent],
+  imports: [NgOptimizedImage, RouterLink, TitleComponent, ParagraphComponent, CallToActionComponent],
   templateUrl: './ingersoll-rand.component.html',
   styleUrl: './ingersoll-rand.component.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class IngersollRandComponent {
+export class IngersollRandComponent implements OnDestroy {
+
+  readonly currentSlide = signal(0);
+  private autoTimer: ReturnType<typeof setInterval> | null = null;
+
+  constructor() {
+    afterNextRender(() => this.startAuto());
+  }
+
+  ngOnDestroy(): void { this.stopAuto(); }
+
+  prev(): void { this.currentSlide.update(i => (i - 1 + this.bannerImages.length) % this.bannerImages.length); this.resetAuto(); }
+  next(): void { this.currentSlide.update(i => (i + 1) % this.bannerImages.length); this.resetAuto(); }
+  goTo(i: number): void { this.currentSlide.set(i); this.resetAuto(); }
+  pauseAuto(): void { this.stopAuto(); }
+  resumeAuto(): void { this.startAuto(); }
+
+  private startAuto(): void {
+    this.autoTimer = setInterval(() => {
+      this.currentSlide.update(i => (i + 1) % this.bannerImages.length);
+    }, 4500);
+  }
+  private stopAuto(): void {
+    if (this.autoTimer !== null) { clearInterval(this.autoTimer); this.autoTimer = null; }
+  }
+  private resetAuto(): void { this.stopAuto(); this.startAuto(); }
+
+  readonly bannerImages = [
+    { src: '/IngersollRandIMG/ingersollrand-rs315ne.jpeg',       alt: 'Ingersoll Rand RS315ne  compresor industrial de tornillo rotativo' },
+    { src: '/IngersollRandIMG/ingersollrand-oilfree.jpeg',        alt: 'Ingersoll Rand compresor libre de aceite  instalación industrial' },
+    { src: '/IngersollRandIMG/ingersollrand-parker-sistema.jpeg', alt: 'Sistema integrado Ingersoll Rand con generadores de nitrógeno Parker' },
+    { src: '/IngersollRandIMG/historia_industrial_hero.jpg',      alt: 'Ingersoll Rand  más de un siglo de historia en ingeniería industrial' },
+    { src: '/IngersollRandIMG/OilandGas.jpg',                     alt: 'Ingersoll Rand  soluciones para la industria de petróleo y gas' },
+  ];
+
   readonly productLines = [
     {
       title: 'Compresores de Aceite',

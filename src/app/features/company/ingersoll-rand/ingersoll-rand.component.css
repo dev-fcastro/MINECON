@@ -17,19 +17,16 @@
 
 .brand-hero {
   position: relative;
-  height: 560px;
+  height: 100svh;
   overflow: hidden;
   display: flex;
   align-items: flex-start;
   justify-content: center;
 }
 
-.brand-hero__bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('/IngersollRandIMG/CorpHeroBanners_DedicatedExperts.jpg');
-  background-size: cover;
-  background-position: center;
+.brand-hero__img {
+  object-fit: cover;
+  object-position: center;
 }
 
 .brand-hero__overlay {
@@ -289,27 +286,79 @@
 @media (max-width: 1023px) {
   .products-grid { grid-template-columns: repeat(2, 1fr); }
   .industries-grid { grid-template-columns: repeat(3, 1fr); }
-  .field-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 767px) {
-  .brand-hero { height: 420px; }
+  .brand-hero { height: 100svh; }
   .brand-hero__content { padding: 32px 24px; }
   .products-grid { grid-template-columns: 1fr; }
   .industries-grid { grid-template-columns: repeat(2, 1fr); }
   .brand-split { grid-template-columns: 1fr; }
   .brand-split__img-col { height: 260px; }
   .brand-split__text-col { padding: 36px 24px; }
-  .field-grid { grid-template-columns: 1fr; }
-  .field-img { height: 220px; }
+  .carousel-btn { width: 38px; height: 38px; }
+  .carousel-btn--prev { left: 8px; }
+  .carousel-btn--next { right: 8px; }
 }
 
-/* ── En obra / campo ─────────────────────────────────────── */
-.brand-field { background-color: var(--brand-primary); padding: 80px 0 0; border-top: 3px solid var(--brand-accent); }
+/* ── Carrusel — instalaciones en RD ──────────────────────── */
+.brand-carousel { background-color: var(--brand-primary); padding: 80px 0 88px; border-top: 3px solid var(--brand-accent); }
 .field-desc { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.7; margin: 16px 0 0; max-width: 720px; }
-.field-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; margin-top: 40px; }
-.field-img { width: 100%; height: 280px; object-fit: cover; display: block; filter: brightness(0.85); transition: filter 0.1s steps(1,end); }
-.field-img:hover { filter: brightness(1.02); }
-.field-img--wide { grid-column: span 2; }
-.field-grid--2col { grid-template-columns: repeat(2, 1fr); }
-.field-img--tall { height: 480px; }
+.carousel-outer {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 7;
+  margin-top: 40px;
+  background-color: #000;
+}
+.carousel-track {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.25,1,0.5,1);
+  will-change: transform;
+}
+.carousel-slide { flex: 0 0 100%; height: 100%; overflow: hidden; }
+.carousel-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  background-color: rgba(35,31,32,0.65);
+  border: 2px solid rgba(255,255,255,0.2);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background-color 0.1s steps(1,end), border-color 0.1s steps(1,end);
+}
+.carousel-btn:hover, .carousel-btn:focus-visible {
+  background-color: var(--brand-accent);
+  border-color: var(--brand-accent);
+  outline: none;
+}
+.carousel-btn--prev { left: 20px; }
+.carousel-btn--next { right: 20px; }
+.carousel-dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255,255,255,0.3);
+  border: 1px solid rgba(255,255,255,0.45);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.1s steps(1,end);
+}
+.carousel-dot--active { background-color: var(--brand-accent); border-color: var(--brand-accent); }
+.carousel-dot:hover { background-color: rgba(255,255,255,0.6); }
