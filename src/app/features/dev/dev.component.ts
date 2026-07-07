@@ -85,7 +85,7 @@ export class DevComponent {
   ];
 
   readonly marqueeItems: MarqueeItem[] = [
-    { name: 'Volvo Construction Equipment', logoSrc: '/VolvoConstructionEquipmentIMG/volvo-logo-texto.svg', route: '/marcas/volvo-construction-equipment' },
+    { name: 'Volvo Construction Equipment', logoSrc: '/VolvoConstructionEquipmentIMG/volvo-imagen-completa-logo.png', route: '/marcas/volvo-construction-equipment' },
     { name: 'Bobcat',                       logoSrc: '/BobcatIMG/bobcat-logo-texto.png',                   route: '/marcas/bobcat' },
     { name: 'Montabert',                    logoSrc: '/MontabertIMG/montabert-logo-texto.png',             route: '/marcas/montabert' },
     { name: 'Michelin',                     logoSrc: '/MichelinIMG/michelin-logo-texto.png',               route: '/marcas/michelin' },
@@ -122,7 +122,7 @@ export class DevComponent {
   readonly showcaseItems: BrandShowcaseItem[] = [
     {
       name: 'Volvo Construction Equipment',
-      logoSrc: '/VolvoConstructionEquipmentIMG/volvo-logo-texto.svg',
+      logoSrc: '/VolvoConstructionEquipmentIMG/volvo-imagen-completa-logo.png',
       route: '/marcas/volvo-construction-equipment',
       logoWidth: 200, logoHeight: 48,
       categories: ['Excavadoras', 'Cargadores Frontales', 'Compactadoras', 'Pavimentadoras'],

@@ -22,17 +22,6 @@
   object-position: center 85%;
 }
 
-.hero__logo {
-  position: absolute;
-  z-index: 2;
-  top: 17%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: clamp(240px, 38vw, 560px);
-  height: auto;
-  pointer-events: none;
-}
-
 /* ── Container ────────────────────────────────────── */
 
 .section-container {
@@ -253,10 +242,6 @@
 }
 
 @media (max-width: 767px) {
-  .hero__logo {
-    width: clamp(180px, 70vw, 320px);
-  }
-
   .section-container {
     padding: 0 16px;
   }
