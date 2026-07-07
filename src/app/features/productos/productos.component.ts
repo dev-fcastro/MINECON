@@ -142,7 +142,7 @@ export class ProductosComponent {
   readonly cmBrands: BrandShowcaseItem[] = [
     {
       name: 'Volvo Construction Equipment',
-      logoSrc: '/VolvoConstructionEquipmentIMG/volvo-logo-texto.svg',
+      logoSrc: '/VolvoConstructionEquipmentIMG/volvo-imagen-completa-logo.png',
       route: '/marcas/volvo-construction-equipment',
       logoWidth: 200,
       logoHeight: 48,
